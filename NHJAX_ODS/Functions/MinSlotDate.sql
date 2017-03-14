@@ -1,0 +1,10 @@
+﻿
+CREATE FUNCTION [dbo].[MinSlotDate]()
+RETURNS datetime AS  
+BEGIN 
+	DECLARE @minDate	datetime;
+	SELECT @minDate = MIN(DATE_TIME) 
+		FROM [nhjax-cache].STAGING.dbo.SCHEDULABLE_ENTITY$SCHEDULE_DATE_TIMES TIMES
+	RETURN @minDate;
+END
+

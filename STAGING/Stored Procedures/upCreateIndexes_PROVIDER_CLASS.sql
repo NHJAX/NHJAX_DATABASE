@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_PROVIDER_CLASS] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_PROVIDER_CLASS')
+		DROP INDEX PROVIDER_CLASS.ind_PROVIDER_CLASS
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_PROVIDER_CLASS_KEY_PROVIDER_CLASS')
+		DROP INDEX PROVIDER_CLASS.IX_PROVIDER_CLASS_KEY_PROVIDER_CLASS
+		                                                                
+	CREATE INDEX 	IX_PROVIDER_CLASS_KEY_PROVIDER_CLASS
+	ON 			PROVIDER_CLASS(KEY_PROVIDER_CLASS)
+	WITH 			FILLFACTOR = 100

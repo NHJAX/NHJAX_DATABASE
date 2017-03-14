@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[NED_PATIENT$ENROLLMENT_HISTORY$PCM_HISTORY] (
+    [KEY_SITE]                                       NUMERIC (5)     NULL,
+    [KEY_NED_PATIENT]                                NUMERIC (13, 3) NULL,
+    [KEY_NED_PATIENT$ENROLLMENT_HISTORY$PCM_HISTORY] NUMERIC (9, 3)  NULL,
+    [KEY_NED_PATIENT$ENROLLMENT_HISTORY]             NUMERIC (8, 3)  NULL,
+    [PCM_HISTORY_NUMBER]                             NUMERIC (17, 3) NULL,
+    [PCM_IEN]                                        NUMERIC (21, 3) NULL,
+    [PCM_ASSIGNED_DATE]                              DATETIME        NULL,
+    [PCM_START_DATE]                                 DATETIME        NULL,
+    [PCM_PROJECTED_END_DATE]                         VARCHAR (10)    NULL,
+    [PCM_END_REASON_IEN]                             NUMERIC (21, 3) NULL,
+    [MCP_PROVIDER_GROUP_IEN]                         NUMERIC (21, 3) NULL,
+    [BENEFICIARY_CATEGORY_IEN]                       NUMERIC (21, 3) NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ind_NED_PATIENT$ENROLLMENT_HISTORY$PCM_HISTORY]
+    ON [dbo].[NED_PATIENT$ENROLLMENT_HISTORY$PCM_HISTORY]([KEY_SITE] ASC, [KEY_NED_PATIENT] ASC, [KEY_NED_PATIENT$ENROLLMENT_HISTORY$PCM_HISTORY] ASC, [KEY_NED_PATIENT$ENROLLMENT_HISTORY] ASC);
+

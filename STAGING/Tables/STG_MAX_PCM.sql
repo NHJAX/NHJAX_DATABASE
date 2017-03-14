@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[STG_MAX_PCM] (
+    [KEY_NED_PATIENT] NUMERIC (13, 3) NOT NULL,
+    [MaxPcm]          NUMERIC (17, 3) NOT NULL,
+    [MaxEnr]          NUMERIC (17, 3) NOT NULL,
+    [CreatedDate]     DATETIME        CONSTRAINT [DF_STG_MAX_PCM_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_STG_MAX_PCM] PRIMARY KEY CLUSTERED ([KEY_NED_PATIENT] ASC, [MaxPcm] ASC, [MaxEnr] ASC)
+);
+

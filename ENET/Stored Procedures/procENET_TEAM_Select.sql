@@ -1,0 +1,16 @@
+﻿
+create PROCEDURE [dbo].[procENET_TEAM_Select]
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+SELECT 
+	TeamId,
+	TeamDesc
+FROM TEAM
+
+END
+

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[xxx20160609_LAB_RESULTS] (
+    [KEY_PATIENT]              NUMERIC (13, 3) NULL,
+    [KEY_LAB_TEST]             NUMERIC (10, 3) NULL,
+    [LabTest]                  VARCHAR (30)    NULL,
+    [KEY_HOSPITAL_LOCATION]    NUMERIC (12, 4) NULL,
+    [HospitalLocation]         VARCHAR (36)    NULL,
+    [DATE_TIME_SPECIMEN_TAKEN] DATETIME        NULL,
+    [ENTER_DATE_TIME]          DATETIME        NULL,
+    [CERTIFY_DATE_TIME]        DATETIME        NULL,
+    [RESULT]                   VARCHAR (19)    NULL,
+    [KEY_ORDER]                NUMERIC (20, 3) NULL,
+    [AccessionTypeId]          INT             NULL,
+    [KEY_USER_Entered]         NUMERIC (12, 4) NULL,
+    [EnteredUser]              VARCHAR (30)    NULL,
+    [KEY_COLLECTION_SAMPLE]    NUMERIC (9, 3)  NULL,
+    [CollectionSample]         VARCHAR (30)    NULL,
+    [LRCCLoginDate]            DATETIME        NULL,
+    [KEY_USER_Certify]         NUMERIC (12, 4) NULL,
+    [CertifyUser]              VARCHAR (30)    NULL,
+    [KEY_PROVIDER]             NUMERIC (12, 4) NULL,
+    [ProviderName]             VARCHAR (40)    NULL,
+    [RNR_DATE_TIME]            DATETIME        NULL,
+    [ResultComments]           VARCHAR (4000)  NULL,
+    [LabResultSubKey]          NUMERIC (26, 9) NULL,
+    [CPT_IEN]                  NUMERIC (21, 3) NULL
+);
+

@@ -1,0 +1,2 @@
+﻿CREATE USER [NMED\nhjax-SQL-ADM] FOR LOGIN [NMED\nhjax-SQL-ADM];
+

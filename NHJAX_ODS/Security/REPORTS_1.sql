@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [REPORTS]
+    WITH PASSWORD = N'f{rxgmf RTxg0vqlytksq^o=msFT7_&#$!~<ghbujv5uQrou', SID = 0x16BD92BB69FBCF45830722F9CE7C7973, DEFAULT_LANGUAGE = [us_english];
+

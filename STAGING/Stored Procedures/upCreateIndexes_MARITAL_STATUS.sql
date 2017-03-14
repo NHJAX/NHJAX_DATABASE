@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_MARITAL_STATUS] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_MARITAL_STATUS')
+		DROP INDEX MARITAL_STATUS.ind_MARITAL_STATUS
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_MARITAL_STATUS_KEY_MARITAL_STATUS')
+		DROP INDEX MARITAL_STATUS.IX_MARITAL_STATUS_KEY_MARITAL_STATUS
+		                                                                
+	CREATE INDEX 	IX_MARITAL_STATUS_KEY_MARITAL_STATUS
+	ON 			MARITAL_STATUS(KEY_MARITAL_STATUS)
+	WITH 			FILLFACTOR = 100

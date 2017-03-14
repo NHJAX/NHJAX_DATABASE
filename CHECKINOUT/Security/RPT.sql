@@ -1,0 +1,2 @@
+﻿CREATE USER [RPT] FOR LOGIN [RPT];
+

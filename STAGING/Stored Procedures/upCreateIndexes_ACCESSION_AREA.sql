@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_ACCESSION_AREA] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_ACCESSION_AREA')
+		DROP INDEX ACCESSION_AREA.ind_ACCESSION_AREA
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ACCESSION_AREA_KEY_ACCESSION_AREA')
+		DROP INDEX ACCESSION_AREA.IX_ACCESSION_AREA_KEY_ACCESSION_AREA
+		                                                                
+	CREATE INDEX 	IX_ACCESSION_AREA_KEY_ACCESSION_AREA
+	ON 			ACCESSION_AREA(KEY_ACCESSION_AREA)
+	WITH 			FILLFACTOR = 100

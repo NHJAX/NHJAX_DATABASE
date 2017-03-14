@@ -1,0 +1,3965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ENET</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{6ab96bd2-702a-4442-b839-a6622ae28def}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ENET</RootNamespace>
+    <AssemblyName>ENET</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <AnsiNulls>False</AnsiNulls>
+    <QuotedIdentifier>False</QuotedIdentifier>
+    <Containment>None</Containment>
+    <IsNestedTriggersOn>True</IsNestedTriggersOn>
+    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
+    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
+    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
+    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <Trustworthy>False</Trustworthy>
+    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
+    <PageVerify>TORN_PAGE_DETECTION</PageVerify>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <Parameterization>SIMPLE</Parameterization>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <CompatibilityMode>110</CompatibilityMode>
+    <AnsiNullDefault>False</AnsiNullDefault>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <DefaultCursor>GLOBAL</DefaultCursor>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <TornPageDetection>True</TornPageDetection>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <Recovery>SIMPLE</Recovery>
+    <EnableFullTextSearch>True</EnableFullTextSearch>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables\" />
+    <Folder Include="Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="Functions\" />
+    <Folder Include="Stored Procedures\" />
+    <Folder Include="User Defined Types\" />
+    <Folder Include="Server Object" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\ASSET_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_SECURITY_LEVEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\COUNTRY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20131216Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BILLET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_SUBTYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20150226Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_ORDER_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BB_INVENTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ALIAS_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_PREFERENCE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_ORDER_ITEM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ADDRESS_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_SchemaVersions.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_MAC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ADDRESS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151211Inventory_KW.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_ASSIGNMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BUILDING.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACTIVITY_LOG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_LOOKUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151214Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130308Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BASE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_PersonalizationAllUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20150311Inventory_CDP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACTIVE_DIRECTORY_COMPUTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\APPLICATION_EXCEPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_IP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LANGUAGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_FILE_ALERT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LOGON_AUDITING.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SHUTDOWN_PRIORITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMPORT_LOG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_WebEvent_Events.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20161209Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\HEALTHCARE_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_ORDER_CONTACT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\EMERGENCY_CONTACT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_ORDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\EMAIL_ADDRESS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RESPONSIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_MOVEMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_COMPUTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140620Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ETHNICITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\EDUCATION_LEVEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SERVER_RESPONSIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_FEEDBACK_FOLLOW_UP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DOMAIN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SYSTEM_RESPONSIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_FILE_SEARCH.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DM_SPRINT_REGRESSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_FEEDBACK_ARCHIVE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DM_BULK_TICKET_PRINT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_MEMBER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140715Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_FEEDBACK.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151230Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DM_ADC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\tempComputerTarget.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\tempActiveDirectoryImport.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130115MonitorsA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20170118Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140718Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_ATTACHMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130115MonitorsB.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140729Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SYSTEM_OWNER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130115MonitorsC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140731Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_ASSIGNMENT_ARCHIVE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_EXCEPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130115MonitorsD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessDRMO.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140811Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Profile.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140820Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessCurrentDMHRSiPositions.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_BILLET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CELL_CARRIER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_EXTENDED_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_PersonalizationPerUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140821Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessASSET_REQUEST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MODEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_ALTERNATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140822Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SECURITY_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TEAM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SECURITY_LEVEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_TEAM_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SECURITY_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SWITCH.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_RECURRENCE_WEEKLY_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160126Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130618Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\REPORT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DECK.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_RECURRENCE_MONTHLY_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOFTWARE_LICENSE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RANK.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\COMPONENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_RECURRENCE_DAILY_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130709Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20170124Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RANGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CITIZENSHIP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_RECURRENCE_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130716Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120309InventoryEric.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_HISTORY_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx0ACTIVE_DIRECTORY_ACCOUNT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130722Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_ASSET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120217Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_ASSIGNMENT_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120124Inventory_Tablets.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_ARCHIVE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120120Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TASK_20080101.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_UsersInRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110816DMLSS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130725Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110713Pearlman.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120227InventoryUnmatchedbySerial.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SYSTEM_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110621SMSReportResultsSubnet2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130731OrgChart.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120223Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Applications.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110621SMSReportResultsSubnet.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130805Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PHONE_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Users.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110616Pearlman.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROBLEM_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Membership.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110608Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130814Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PHONE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110201Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PRIORITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_PRINTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20140915Inventory_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110121Inventory_KeyWest.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160202Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PERSONNEL_TYPE_LIST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20110120Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PREFERENCE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130821Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_FILE_EXTENSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PERSONNEL_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_DISPOSITION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessASSET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130904Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PERSONNEL_SPECIAL_SOFTWARE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_DISPLAY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\Pending12JUL11_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_BASE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_EXTENDED.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\OPERATING_SYSTEM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141120Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_AUDIENCE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141124Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Paths.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_ASSET_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20130925Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_ASSET_SUBTYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141125Inventory_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DIRECTORATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151018Inventory_DRMO.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessEMail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DESIGNATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessEASIVSummary.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEPARTMENT_20080612.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141009Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TIER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160323Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141202Inventory_Yellow.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141010Inventory_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141202Inventory_Red.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_ALTERNATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET_FEEDBACK_FOLLOW_UP_ARCHIVE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141211Inventory_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MARQUEE_MESSAGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_HOUR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MANUFACTURER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DISPOSITION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MAINTENANCE_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MAILING_ADDRESS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151004Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LANGUAGE_SPOKEN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_FILE_OVERRIDE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACTIVE_DIRECTORY_ACCOUNT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20141024InventoryRADC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessTICKET_ATTACHMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessTECH_SETTING.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160517PFT_UserId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessTECH_LIST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessPROBLEM_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20150109Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOFTWARE_NAME.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessMERGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\VOLUNTEER_TYPE_LIST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TIMEKEEPER_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SESSION_LOOKUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\VOLUNTEER_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SESSION_DISPLAY_LIST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\VIEW_LEVEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\aspnet_Roles.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_PROJECT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ASSET_ASSIGNMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SPRINT_CYCLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120405InventoryA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120405InventoryB.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_POC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOURCE_SYSTEM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOFTWARE_VENDOR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TECHNICIAN_TIMEKEEPER_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151120Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_MODEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessSYSTEM_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151130Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\sessINV_MANUFACTURER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120829AlphaRoster.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOFTWARE_MANUFACTURER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20120906Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOFTWARE_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160907InventoryADtoDRMO.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20151207Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DM_ADA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROJECT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\TICKET.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxx20160921Inventory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CAPS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BLOOD_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AUDIENCE_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_MaxbyNetworkName.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_MaxbyECN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_DIRECTORATE_EMAIL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAudienceMemberDepartmentHeads.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCIAO_PERSONNEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwVOL_VOLUNTEER_HOUR_MaxVolunteerDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDomains.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ACTIVE_DIRECTORY_ACCOUNT_LastReportedDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDecks.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCurrentAssignment.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_AUDIENCE_DIRECTORATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_WebPartState_Paths.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vw_aspnet_Roles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwENET_TICKETCloseAverages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_TICKETCloseCombinedAverage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownTotalHours.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSPDB_Role_Assignments.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownOpenEstimated.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_AUDIENCE_OrgChart.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownCompleteEstimated.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCountOfAssignments.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_TICKETCloseAveragesHours.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownActualHours.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwPointOfContact.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwInventorySync_DONOTUSE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_SPRINT_CYCLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetIps.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_WebPartState_Shared.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwENET_BurndownActualHoursSprint.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownCompleteEstimatedSprint.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownOpenEstimatedSprint.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\xxxvwENET_20120223UnmatchedbyECN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownTotalHoursbySprint.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\xxxvwENET_20120223UnmatchedbySerial.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwProjects.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwManufacturers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetFile_SoftwareLoaded.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownEndDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_BurndownList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetTypes.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwBases.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetSubtypes.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetComputers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_ASSIGNMENT_TabletPrimaryUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_ASSIGNMENT_PrimaryUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_ASSIGNMENT_DesktopPrimaryUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_Profiles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwDuplicateAssetsbyPANumber.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDuplicateAssetsbyNetworkName.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_WebPartState_User.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwAssetsWithPrinterFilter_ALL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetsLessThan1000CPU_Tommy_20051206.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetsWithPrinterFilter.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssets.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_AUDIENCE_DIRECTORATE_ROLLUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_SoftwareLicenses.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_SoftwareLoaded.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCIAO_MaxCHECKOUT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCHECKIN_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCHECKIN_APPLICATION_FLOW.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDuplicateAssetbySerialNumber.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwMinSecurityLevelByGroup.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_UsersInRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwENET_BurndownInceptionDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_Users.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwAssetPrinters.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSIM_AssetFileExtensionProduct.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSIM_MaxUpdateExtension.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSUSInfo.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_TICKET_ASSIGNMENTCloseAverages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDMHRSI_DMHRSI_PERSONNEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_Applications.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwODS_PRIMARY_CARE_MANAGER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwODS_PCM_EXCEPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwODS_CHCS_USER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ACTIVE_DIRECTORY_COMPUTER_LastReportedDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDistinctTechnician.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vw_aspnet_MembershipUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_DISPOSITION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDRMOAssets.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDispositions.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwTechnicians.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwMinSecurityLevel.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwLoginId_Temp.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_DispositionExcluded.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwBuildings.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_SelectAudienceAlternateList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwModels.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssignedAssets.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAssetAssignments.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ReportingDepartments_Cat1.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwODS_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ReportingDepartments_Cat2_A.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_PERSONNEL_ROSTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ReportingDepartments_Cat2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ReportingDepartments_Cat3.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_MaxUpdatedDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_AUDIENCE_ReportingDepartments.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwENET_ASSET_MaxbySerial.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\aspnet_Membership_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Membership_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Membership_FullAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Personalization_FullAccess.sql" />
+    <Build Include="Security\aspnet_Profile_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Profile_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Profile_FullAccess.sql" />
+    <Build Include="Security\aspnet_Roles_BasicAccess.sql" />
+    <Build Include="Security\aspnet_Roles_ReportingAccess.sql" />
+    <Build Include="Security\aspnet_Roles_FullAccess.sql" />
+    <Build Include="Security\aspnet_WebEvent_FullAccess.sql" />
+    <Build Include="Security\AWARDS2.sql" />
+    <Build Include="Security\AWARDS2_1.sql" />
+    <Build Include="Security\ENET.sql" />
+    <Build Include="Security\ENET_1.sql" />
+    <Build Include="Security\CIAO.sql" />
+    <Build Include="Security\CIAO_1.sql" />
+    <Build Include="Security\WATCH.sql" />
+    <Build Include="Security\WATCH_1.sql" />
+    <Build Include="Security\RPT.sql" />
+    <Build Include="Security\RPT_1.sql" />
+    <Build Include="Security\ENET_REPORTS.sql" />
+    <Build Include="Security\ENET_REPORTS_1.sql" />
+    <Build Include="Security\FORMS.sql" />
+    <Build Include="Security\FORMS_1.sql" />
+    <Build Include="Security\MACS.sql" />
+    <Build Include="Security\MACS_1.sql" />
+    <Build Include="Security\MEDP.sql" />
+    <Build Include="Security\MEDP_1.sql" />
+    <Build Include="Security\PR.sql" />
+    <Build Include="Security\PR_1.sql" />
+    <Build Include="Security\QM.sql" />
+    <Build Include="Security\QM_1.sql" />
+    <Build Include="Security\TRAINING.sql" />
+    <Build Include="Security\TRAINING_1.sql" />
+    <Build Include="Security\VTC.sql" />
+    <Build Include="Security\VTC_1.sql" />
+    <Build Include="Security\WEATHER.sql" />
+    <Build Include="Security\WEATHER_1.sql" />
+    <Build Include="Security\NMED_NHJAX-WEBAPPS-0_.sql" />
+    <Build Include="Security\NMED_NHJAX-WEBAPPS-0__1.sql" />
+    <Build Include="Security\DMHRSI_LOCAL.sql" />
+    <Build Include="Security\DMHRSI_LOCAL_1.sql" />
+    <Build Include="Security\PORTAL.sql" />
+    <Build Include="Security\PORTAL_1.sql" />
+    <Build Include="Security\NHJAX_REPORTS.sql" />
+    <Build Include="Security\NHJAX_REPORTS_1.sql" />
+    <Build Include="Security\NMED_nhjax-SQL-ADM.sql" />
+    <Build Include="Security\NMED_nhjax-SQL-ADM_1.sql" />
+    <Build Include="Security\Reesdata.sql" />
+    <Build Include="Security\Reesdata_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Functions\NewTicketNumber.sql" />
+    <Build Include="Functions\CountSystemType.sql" />
+    <Build Include="Functions\CountProblemType.sql" />
+    <Build Include="Functions\CountTechList.sql" />
+    <Build Include="Functions\MailStatus.sql" />
+    <Build Include="Functions\CalculateHours.sql" />
+    <Build Include="Functions\SprintCycle.sql" />
+    <Build Include="Functions\EndOfDay.sql" />
+    <Build Include="Functions\FormatDateWithoutTime.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\NextTicketNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\StartOfDay.sql" />
+    <Build Include="Functions\AudiencePersonnelCount.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\NewOrderNumber.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_Alternate_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetNumberOfUsersOnline.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_TechnicianSelect.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_Update.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbySSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateExpectedEndDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procASPNET_Technician_SelectActiveAppUsersbyAudience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetAllUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TicketInsert.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_SelectbyAlternate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetSelect.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEthnicity.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procASPNET_Technician_SelectActiveAppUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_FindUsersByName.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TicketDevelopmentUpdateStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectActive.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyLoginandUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEmployeeNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_Technician_SelectExtended.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_FindUsersByEmail.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TicketDevelopmentUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectListbyBase.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEMail.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_Technician_Security_Level_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_ChangePasswordQuestionAndAnswer.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectReport.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectListByUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectHasAlternates.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEffectiveDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENET_Audience_SelectHeadbyId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyEmail.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEducationLevel.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_Audience_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_Security_Level_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Paths_CreatePath.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Billet_IsDirector.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_InsertExpressTicket.sql" />
+    <Build Include="Stored Procedures\procAD_Technician_SelectbyLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_ASSET_COMPUTER_Select.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_Security_Level_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectUnassignedReport.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationPerUser_SetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVE_DIRECTORY_ACCOUNT_UpdateAll.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Setup_RestorePermissions.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Billet_IsDepartmentHead.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_InsertDevelopmentTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_SelectActive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_COMPUTER_Select.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectAllActiveUsers.sql" />
+    <Build Include="Stored Procedures\aspnet_Setup_RemoveAllRoleMembers.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Billet_HasCommandAccess.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_Insert.sql" />
+    <Build Include="Stored Procedures\ENET_REPORT_TicketsByDept.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_COMPUTER_Insert.sql" />
+    <Build Include="Stored Procedures\procAD_Directorate_SelectbyLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Billet_IsChief.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectUnassigned.sql" />
+    <Build Include="Stored Procedures\procENET_sessMerge_UpdateDisposition.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Technician_History_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_COMPUTER_Update.sql" />
+    <Build Include="Stored Procedures\upTechnicianPreferenceUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_SelectReportDetail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_File_Update.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_Billet_IsDivisionOfficer.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectOpenbyUser.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateTeamId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_COMPUTER_SelectVerify.sql" />
+    <Build Include="Stored Procedures\upTechnicianPreferenceInsert.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateNPI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_TIMEKEEPER_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_Billet_IsLPO.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectOpenbyTech.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateHasServerAccess.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SendMail_AssetAlert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_SelectDuplicatesbyPANumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_AudienceByBaseId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TIMEKEEPER_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20150226.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectOpen.sql" />
+    <Build Include="Stored Procedures\upENet_AssetSelectbyMacArray.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Technician_Extended_UpdateHasAlt.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SendMail_TechnicianUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_SelectDuplicatesbyNetworkName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_Bulk_Ticket_Print_Select.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_TIMEKEEPER_TYPE_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_SelectNetworkNameExists.sql" />
+    <Build Include="Stored Procedures\procENet_Ticket_SelectClosedbyUser.sql" />
+    <Build Include="Stored Procedures\upAssetMACUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Technician_Extended_UpdateExcludeTrainingDept.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectReportAverage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_SelectDuplicatesbySerialNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectDynamicFilter.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_TIMEKEEPER_TYPE_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectClosedbyTech.sql" />
+    <Build Include="Stored Procedures\upAssetMACSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateException.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectReportAveragebyTech.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectDynamic.sql" />
+    <Build Include="Stored Procedures\procENet_Ticket_SelectClosed.sql" />
+    <Build Include="Stored Procedures\upAssetMACInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Technician_Extended_UpdateDeployed.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ApplicationsRolesUsers_RPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_SelectDynamic.sql" />
+    <Build Include="Stored Procedures\aspnet_PersonalizationAdministration_GetCountOfState.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectbyTicketAudience.sql" />
+    <Build Include="Stored Procedures\procENET_Technician_Extended_UpdateAvailableForDisaster.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_WebEvent_LogEvent.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_Technician_UpdateDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationAdministration_FindState.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectbyNumber.sql" />
+    <Build Include="Stored Procedures\procENET_Security_Group_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CountFeedback.sql" />
+    <Build Include="Stored Procedures\procAIM_Technician_InsertExtended.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationAdministration_DeleteAllState.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectbyId.sql" />
+    <Build Include="Stored Procedures\procENET_Security_Group_HasAlternates.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_InsertVolunteer.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_FEEDBACK_SelectReport.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateZip.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCP_SystemUser_SelectByLogin.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectAllbyUser.sql" />
+    <Build Include="Stored Procedures\upAssetIPSelect.sql" />
+    <Build Include="Stored Procedures\procENET_Rank_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_InsertExtended.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectAssignedToClosedReport.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateTitle.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationAllUsers_SetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectAllbyTech.sql" />
+    <Build Include="Stored Procedures\upAssetIPInsert.sql" />
+    <Build Include="Stored Procedures\procENET_PHONE_UpdatePhoneTypeId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_DRMOReport.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateSupervisorSignedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_IMPORT_LOG_SelectCurrent.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationAllUsers_ResetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareLicenseUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_Ticket_SelectAll.sql" />
+    <Build Include="Stored Procedures\upAssetAssignmentInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_UpdatePhoneNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectbyAudience.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Select20121129.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateState.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationAllUsers_GetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_UpdateInactive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateCompletedDatebyUserId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateSSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVE_DIRECTORY_ACCOUNT_SelectAIM.sql" />
+    <Build Include="Stored Procedures\aspnet_PersonalizationAdministration_ResetSharedState.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_SelectbyUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateSprintRegressionAll.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectPersonnelRosterList.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateSignedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Technician_Alternate_SelectAll.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upLog.sql" />
+    <Build Include="Stored Procedures\procENET_Personnel_Type_Select_Active.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateSprintRegression.sql" />
+    <Build Include="Stored Procedures\procENET_Personnel_Type_List_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateServiceAccount.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVE_DIRECTORY_ACCOUNT_UpdateADA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_ALTERNATE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SUSUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Type_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateSecurityStatusId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVITY_LOG_InsertChanges.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\FindSPWithText.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20110201.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_Technician_SelectbyUserRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Type_List_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_AssetFileSelectCountofUsers.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateReportedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20110121_KeyWest.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upASPNET_Technician_SelectAppUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Type_List_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_AssetFileInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_BurndownTotals.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateRemarks.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20110120.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upASPNET_Audience_SelectbyRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Type_List_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileUpdateRemove.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdatePSQDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20140620.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20101125.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upASPNET_Audience_SelectbyAudienceRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Special_Software_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdatePhone.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20100827.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_Technician_SelectAlternateListbyApp.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Special_Software_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileSelectPath.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateMiddleName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTicketFeedbackFollowupSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20100809.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_TECHNICIAN_SelectTechEMail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Special_Software_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessProblemTypeSelectList.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateLongUserName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20140715.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20100806C.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectAllReportTechs.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upSIM_AssetSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_MAINTENANCE_TYPE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileInsert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessProblemTypeSelect.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20100806B.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectActivePRProvidersbyAudience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENET_ASSET_OVERRIDE_BulkRefreshALTHA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Spoken_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_File_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_SelectbyId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessProblemTypeInsert.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20100806.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectActiveFPProvidersbyAudience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Spoken_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessProblemTypeDeleteAll.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_Member_DeletebyBillet.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCountFeedback.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20100804.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_IsUserInRole.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Spoken_DeleteAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessProblemTypeDelete.sql" />
+    <Build Include="Stored Procedures\procENET_Audience_Member_IsAudienceMember.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20100729.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_IsSystemAdmin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_GetProperties.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Spoken_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upSessionRequestEdit.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SendMail_AssetRelocation.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20170118.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20100728_Keywest.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectbyOwnerMID.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_IsAdminbyGroup.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_GetProfiles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Spoken_Count.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetComputerUpdate.sql" />
+    <Build Include="Stored Procedures\upSessionDisplayListSelect.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20100714.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_IsAdmin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_GetNumberOfInactiveProfiles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Select_Active.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetComputerSelect.sql" />
+    <Build Include="Stored Procedures\upsessInvProjectSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20080808b.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_Group_Select_ListbyUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_DeleteInactiveProfiles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Language_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetComputerInsert.sql" />
+    <Build Include="Stored Procedures\upsessInvProjectInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130116Monitors.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20080808.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_Group_Select_Active.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_UpdateUserInfo.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Designation_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_SelectActive.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvProjectDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130116MonitorsB.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessCurrentDMHRSiPositions_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_PCMUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procASPNET_Technician_SelectbyAppUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Designation_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_SelectAll.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvPOCSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_GenericUpdateTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procASPNET_Technician_SelectAllAppUsersbyAudience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ATTACHMENT_UpdateDeletedDate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvPOCInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130116MonitorsC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_GenericUpdateTech.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procASPNET_Technician_SelectAllAppUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectEMailbyAudienceBase.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ATTACHMENT_SelectByTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvPOCDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_GenericUpdate.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectEmailbyAudienceBillet.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectEMailbyAudience.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ATTACHMENT_InsertSession.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvModelSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130116MonitorsD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Directorate_Select_Audience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_IsDirectorateHead.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ATTACHMENT_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvModelInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateLBDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectDirectorates.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_IsDepartmentHead.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ATTACHMENT_Count.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_Update.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvModelDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateLastName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVITY_LOG_SelectError.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_IsAudienceBilletMember.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDRMOReport.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateTier.sql" />
+    <Build Include="Stored Procedures\upsessInvManufacturerSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Personnel_Type_List_DeleteDesignation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateIsHidden.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ACTIVITY_LOG_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_HasCommandAccess.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetSelectDuplicatesbySerialNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateStatusClosed.sql" />
+    <Build Include="Stored Procedures\upCE_AssetUpdate.sql" />
+    <Build Include="Stored Procedures\upsessInvManufacturerInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateInactive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_Billet_SelectbyAudUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetSelectDuplicatesbyPANumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateRemarks.sql" />
+    <Build Include="Stored Procedures\upCE_AssetInsert.sql" />
+    <Build Include="Stored Procedures\upsessInvManufacturerDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateHomeDrive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_Technician_SelectbyLogin_20120720.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetSelectDuplicatesbyNetworkName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateIndividualRemarks.sql" />
+    <Build Include="Stored Procedures\procENET_SYSTEM_OWNER_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetUpdate.sql" />
+    <Build Include="Stored Procedures\upsessInvLookupSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateHomeDirectory.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDepartmentDetailSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Movement_SelectbyDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateHours.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_SelectServers.sql" />
+    <Build Include="Stored Procedures\upAssetInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvLookupInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateFirstName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateHasDriversLicense.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20160126.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SPRINT_CYCLE_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Movement_SelectAllbyDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_UpdateAssignmentClosed.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_SelectManagedServers.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_Select20141118.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvLookupDeletebyKey.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateENetStatus.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Movement_SelectAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_SelectOpenCount.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_SelectbyNetworkName.sql" />
+    <Build Include="Stored Procedures\upsessInvLookupDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateEmployeeId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Movement_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_Assignment_SelectAssigned.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDispositionSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateEMail.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatebyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_AssetSelectbySerial.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PRIORITY_Select.sql" />
+    <Build Include="Stored Procedures\upsessInvDispositionInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdatedistinguishedName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_TechnicianSelectbyDoDEDI.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130709.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SWITCH_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_AssetSelectbyPlant.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_InsertExpress.sql" />
+    <Build Include="Stored Procedures\procENET_SHUTDOWN_PRIORITY_Select.sql" />
+    <Build Include="Stored Procedures\procENET_SoftwareLicenseLoaded.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDispositionDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateDisplayName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTechnicianUpdatebyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_SelectListAssignments.sql" />
+    <Build Include="Stored Procedures\procENET_SWITCH_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_AssetSelectbyNetwork.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSIGNMENT_Insert.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_UpdateTechShop.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_SelectInto.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDisplaySelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateDirectorateDesc.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbyDoDEDIandUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130716.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ExpressTicketSelect.sql" />
+    <Build Include="Stored Procedures\procAIM_AssetSelectbyMacs.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSET_SelectByTicketandAsset.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectActivebyDepartment.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_UpdateDispositionbyNetworkName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessASSET_SelectbyTechId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDisplayInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateDescription.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdateCompletedDatebyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SWITCH_UpdateInac.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSET_SelectByTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_UpdateDisposition.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDisplayDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateCountry.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdateLBDatebyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130722.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_ASSET_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Update.sql" />
+    <Build Include="Stored Procedures\upsessInvBaseSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateCompletedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdatePSQDatebyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_InsertSwitchportTicket.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_ASSET_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvBaseInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateCity.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateIsSupplyPO.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_DeveloperTicketSelectbySystem.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SWITCH_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_APPLICATION_FLOW_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessTICKET_ATTACHMENT_SelectByKey.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvBaseDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateBaseDesc.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_DeveloperTicketSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SWITCH_SelectbyBase.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessTICKET_ATTACHMENT_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvAssetTypeSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateAudienceDesc.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130725.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ApplicationsRolesUsers_PORTAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessTICKET_ATTACHMENT_DeleteByName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvAssetTypeInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateADLoginDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_TYPE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectActive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_IMPORT_LOG_Insert.sql" />
+    <Build Include="Stored Procedures\upsessInvAssetTypeDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateADExpiresDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Healthcare_Status_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvAssetSubTypeSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateAddress2.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130805.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ManagedTicketSelectbySystem.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ethnicity_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvAssetSubTypeInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateAddress1.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ManagedTicketSelectbySoftware.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Education_Level_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Users_DeleteUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvAssetSubTypeDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_UpdateADCreatedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20140915_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130814.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ManagedTicketSelectbyProblem.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessCurrentDMHRSiPositions_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_DeleteProfiles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upOrderItemUpdateStatus.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateIsDeployed.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ManagedTicketSelectbyAudience.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessCurrentDMHRSiPositions_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Users_CreateUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upOrderItemInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20160202.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatedistinguishedName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_ManagedTicketSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SendMail_ActivityLog.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upOrderInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectActivebyDesignation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_GenericUpdateAsset.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_Status_SelectbyId.sql" />
+    <Build Include="Stored Procedures\upENet_TicketAssignmentUpdateStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateEAOS.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130821.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkManagedbySystem.sql" />
+    <Build Include="Stored Procedures\procENET_Security_Status_Select.sql" />
+    <Build Include="Stored Procedures\upENet_TicketAssignmentUpdate.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateDOB.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkManagedbySoftware.sql" />
+    <Build Include="Stored Procedures\procENET_vwODS_PCM_EXCEPTION_AddRemove.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTicketFeedbackInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateDesignation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkManagedbyProblem.sql" />
+    <Build Include="Stored Procedures\procENET_VOLUNTEER_TYPE_Select_Active.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTicketFeedbackFollowupUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateDeployed20090713.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_SelectReportAverageDetail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkManagedbyAudience.sql" />
+    <Build Include="Stored Procedures\procENET_VOLUNTEER_TYPE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upSIM_AssetFileSearchUpdateAudit.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkManaged.sql" />
+    <Build Include="Stored Procedures\procENET_VOLUNTEER_TYPE_LIST_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\msdeAssetSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upOrderUpdateStatus.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateContractorCompany.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkDeveloperbySystem.sql" />
+    <Build Include="Stored Procedures\procENET_VOLUNTEER_TYPE_LIST_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\msdeAssetInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTicketFeedbackFollowupInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateContractNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_CreateBulkDeveloper.sql" />
+    <Build Include="Stored Procedures\procENET_VOLUNTEER_TYPE_LIST_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetUpdatePrinter.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateComponent.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DMHRSI_PERSONNEL_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectSpecialSoftware.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TIER_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetUpdateNetworkName.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateComments.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectListTree.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TEAM_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetUpdateMAC.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20141124_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Personalization_GetApplicationId.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateCity.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_CheckSchemaVersion.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_SYSTEM_TYPE_SelectBurndown.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_TechnicianSelectbySSN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationPerUser_ResetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateCitizenship.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Applications_CreateApplication.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareVendorUpdate.sql" />
+    <Build Include="Stored Procedures\upENet_SoftwareLicenseSelectSumofUsers.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_PersonalizationPerUser_GetPageSettings.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateCheckIn.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20130925.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Profile_SetProperties.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareVendorInsert.sql" />
+    <Build Include="Stored Procedures\upENet_SoftwareLicenseInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20141125_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateBase.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_CreateUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareManufacturerUpdate.sql" />
+    <Build Include="Stored Procedures\aspnet_UnRegisterSchemaVersion.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateAudience.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessMerge_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareManufacturerInsert.sql" />
+    <Build Include="Stored Procedures\upAIM_AssetInsertPrinter.sql" />
+    <Build Include="Stored Procedures\aspnet_PersonalizationAdministration_ResetUserState.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateAltPhone.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessMerge_InsertPage1.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareLocationUpdate.sql" />
+    <Build Include="Stored Procedures\upAIM_AssetAssignmentUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateReportedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateAddress2.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessMerge_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareLocationInsert.sql" />
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateRemarks.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateAddress1.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessInvAudience_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SessionEMailSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetUserByUserId.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateOperatingSystemVersion.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_AssetUpdateRestricted.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20141009.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTechnicianSelect_20130107.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessInvAudience_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SessionEMailInsert.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatePSQbyLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateOperatingSystemSP.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_UpdateInactive.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20160323.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TechnicianSelectTechEMail20090224.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessInvAudience_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SessionEMailDelete.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatePSQ.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateOperatingSystem.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_UpdateEMail.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectIssued.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TechnicianSelectEMail20090224.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessEASIVSummary_UpdateProcessed.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upBaseUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdateLBbyLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateLocation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_UpdatedistinguishedName.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20141010_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectIssuedbySSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENET_Technician_SelectFilteredUsers_20120720.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessEASIVSummary_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdateLB.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateLastLogon.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_UpdateAudiencebyLogin.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectIssuedbyDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Audience_Member_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessEASIVSummary_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_SecurityGroup_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateIsSupervisor.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdateExtended.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20141211_MYPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateIsHidden.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectbyLogin.sql" />
+    <Build Include="Stored Procedures\procENET_sessEASIVSummary_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_AudienceGroup_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateIsORM.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatebySSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateDNSHostName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_Select.sql" />
+    <Build Include="Stored Procedures\procENET_sessDRMO_Update.sql" />
+    <Build Include="Stored Procedures\procFLOW_AudienceCategory_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdatebyID.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdatedistinguishedName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_IsDepartmentManager.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessDRMO_SelectbyID.sql" />
+    <Build Include="Stored Procedures\upBaseInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_TECHNICIAN_SelectEMailbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_UpdateDeletedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Audience_Member_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessDRMO_Select.sql" />
+    <Build Include="Stored Procedures\upBaseDetailSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectAudienceMemberAud.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_SelectbyName.sql" />
+    <Build Include="Stored Procedures\procCAPS_Audience_Member_Disable.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessDRMO_Insert.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectAudienceMember.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_SelectbyId.sql" />
+    <Build Include="Stored Procedures\procCAPS_Audience_Member_DeletebyId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessDRMO_DeleteAll.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectAllbyDesignation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_UpdateSystemName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_AssetFileSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessDRMO_Delete.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_LastUpdated.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_Technician_History_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_UpdateSoftware.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDepartmentSelect20080128.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessCurrentDMHRSiPositions_UpdateProcessed.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Technician_UpdateADLoginDate.sql" />
+    <Build Include="Stored Procedures\procAIM_BaseIdGet.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_UpdateProblemType.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDomainSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessTICKET_ATTACHMENT_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_SelectDuplicatebyNetworkName.sql" />
+    <Build Include="Stored Procedures\procAD_Technician_UpdateADExpiresDate.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TICKET_UpdatePatientImpact.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDispositionSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessMerge_UpdatePage2.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_SelectDRMObySerial.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Movement_Update.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_UpdateManagedTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDeckSelect.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInven20151004.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessMerge_UpdatePage1.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_SelectDRMObyNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Component_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_UpdateDevelopmentTicketStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upBaseSelect.sql" />
+    <Build Include="Stored Procedures\upASPNET_Roles_SelectApp.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetAssignmentSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_SelectDRMObyBarCode.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upSIM_AssetFileOverrideUpdateAudit.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Citizenship_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Ticket_UpdateDevelopmentTicket.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetUpdateDisposition.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAIM_AssetInsert.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_CountbyNetworkName.sql" />
+    <Build Include="Stored Procedures\upSIM_AssetFileOverrideSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_ADC_Select.sql" />
+    <Build Include="Stored Procedures\procENET_Ticket_UpdateClosedStatus.sql" />
+    <Build Include="Stored Procedures\procENet_xxxInventoryRemove.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_TicketSelect.sql" />
+    <Build Include="Stored Procedures\aspnet_Roles_CreateRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectPrimaryAsset.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_ADC_Delete.sql" />
+    <Build Include="Stored Procedures\procENET_TICKET_UpdateAudience.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetTypeSelect.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectbyUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_ADC_Create.sql" />
+    <Build Include="Stored Procedures\procENET_Ticket_UpdateAssignedStatus.sql" />
+    <Build Include="Stored Procedures\upTechnicianUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upAssetSubTypeSelect.sql" />
+    <Build Include="Stored Procedures\xxx_ASSET_TabletLaptop_20090330.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTechnicianUpdatebySSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_ADA_Select.sql" />
+    <Build Include="Stored Procedures\procENET_Ticket_Update.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_SelectbyPlantAccountNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upModelSelect.sql" />
+    <Build Include="Stored Procedures\upBuildingSelect.sql" />
+    <Build Include="Stored Procedures\procENET_ASSET_COMPUTER_UpdateEDPTSVersion.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Roles_RoleExists.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectActive.sql" />
+    <Build Include="Stored Procedures\procENET_DM_ADA_Delete.sql" />
+    <Build Include="Stored Procedures\upAssetPrinterUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_SelectbySerialNumber.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upManufacturerSelect.sql" />
+    <Build Include="Stored Procedures\upENet_ExpressTicketSelect.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateDoDEDI.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Roles_GetAllRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENET_Audience_SelectHeadbyUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateZip.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_DM_ADA_Create.sql" />
+    <Build Include="Stored Procedures\upAssetPrinterSelect.sql" />
+    <Build Include="Stored Procedures\procENET_Asset_SelectbyECN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TicketSelect.sql" />
+    <Build Include="Stored Procedures\upENet_AssetSelectComputer.sql" />
+    <Build Include="Stored Procedures\procAIM_ASSET_COMPUTER_UpdateAimVersion.sql" />
+    <Build Include="Stored Procedures\procFLOW_Technician_SelectAlternateDirectorateList.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateUMName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Base_Select.sql" />
+    <Build Include="Stored Procedures\upAssetPrinterInsert.sql" />
+    <Build Include="Stored Procedures\upProjectSelect.sql" />
+    <Build Include="Stored Procedures\upENet_AssetFileUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_UpdateInactiveGT2Yrs.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENET_Audience_SelectHead.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_Audience_SelectDepartmentsbyGroup.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateULName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Alternate_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upTechnicianPreferenceSelect.sql" />
+    <Build Include="Stored Procedures\procENET_PHONE_SelectbyNumber.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_DeveloperTicketSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENET_Audience_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_Audience_SelectDepartments.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateUFName.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Alternate_DeleteAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_UpdatePreferredContactOrder.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareLicenseSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDepartmentSelect.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_Audience_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateTitle.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Alternate_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareNameInsert.sql" />
+    <Build Include="Stored Procedures\procENET_PHONE_SelectPrimary.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareLocationSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDispositionInsert.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectFilteredUsers.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateSupervisor.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Exception_IsAudienceException.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_ExpressTicketInsert.sql" />
+    <Build Include="Stored Procedures\upENet_SoftwareManufacturerSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procFLOW_Audience_SelectByCategory.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectExtended.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateSuffix.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Billet_SelectbyAudience.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_DevelopmentTicketInsertClosed.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_UpdateExtension.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareNameUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_EXTENDED_UpdateTimekeeperTypeId.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_Level_Select_Min.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateState.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_IsAudienceException.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_DevelopmentTicketInsert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_PHONE_Delete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareNameSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Directorate_Audience_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Security_Level_Select_Active.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectbyBase.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateSSN.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upDeactivateIdleUsers.sql" />
+    <Build Include="Stored Procedures\procENET_PHONE_DeleteAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upENet_SoftwareVendorSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAIM_Technician_SelectExtendedList.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdatePSQDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectAlternatebyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateRate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_RemoveUsersFromRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upTicketFeedbackSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdateLBDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_SelectActivebyGroup.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateRank.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_IsUserInRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upOrderSelect.sql" />
+    <Build Include="Stored Procedures\procCIAO_vwCIAO_Personnel_UpdateCompletedDate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectLeaveRouting20130308.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdatePrefix.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_GetUsersInRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDepartmentSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TIMEKEEPER_TYPE_SelectList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAD_Audience_SelectbyCode.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectbyAppUserAud.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdatePhone.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_GetRolesForUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDepartmentInsert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procAAP_TECHNICIAN_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectAlternateLeaveRouting.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Member_SelectbyAppUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdatePager.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_FindUsersInRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upAssetAssignmentUpdateUsage.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upsessInvDepartmentDelete.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Group_SelectbyGroupUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateOtherStu.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_UsersInRoles_AddUsersToRoles.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upAssetAssignmentUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_UpdateUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upAssetFileExtensionSelect.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20151130.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Group_SelectbyGroup.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Alternate_SelectbyId.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateNMCIEmail.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Roles_DeleteRole.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SetPrimary.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_UnlockUser.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Group_SelectbyCustomGroup.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_File_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateMedStuYr.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_AnyDataInTables.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_SelectCount.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_SetPassword.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENet_xxxInven20151207.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Audience_Group_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Asset_Assignment_SelectPrimary.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateLogin.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_RegisterSchemaVersion.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_Select.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_ResetPassword.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessSYSTEM_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\procAIM_Audience_SelectbyBase.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectUnsigned.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateLocation.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_Alternate_Update.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_ResetPrimary.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetUserByName.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessSYSTEM_TYPE_SelectList.sql" />
+    <Build Include="Stored Procedures\procENET_BurndownDMSprintRegressionTotals.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Account_SelectSigned.sql" />
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateInactive.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_Alternate_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_ASSET_ASSIGNMENT_Insert.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetUserByEmail.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_sessSYSTEM_TYPE_Delete.sql" />
+    <Build Include="Stored Procedures\procENET_BurndownDMSprintRegression_ManualAll.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\msdeTechnicianSelect.sql" />
+    <Build Include="Stored Procedures\procENet_TECHNICIAN_SelectEMail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateHealthCareStatus.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_Alternate_Disable.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetPasswordWithFormat.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procENET_Active_Directory_Computer_SelectShares.sql" />
+    <Build Include="Stored Procedures\procENET_sessSYSTEM_TYPE_Insert.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_Update.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_BurndownDMSprintRegression.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\msdeAssetUpdate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectDirectorate.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateGender.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_Alternate_DeleteAll.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\aspnet_Membership_GetPassword.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upENet_TicketUpdate.sql" />
+    <Build Include="Stored Procedures\procENET_sessSYSTEM_TYPE_DeleteAll.sql" />
+    <Build Include="Stored Procedures\procENet_ExpressTicketSelect20090306.sql" />
+    <Build Include="Stored Procedures\procENET_Base_SelectbyAudience.sql" />
+    <Build Include="Stored Procedures\upAIM_TechnicianSelect.sql" />
+    <Build Include="Stored Procedures\procENET_TECHNICIAN_SelectbySSNandUser.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCAPS_Technician_UpdateExtension.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="User Defined Types\ProcedureParameters.sql" />
+    <Build Include="Security\aspnet_Membership_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Membership_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Membership_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Personalization_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Profile_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_BasicAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_FullAccess_1.sql" />
+    <Build Include="Security\aspnet_Roles_ReportingAccess_1.sql" />
+    <Build Include="Security\aspnet_WebEvent_FullAccess_1.sql" />
+  </ItemGroup>
+</Project>

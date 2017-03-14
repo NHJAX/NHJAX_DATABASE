@@ -1,0 +1,31 @@
+﻿CREATE PROCEDURE [dbo].[upENET_Audience_SelectHeadbyUser]
+(
+	@usr int
+)
+
+ AS
+
+SELECT DISTINCT 
+	TECHNICIAN.UserId, 
+	TECHNICIAN.UFName, 
+	TECHNICIAN.ULName, 
+	TECHNICIAN.UMName, 
+	TECHNICIAN.EMailAddress, 
+	BILLET.BilletShortName
+FROM AUDIENCE AS AUD 
+	INNER JOIN TECHNICIAN AS TECH 
+	ON AUD.AudienceId = TECH.AudienceId 
+	INNER JOIN AUDIENCE_MEMBER AS MEM 
+	ON AUD.AudienceId = MEM.AudienceId 
+	INNER JOIN TECHNICIAN 
+	ON MEM.TechnicianId = TECHNICIAN.UserId 
+	INNER JOIN BILLET 
+	ON MEM.BilletId = BILLET.BilletId
+WHERE     (TECH.UserId = @usr) 
+	AND (MEM.BilletId IN (15, 76, 77))
+	AND TECH.Inactive = 0
+
+
+
+
+

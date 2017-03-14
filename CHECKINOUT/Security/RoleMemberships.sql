@@ -1,0 +1,22 @@
+﻿ALTER ROLE [db_owner] ADD MEMBER [CIAO];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [ENET];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [DMHRSI_LOCAL];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NMED\NHJAX-WEBAPPS-0$];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [RPT];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NMED\nhjax-SQL-ADM];
+

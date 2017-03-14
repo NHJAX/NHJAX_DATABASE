@@ -1,0 +1,2 @@
+﻿CREATE SYNONYM [db_owner].[ods] FOR [nhjax-ods].[NHJAX_ODS].[db_owner].[DM_DIABETES_DASHBOARD_LAB_RESULTS_AVERAGES];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ENET]
+    WITH PASSWORD = N'quberbgXuganpiH^rgtdo.y|msFT7_&#$!~<tSfeh8kfqgtj', SID = 0x5507BCBD83E82043930F21553320BCB5, DEFAULT_DATABASE = [ENET], DEFAULT_LANGUAGE = [us_english];
+

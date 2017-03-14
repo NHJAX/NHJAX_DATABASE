@@ -1,0 +1,438 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_ADDITIONAL_PROVIDER] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_ADDITIONAL_PROVIDER')
+		DROP INDEX ADDITIONAL_PROVIDER.ind_ADDITIONAL_PROVIDER
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_SponsorSSN')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_SponsorSSN
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_SponsorSSN
+	ON 			ADDITIONAL_PROVIDER([Sponsor SSN])
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_FullName')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_FullName
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_FullName
+	ON 			ADDITIONAL_PROVIDER([Full Name])
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_DOB')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_DOB
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_DOB
+	ON 			ADDITIONAL_PROVIDER([DOB])
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_Multi')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_Multi
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_Multi
+	ON 			ADDITIONAL_PROVIDER([Full Name],[Sponsor SSN],DOB)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_FullName_SponsorSSN')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_FullName_SponsorSSN
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_FullName_SponsorSSN
+	ON 			ADDITIONAL_PROVIDER([Full Name],[Sponsor SSN])
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_FullName_DOB')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_FullName_DOB
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_FullName_DOB
+	ON 			ADDITIONAL_PROVIDER([Full Name],DOB)
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_SponsorSSN_DOB')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_SponsorSSN_DOB
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_SponsorSSN_DOB
+	ON 			ADDITIONAL_PROVIDER([Sponsor SSN],DOB)
+	WITH 			FILLFACTOR = 100
+	
+	--Add routine to replace space with blank
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = REPLACE([Additional Provider],', ',',')
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BARNHART,D''''MAURIER J'
+	WHERE [Additional Provider] = 'BARNHART,D''MAURIER J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GILLINGHAM,BRUCE LINDSLEY'
+	WHERE [Additional Provider] = 'GILLINGHAM,BRUCE L'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GRAHAM,DENISE MARIE'
+	WHERE [Additional Provider] = 'GRAHAM,DENISE M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'LIPPINCOTT,TRYON KENNETH'
+	WHERE [Additional Provider] = 'LIPPINCOTT,TRYON K'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'O''''CONNOR,MARGARET M'
+	WHERE [Additional Provider] = 'O''CONNOR,MARGARET M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WIENS,PATRICK M (IDC)'
+	WHERE [Additional Provider] = 'WIENS,PATRICK M *IDC*'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WILBANKS,JEREMY S'
+	WHERE [Additional Provider] = 'WILBANKS,JEREMY '
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ALEXANDER,CRAIG R'
+	WHERE [Additional Provider] = 'ALEXANDER,CRAIG ROBERT'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ATWOOD,CHELSEA'
+	WHERE [Additional Provider] = 'ATWOOD,CHELSEA M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BREWINGTON,CHARLENE C'
+	WHERE [Additional Provider] = 'BREWINGTON,CHARLENE CARAMBAS'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BRUENING,AARON C'
+	WHERE [Additional Provider] = 'BRUENING,AARON CHRISTOPHER'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'FARNUM,ROGER A'
+	WHERE [Additional Provider] = 'FARNUM,ROGER ANTHONY'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GERVASI,ANTHONY JOSEPH'
+	WHERE [Additional Provider] = 'GERVASI,ANTHONY J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GRABOSKY,SEAN J'
+	WHERE [Additional Provider] = 'GRABOSKY,SEAN JAMES'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'HOLLIER,AMBER N'
+	WHERE [Additional Provider] = 'HOLLIER,AMBER NOELLE'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'KENNEY,LINDA L'
+	WHERE [Additional Provider] = 'KENNEY,LINDA L.'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'KING,ROBERT L (IDC)'
+	WHERE [Additional Provider] = 'KING,ROBERT L'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'KITCHENS,JOSHUA C'
+	WHERE [Additional Provider] = 'KITCHENS,JOSHUA CODY'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MENDIOLA,MICHAEL JOSEPH B'
+	WHERE [Additional Provider] = 'MENDIOLA,MICHAELJOSEPH BORJ'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PAGUAGAVALDEZ,AUGUSTO CESAR'
+	WHERE [Additional Provider] = 'PAGUAGAVALDEZ,AUGUSTO C'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PARKE,JONATHAN MICHAEL'
+	WHERE [Additional Provider] = 'PARKE,JONATHAN M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'REEVES,FRANK L'
+	WHERE [Additional Provider] = 'REEVES,FRANK LEON'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'TUSSEY,NATALIE B'
+	WHERE [Additional Provider] = 'TUSSEY,NATALIE BELLE BRESLE'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MAGNES,SCOTT ALAN'
+	WHERE [Additional Provider] = 'MAGNES,SCOTT A'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MILLER,NICOLE ODETTE'
+	WHERE [Additional Provider] = 'MILLER,NICOLE O'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RAZO,JOSE J JR'
+	WHERE [Additional Provider] = 'RAZO,JOSE JAIME'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BLAKE,DION ERICSON'
+	WHERE [Additional Provider] = 'BLAKE,DION E'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BAHAMON,LEONA R'
+	WHERE [Additional Provider] = 'BAHAMON,LEONA RENEE'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BALENSIEFEN,JULIE MAE'
+	WHERE [Additional Provider] = 'BALENSIEFEN,JULIE M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BROWNFIELD,MICHAEL JAMES'
+	WHERE [Additional Provider] = 'BROWNFIELD,MICHAEL J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'DOREY,HARLAN F'
+	WHERE [Additional Provider] = 'DOREY,HARLAN F(OAK)'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WALKER,CHRISTOPHER'
+	WHERE [Additional Provider] = 'WALKER,CHRISTOPHER M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'BURGER,JOHN MCCLURE'
+	WHERE [Additional Provider] = 'BURGER,JOHN M'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'CACCHIOLI,PATRICIA L'
+	WHERE [Additional Provider] = 'CACCHIOLI,PATRICIA'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GROSE,LEE W'
+	WHERE [Additional Provider] = 'GROSE,LEE W.'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ROUTLY,RONALD C'
+	WHERE [Additional Provider] = 'ROUTLY,RONALD CLAYTON'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'JACKSON,AMANDA D'
+	WHERE [Additional Provider] = 'JACKSON,AMANDA'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ALLEMANG,TRAVIS CHRISTOPHER'
+	WHERE [Additional Provider] = 'ALLEMANG,TRAVIS C'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RILLEY,VERNA DEMETRICE'
+	WHERE [Additional Provider] = 'RILLEY,VERNA D'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RUIZ MESTIZO,ESMERALDA'
+	WHERE [Additional Provider] = 'RUIZMESTIZO,ESMERALDA '
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WILLIAMS,KERLON B'
+	WHERE [Additional Provider] = 'WILLIAMS,KERLON BERTEARL'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ALERTE,YVELINE A'
+	WHERE [Additional Provider] = 'ALERTE,YVELINE AUGUSTE'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WALKER,ASHLEY S'
+	WHERE [Additional Provider] = 'WALKER,ASHLEY SADE'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RAZO,DENISE R'
+	WHERE [Additional Provider] = 'RAZO,DENISE '
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'HARRELL,BRYAN K'
+	WHERE [Additional Provider] = 'HARRELL,BRYAN '
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MURRAY,FAITH ROSE'
+	WHERE [Additional Provider] = 'MURRAY,FAITH R'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MURRAY,FAITH ROSE'
+	WHERE [Additional Provider] = 'MURRAY,FAITH R'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'FINGAL,KELROY ELIASJOSEPH'
+	WHERE [Additional Provider] = 'FINGAL,KELROY E'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'KETZLER,JAMES A'
+	WHERE [Additional Provider] = 'KETZLER,JAMESA'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'FINGAL,KELROY ELIASJOSEPH'
+	WHERE [Additional Provider] = 'FINGAL,KELROY E'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'KETZLER,JAMES A'
+	WHERE [Additional Provider] = 'KETZLER,JAMESA'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'SALAZAR,TRAVIS JOSEPH'
+	WHERE [Additional Provider] = 'SALAZAR,TRAVIS J'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'SALAZAR,TRAVIS JOSEPH'
+	WHERE [Additional Provider] = 'SALAZAR,TRAVIS J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ALLEN,SHANTELL PATRICE'
+	WHERE [Additional Provider] = 'ALLEN,SHANTELL P'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ALLEN,SHANTELL PATRICE'
+	WHERE [Additional Provider] = 'ALLEN,SHANTELL P'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MOORE,ROBERT'
+	WHERE [Additional Provider] = 'MOORE,ROBERT MICHAEL'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MOORE,ROBERT'
+	WHERE [Additional Provider] = 'MOORE,ROBERT MICHAEL'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RAO,DINESH'
+	WHERE [Additional Provider] = 'RAO,DINESH J'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RAO,DINESH'
+	WHERE [Additional Provider] = 'RAO,DINESH J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'DERAS,JEFFREY E'
+	WHERE [Additional Provider] = 'DERAS,JEFFREY'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'DERAS,JEFFREY E'
+	WHERE [Additional Provider] = 'DERAS,JEFFREY'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RIVAS,NOELLE J'
+	WHERE [Additional Provider] = 'FLYNN,NOELLE J'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'RIVAS,NOELLE J'
+	WHERE [Additional Provider] = 'FLYNN,NOELLE J'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PIERCE,GLORIA CALDERON'
+	WHERE [Additional Provider] = 'PIERCE,GLORIA C'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PIERCE,GLORIA CALDERON'
+	WHERE [Additional Provider] = 'PIERCE,GLORIA C'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MATOVU,NUSURA'
+	WHERE [Additional Provider] = 'MATOVU,NUSURA N'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MATOVU,NUSURA'
+	WHERE [Additional Provider] = 'MATOVU,NUSURA N'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	WHERE [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	WHERE [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	WHERE [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	WHERE [Additional Provider] = 'ENDO,MICHELLE KIMIKO'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'FLAITZ,JOHN M'
+	WHERE [Additional Provider] = 'FLAITZ,JOHN MICHAEL'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'FLAITZ,JOHN M'
+	WHERE [Additional Provider] = 'FLAITZ,JOHN MICHAEL'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GILLILAND,SAMUEL THOMAS'
+	WHERE [Additional Provider] = 'GILLILAND,SAMUEL T'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'GILLILAND,SAMUEL THOMAS'
+	WHERE [Additional Provider] = 'GILLILAND,SAMUEL T'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'JACKSON,GERALD D'
+	WHERE [Additional Provider] = 'JACKSON,GERALD DERAND'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'JACKSON,GERALD D'
+	WHERE [Additional Provider] = 'JACKSON,GERALD DERAND'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PEASE,CHRISTOPHER FLOYD MIL'
+	WHERE [Additional Provider] = 'PEASE,CHRISTOPHER '
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PEASE,CHRISTOPHER FLOYD MIL'
+	WHERE [Additional Provider] = 'PEASE,CHRISTOPHER '
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'VILLAFUERTE,PENALOZA JORGEL'
+	WHERE [Additional Provider] = 'VILLAFUERTE,JORGE L'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'VILLAFUERTE,PENALOZA JORGEL'
+	WHERE [Additional Provider] = 'VILLAFUERTE,JORGE L'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WILLIAMS,JENNIFER ANN'
+	WHERE [Additional Provider] = 'WILLIAMS,JENNIFER ANN'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'WILLIAMS,JENNIFER ANN'
+	WHERE [Additional Provider] = 'WILLIAMS,JENNIFER ANN'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'DONOVAN,MARY A'
+	WHERE [Additional Provider] = 'DONAVAN,MARY A'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'DONOVAN,MARY A'
+	WHERE [Additional Provider] = 'DONAVAN,MARY A'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MICKELSON,JOSEPH DALE'
+	WHERE [Additional Provider] = 'MICKELSON,JOSEPH D'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'MICKELSON,JOSEPH DALE'
+	WHERE [Additional Provider] = 'MICKELSON,JOSEPH D'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PAGE,JACK AUSTIN'
+	WHERE [Additional Provider] = 'PAGE,JACK A'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PAGE,JACK AUSTIN'
+	WHERE [Additional Provider] = 'PAGE,JACK A'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PEASE,CHRISTOPHER FLOYD MIL'
+	WHERE [Additional Provider] = 'PEASE,CHRISTOPHER FM'
+	
+	UPDATE BIT_BUCKET_CDM_ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'PEASE,CHRISTOPHER FLOYD MIL'
+	WHERE [Additional Provider] = 'PEASE,CHRISTOPHER FM'
+	
+	UPDATE ADDITIONAL_PROVIDER
+	SET [Additional Provider] = 'UNKNOWN'
+	WHERE [Additional Provider] = 'UNKNOWN,'
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_Additional_Provider')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_Additional_Provider
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_Additional_Provider
+	ON 			ADDITIONAL_PROVIDER([Additional Provider])
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ADDITIONAL_PROVIDER_Appointment_Provider_Role')
+		DROP INDEX ADDITIONAL_PROVIDER.IX_ADDITIONAL_PROVIDER_Appointment_Provider_Role
+		                                                                
+	CREATE INDEX 	IX_ADDITIONAL_PROVIDER_Appointment_Provider_Role
+	ON 			ADDITIONAL_PROVIDER([Appointment Provider Role])
+	WITH 			FILLFACTOR = 100

@@ -1,0 +1,17 @@
+﻿
+CREATE PROCEDURE [dbo].[procODS_PLACE_OF_TREATMENT_Insert]
+(
+	@desc varchar(50)
+)
+AS
+	SET NOCOUNT ON;
+	
+INSERT INTO NHJAX_ODS.dbo.PLACE_OF_TREATMENT
+(
+	PlaceofTreatmentDesc
+) 
+VALUES
+(
+	@desc
+);
+SELECT SCOPE_IDENTITY();

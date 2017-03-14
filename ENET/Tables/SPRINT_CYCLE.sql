@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[SPRINT_CYCLE] (
+    [SprintCycleId] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [BeginDate]     DATETIME NULL,
+    CONSTRAINT [PK_SPRINT_CYCLE] PRIMARY KEY CLUSTERED ([SprintCycleId] ASC)
+);
+

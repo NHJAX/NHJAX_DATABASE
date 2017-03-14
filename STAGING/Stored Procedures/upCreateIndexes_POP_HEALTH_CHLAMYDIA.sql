@@ -1,0 +1,32 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_POP_HEALTH_CHLAMYDIA] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_POP_HEALTH_CHLAMYDIA')
+		DROP INDEX POP_HEALTH_CHLAMYDIA.ind_POP_HEALTH_CHLAMYDIA
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_CHLAMYDIA_EDIPN')
+		DROP INDEX POP_HEALTH_CHLAMYDIA.IX_POP_HEALTH_CHLAMYDIA_EDIPN
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_CHLAMYDIA_EDIPN
+	ON 			POP_HEALTH_CHLAMYDIA(EDIPN)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_CHLAMYDIA_FMP')
+		DROP INDEX POP_HEALTH_CHLAMYDIA.IX_POP_HEALTH_CHLAMYDIA_FMP
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_CHLAMYDIA_FMP
+	ON 			POP_HEALTH_CHLAMYDIA(FMP)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_CHLAMYDIA_LastExamDate')
+		DROP INDEX POP_HEALTH_CHLAMYDIA.IX_POP_HEALTH_CHLAMYDIA_LastExamDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_CHLAMYDIA_LastExamDate
+	ON 			POP_HEALTH_CHLAMYDIA([Last Exam Date])
+	WITH 			FILLFACTOR = 100
+
+
+	--IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_MAMMOGRAPHY_FMP_SponsorSSN')
+	--	DROP INDEX POP_HEALTH_MAMMOGRAPHY.IX_POP_HEALTH_MAMMOGRAPHY_FMP_SponsorSSN
+		                                                                
+	--CREATE INDEX 	IX_POP_HEALTH_MAMMOGRAPHY_FMP_SponsorSSN
+	--ON 			POP_HEALTH_MAMMOGRAPHY(FMP,SponsorSSN)
+	--WITH 			FILLFACTOR = 100

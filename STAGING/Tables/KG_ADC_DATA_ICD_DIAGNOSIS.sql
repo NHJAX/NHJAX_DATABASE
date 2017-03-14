@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[KG_ADC_DATA$ICD_DIAGNOSIS] (
+    [KEY_SITE]                      NUMERIC (5)     NULL,
+    [KEY_KG_ADC_DATA]               NUMERIC (14, 3) NULL,
+    [KEY_KG_ADC_DATA$ICD_DIAGNOSIS] NUMERIC (8, 3)  NULL,
+    [ICD_DIAGNOSIS_IEN]             NUMERIC (21, 3) NULL,
+    [ICD_CODE]                      VARCHAR (10)    NULL,
+    [PRIORITY]                      VARCHAR (1)     NULL,
+    [DESCRIPTION]                   VARCHAR (45)    NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ind_KG_ADC_DATA$ICD_DIAGNOSIS]
+    ON [dbo].[KG_ADC_DATA$ICD_DIAGNOSIS]([KEY_SITE] ASC, [KEY_KG_ADC_DATA] ASC, [KEY_KG_ADC_DATA$ICD_DIAGNOSIS] ASC);
+

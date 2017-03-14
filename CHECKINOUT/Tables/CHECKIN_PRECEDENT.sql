@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[CHECKIN_PRECEDENT] (
+    [CheckInStepId] BIGINT NOT NULL,
+    [PrecedentId]   BIGINT NOT NULL,
+    CONSTRAINT [PK_CHECKIN_PRECEDENT] PRIMARY KEY CLUSTERED ([CheckInStepId] ASC, [PrecedentId] ASC)
+);
+

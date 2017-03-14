@@ -1,0 +1,2 @@
+﻿CREATE USER [DW] FOR LOGIN [DW];
+

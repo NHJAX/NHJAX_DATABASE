@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[TEST_TABLE] (
+    [TestPrimaryKey] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [TestDateTime]   DATETIME NULL,
+    [TestLookupId]   INT      NULL,
+    CONSTRAINT [PK_TEST_TABLE] PRIMARY KEY CLUSTERED ([TestPrimaryKey] ASC),
+    CONSTRAINT [FK_TEST_TABLE_TEST_LOOKUP] FOREIGN KEY ([TestLookupId]) REFERENCES [dbo].[TEST_LOOKUP] ([TestLookupId])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_TEST_TABLE_TestDateTime]
+    ON [dbo].[TEST_TABLE]([TestDateTime] ASC);
+

@@ -1,0 +1,34 @@
+﻿ALTER ROLE [db_owner] ADD MEMBER [RMAN];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [PORTAL];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [ODS];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [REPORTS];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [EDPTS];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [DW];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [ENET];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NSQIP];
+
+
+GO
+ALTER ROLE [db_owner] ADD MEMBER [NMED\NHJAX-WEBAPPS-0$];
+

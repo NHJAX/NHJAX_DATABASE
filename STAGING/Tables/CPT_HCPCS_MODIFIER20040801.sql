@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[CPT_HCPCS$MODIFIER20040801] (
+    [KEY_SITE]               DECIMAL (5)     NULL,
+    [KEY_CPT_HCPCS]          DECIMAL (11, 3) NULL,
+    [KEY_CPT_HCPCS$MODIFIER] DECIMAL (7, 3)  NULL,
+    [MODIFIER]               VARCHAR (2)     NULL,
+    [DOD_BILLING]            DECIMAL (15, 5) NULL
+);
+

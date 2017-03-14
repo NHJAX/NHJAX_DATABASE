@@ -1,0 +1,2 @@
+﻿CREATE USER [ODS] FOR LOGIN [ODS];
+

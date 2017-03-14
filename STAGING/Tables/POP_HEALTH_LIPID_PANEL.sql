@@ -1,0 +1,56 @@
+﻿CREATE TABLE [dbo].[POP_HEALTH_LIPID_PANEL] (
+    [Patient Name]   NVARCHAR (255) NULL,
+    [EDIPN]          NVARCHAR (255) NULL,
+    [FMP]            NVARCHAR (255) NULL,
+    [DOB]            NVARCHAR (255) NULL,
+    [Age]            NVARCHAR (255) NULL,
+    [BenCat]         NVARCHAR (255) NULL,
+    [PCM Name]       NVARCHAR (255) NULL,
+    [Provider Group] NVARCHAR (255) NULL,
+    [CHOL CertDate]  NVARCHAR (255) NULL,
+    [CHOL]           NVARCHAR (255) NULL,
+    [HDL CertDate]   NVARCHAR (255) NULL,
+    [HDL]            NVARCHAR (255) NULL,
+    [Chol-HDL Ratio] NVARCHAR (255) NULL,
+    [LDL CertDate]   NVARCHAR (255) NULL,
+    [LDL]            NVARCHAR (255) NULL,
+    [Gender]         NVARCHAR (255) NULL,
+    [Street 1]       NVARCHAR (255) NULL,
+    [Street 2]       NVARCHAR (255) NULL,
+    [City]           NVARCHAR (255) NULL,
+    [State]          NVARCHAR (255) NULL,
+    [Zip]            NVARCHAR (255) NULL,
+    [Country]        NVARCHAR (255) NULL,
+    [Home Phone]     NVARCHAR (255) NULL,
+    [Work Phone]     NVARCHAR (255) NULL,
+    [DMIS]           FLOAT (53)     NULL,
+    [ACGRUB]         NVARCHAR (255) NULL,
+    [ACGIBI]         NVARCHAR (255) NULL,
+    [ACGDate]        NVARCHAR (255) NULL
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_POP_HEALTH_LIPID_PANEL_EDIPN]
+    ON [dbo].[POP_HEALTH_LIPID_PANEL]([EDIPN] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_POP_HEALTH_LIPID_PANEL_FMP]
+    ON [dbo].[POP_HEALTH_LIPID_PANEL]([FMP] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_POP_HEALTH_LIPID_PANEL_LDLCertDate]
+    ON [dbo].[POP_HEALTH_LIPID_PANEL]([LDL CertDate] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_POP_HEALTH_LIPID_PANEL_CHOLCertDate]
+    ON [dbo].[POP_HEALTH_LIPID_PANEL]([CHOL CertDate] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_POP_HEALTH_LIPID_PANEL_HDLCertDate]
+    ON [dbo].[POP_HEALTH_LIPID_PANEL]([HDL CertDate] ASC) WITH (FILLFACTOR = 100);
+

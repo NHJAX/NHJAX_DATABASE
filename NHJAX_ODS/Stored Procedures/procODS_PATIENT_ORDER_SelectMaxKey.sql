@@ -1,0 +1,11 @@
+﻿
+CREATE PROCEDURE [dbo].[procODS_PATIENT_ORDER_SelectMaxKey]
+
+AS
+	SET NOCOUNT ON;
+SELECT     
+	MAX(OrderKey)
+FROM PATIENT_ORDER
+WHERE OrderNumber IS NOT NULL
+	AND SourceSystemId NOT IN (6,8)
+

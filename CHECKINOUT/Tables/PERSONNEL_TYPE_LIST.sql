@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[PERSONNEL_TYPE_LIST] (
+    [PersonnelTypeListId] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [PersonnelId]         BIGINT   NULL,
+    [PersonnelTypeId]     INT      NULL,
+    [CreatedDate]         DATETIME CONSTRAINT [DF_PERSONNEL_TYPE_LIST_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_PERSONNEL_TYPE_LIST] PRIMARY KEY CLUSTERED ([PersonnelTypeListId] ASC),
+    CONSTRAINT [FK_PERSONNEL_TYPE_LIST_PERSONNEL] FOREIGN KEY ([PersonnelId]) REFERENCES [dbo].[PERSONNEL] ([PersonnelId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PERSONNEL_TYPE_LIST_PersonnelTypeId_PersonnelId]
+    ON [dbo].[PERSONNEL_TYPE_LIST]([PersonnelTypeListId] ASC, [PersonnelId] ASC);
+

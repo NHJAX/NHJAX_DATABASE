@@ -1,0 +1,5 @@
+﻿CREATE VIEW [dbo].[vwDistinctTechnician]
+AS
+SELECT DISTINCT UserId
+FROM         dbo.TECHNICIAN_SECURITY_LEVEL
+

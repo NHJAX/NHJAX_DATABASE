@@ -1,0 +1,22 @@
+﻿
+CREATE PROCEDURE [dbo].[procENET_IMPORT_LOG_SelectCurrent]
+(
+	@typ int = 0
+)
+
+AS
+	SET NOCOUNT ON;
+SELECT TOP 1 
+	IMPORT_LOG.ImportLogId,   
+	IMPORT_LOG.ImportLogDesc,
+	IMPORT_LOG.CreatedDate,
+	IMPORT_LOG.UserId,
+	TECH.ULName,
+	TECH.UFName,
+	TECH.UMName
+FROM IMPORT_LOG
+INNER JOIN TECHNICIAN AS TECH
+ON IMPORT_LOG.UserId = TECH.UserId
+WHERE LogTypeId = @typ
+ORDER BY IMPORT_LOG.CreatedDate Desc
+

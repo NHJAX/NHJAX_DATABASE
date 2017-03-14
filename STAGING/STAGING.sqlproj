@@ -1,0 +1,2176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>STAGING</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f5acb595-bc96-4b8c-bfa1-629c25f045aa}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>STAGING</RootNamespace>
+    <AssemblyName>STAGING</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <AnsiNulls>False</AnsiNulls>
+    <QuotedIdentifier>False</QuotedIdentifier>
+    <Containment>None</Containment>
+    <IsNestedTriggersOn>True</IsNestedTriggersOn>
+    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
+    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
+    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
+    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <Trustworthy>False</Trustworthy>
+    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
+    <PageVerify>CHECKSUM</PageVerify>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <Parameterization>SIMPLE</Parameterization>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <CompatibilityMode>90</CompatibilityMode>
+    <AnsiNullDefault>False</AnsiNullDefault>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <DefaultCursor>GLOBAL</DefaultCursor>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <TornPageDetection>False</TornPageDetection>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <Recovery>SIMPLE</Recovery>
+    <EnableFullTextSearch>True</EnableFullTextSearch>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SuppressTSqlWarnings>71561</SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables\" />
+    <Folder Include="Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="Functions\" />
+    <Folder Include="Stored Procedures\" />
+    <Folder Include="Server Object" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\RADIOLOGY_PROCEDURES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ADDITIONAL_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RADIOLOGY_PROCEDURES_PROCEDURES_IN_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACTIVITY_LOG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KG_ADC_DATA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CPT_HCPCS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RX_ACTIVITY_CODE_REASON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CPT_HCPCS_MODIFIER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PATIENT_ENROLLMENT_HISTORY_PCM_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ESS_PATCOMMON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PATIENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PATIENT_ENROLLMENT_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\OB_PART2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PROVIDER_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PATIENT_FUTURE_ENROLLMENT_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\OUTPATIENT_DISPOSITION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PATIENT_FUTURE_ENROLLME_FUTURE_PCM_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\APPOINTMENT_AUDIT_TRAIL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KG_ADC_DATA_ICD_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RECORD_TYPES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CLINICAL_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CLINICAL_HISTORY_DRUG_ALLERGY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KG_ADC_DATA_EVAL_MGMT_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEPARTMENT_AND_SERVICE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RECORD_MOVEMENT_TYPES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SOURCE_OF_ADMISSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ESS_TOBACCO_USE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DISCHARGE_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KG_ADC_DATA_CPT_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\GEOGRAPHIC_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\COLLECTION_SAMPLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ORDER_TASK.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\EXAMINATION_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACCESSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MAIL_MESSAGE_SEARCH.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MAIL_BOX.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACCESSION_TEST_ORDERED.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACCESSION_ACCESSION_NAME.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_ORGANISM_OLD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_MAILER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\FORMULARY_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_PATIENT_INQUIRY_COLLECTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_ANTIDEPRESSANT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_PATIENT_INQUIRY_RESPONSE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_ELIG_REG_RESPONSES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_PATIENT_INQUIRY_RESPONSE_CONTACT_INFORMATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_SPONSOR_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_EXCEPTIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_PATIENT_INQUIRY_RESPO_OTHER_HEALTH_INSURANCE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_PATIENT_OTHER_HEALTH__OHI_COVERAGE_TYPE_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DEERS_TRANSMISSION_QUEUE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATION_EVENTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATION_EVENTS_VACCINE_REACTIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\INSURED_PARTY_POLICY_COVERAGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\INSURED_PARTY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KC_ECS_REFERRAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_ENROLLMENT_CANDIDATES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\APPOINTMENT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ORDER_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_UNIT_PCM_PCM_HISTORY_MULTIPLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_UNIT_PCM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATIONS_WEEK4.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\KG_CPT_EVALUATION_MANAGEMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATIONS_WEEK3.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ORDER_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATIONS_WEEK2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NDI_QUERY_AND_RESPONSE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ORDER_PRIORITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATIONS_WEEK1.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMMUNIZATIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_CERVICAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_ALTERNATE_CARE_VALUE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_CHLAMYDIA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\HUMANA_REFERRALS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACCESS_TO_CARE_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MEDICAL_TREATMENT_FACILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_COLON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_DIABETES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG_NAME_FORM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AC_COLON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_LIPID_PANEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\xxxNSQIPCPTInclusion.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG_NAME_ROUTE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_PCM_END_REASON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BORROWERS_FILE_AREAS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_CHF.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DMIS_ID_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_ASTHMA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MILITARY_GRADE_RANK.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MESSAGE_RECIPIENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_MAMMOGRAPHY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\FAMILY_MEMBER_PREFIX.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_DIABETES_MICROALBUMINS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MEPRS_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROVIDER_PROVIDER_SPECIALTY_S_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_BENEFICIARY_CATEGORIES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MESSAGE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\STG_PROVIDER_ACTIVITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ACCESSION_AREA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MESSAGE_ADDRESSEE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RELIGION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_INTERPRETATION_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RADIOLOGY_REPORTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\STG_PATIENT_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\APPOINTMENT_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RADIOLOGY_REPORTS_AMENDED_REPORT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\STG_PATIENT_ACTIVITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AP_DESCRIPTION_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MARITAL_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RADIOLOGY_EXAM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NED_HCDP_COVERAGE_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RECORDS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\STG_MAX_PCM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\USER_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG_SYNONYM_NDC_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG_SYNONYM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\STG_MAX_ENROLLMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROVIDER_SPECIALTY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PHARMACY_PATIENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\NDI_ELIGIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SMOKING_CESSATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_ADMISSION_DATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DRUG_ASSOCIATED_FORMULARY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DIABETES_MICROALBUMINS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PROVIDER_CLASS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_COMMAND_INTEREST_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\Diabetes_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_MEDICAL_HOLD_START_DATE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\Destination - Productivity.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_HEALTH_CARE_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RVU_2005.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_APPOINTMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CPT_HCPCS_MODIFIER20040801.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RVU_2004.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_APPOINTMENT_APPT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RVU_2003.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\WARD_LOCATION_ROOM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_APPOINTMENT_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RVU.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\WARD_LOCATION_ROOM_BED.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PATIENT_APPOINTMENT_PROCEDURE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CPG_ANTIBIOTIC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\WARD_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\UNIT_SHIP_ID.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ANCILLARY_PROCEDURE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\DIAGNOSTIC_RELATED_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST_COLLECTION_SAMPLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CHCS_PRESCRIPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST_MTF_CPT_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CDM_PAP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ORDER_APPOINTMENT_REVIEW_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST_LAB_TEST_IN_PANEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST_LAB_WORK_ELEMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\HOSPITAL_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_TEST_LAB_WORK_ELEMENT_CPT_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BMI.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\HOSPITAL_LOCATION_CLINIC_SPECIALTY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PDTS_COLLECTION_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_MAMMOGRAPHY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ICD_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_DIABETES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CLINICAL_CHEMISTRY_RESULT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PSAFDB_NDCTBL_20040610.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RACE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SCHEDULABLE_ENTITY_SCHEDULE_DATE_TIMES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_COLON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PSAFDB_NDCTBL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SCHEDULABLE_ENT_SCHEDULE_DATE_T_APPOINTMENT_SLOTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_CHF.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ALLERGIES_DEFINITIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SCHEDULABL_SCHEDULE_D_APPOINTMEN_APPT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_CERVICAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\CO_INSURANCE_CLAIM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BRANCH_OF_SERVICE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\SCHEDULABLE_ENTITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_POP_HEALTH_ASTHMA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\HEALTH_INSURANCE_CARRIER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\Productivity.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_APPOINTMENT_REFUSAL_REASON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER_DIAGNOSIS__FREE_TEXT_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_CDM_TO_CHCS_CONVERSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ETIOLOGY_FIELD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MEDICAL_CENTER_DIVISION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PRESCRIPTION_FILL_DATES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_CDM_ADDITIONAL_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\INSURANCE_CO_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CLINICAL_CHEMISTRY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_AHLTA_MAMMOGRAPHY_ICD9.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ANTIBIOTIC_SUSCEPTIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_AHLTA_MAMMOGRAPHY_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\OTHER_HEALTH_INSURANCE__OHI__POLICY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER_ICD_OPERATIONS_PROCEDURES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_AHLTA_CERVICAL_ICD9.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\OTHER_HEALTH_INSURANCE__OHI_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER_ICD_OPERATIONS_PR_ASSISTING_HCPS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BIT_BUCKET_AHLTA_CERVICAL_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\RESULT_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ENCOUNTER_PROCEDURE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\BED_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_BACTERIOLOGY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\METHOD_OF_TRANSIT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PRESCRIPTION_ACTIVITY_LOG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_BACTERIOLOGY_TEST.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_APPOINTMENTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESUL_BACTERIOL_TEST_ORGANISM_ANTIBIOTIC2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CYTOLOGY_GYN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PRESCRIPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_BACTERIOLOGY_TEST_ORGANISM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_FREE_TEXT_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CYTOLOGY_NON_GYN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_BACK_PAIN_RECURRENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_APPOINTMENT_REQUEST_REVIEW.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESUL_BACTERIOL_TEST_APPENDED_AMENDED_RNR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\POP_HEALTH_BACK_PAIN_ACUTE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_APPOINTMENT_REFUSALS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESUL_CLINICAL__RESULT_APPENDED_AMENDED_RNR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\IMAGING_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_PROCEDURES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CYTOLOGY_GYN_APPENDED_AMENDED_RNR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MCP_REFERRAL_PROVISIONAL_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\LAB_RESULT_CYTOLOGY_NON_G_APPENDED_AMENDED_RNR.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ALLERGIES_SELECTIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\MEDICATION_PROFILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ICD_OPERATION_PROCEDURE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AHLTA_MAMMOGRAPHY_ICD9.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\APPOINTMENT_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AHLTA_MAMMOGRAPHY_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\ESS_ORDER_NEW.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PDTS_PROFILE_COLLECTION_F_ACCEPTED_RESPONSE_DETAIL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AHLTA_CERVICAL_ICD9.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\PDTS_PROFILE_COLLECTION_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Tables\AHLTA_CERVICAL_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwODS_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwHyperlipidemicList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwDiabeticList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwCPTModifierErrorCorrection20050228.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwAsthmaticList.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwProviderActivity.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwPatientEncounterReferrals.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwOperationsProcedures.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSTG_IMMUNIZATIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSTG_CHCS_PRESCRIPTION_Plavix.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwSTG_CHCS_PRESCRIPTION_NonPlavix.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Views\vwRecords.sql">
+      <AnsiNulls>On</AnsiNulls>
+    </Build>
+    <Build Include="Views\vwRecordReport.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\ODS.sql" />
+    <Build Include="Security\ODS_1.sql" />
+    <Build Include="Security\NT AUTHORITY_SYSTEM.sql" />
+    <Build Include="Security\NT AUTHORITY_SYSTEM_1.sql" />
+    <Build Include="Security\nmed_sean.kern.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Functions\FormatDateWithoutTime.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\YesterdayStart.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\YesterdayEnd.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\ToRecordGroup.sql" />
+    <Build Include="Functions\Todeersdate.sql" />
+    <Build Include="Functions\ToCompressedDateStr.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\StartOfDay.sql" />
+    <Build Include="Functions\RecordLocation.sql" />
+    <Build Include="Functions\PrevMonth.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\MinSlotDate.sql" />
+    <Build Include="Functions\MilitaryTime.sql" />
+    <Build Include="Functions\MaxSlotDate.sql" />
+    <Build Include="Functions\FormattedSSN.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\FormattedNDC.sql" />
+    <Build Include="Functions\EndOfDay.sql" />
+    <Build Include="Functions\AdmissionDateTime.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PRESCRIPTION_ACTIVITY_LOG.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_MAMMOGRAPHY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PRESCRIPTION_FILL_DATES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_DIABETES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PRESCRIPTION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_COLORECTAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_MAMMOGRAPHY.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_CHF.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_LIPID_PANEL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_CERVICAL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_DIABETES_MICROALBUMINS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_POP_HEALTH_ASTHMA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_DIABETES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_CHCS_PRESCRIPTION_SelectPlavixInteractionDistinct.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_COLORECTAL.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_ORDER_NEW_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_CHCS_PRESCRIPTION_SelectPlavixInteraction.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_CHLAMYDIA.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_ORDER_NEW_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_CHF.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_CERVICAL.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_ASTHMA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PHARMACY_PATIENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PDTS_PROFILE_COLLECTION_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PDTS_PROFILE_COLLECTION_F_ACCEPTED_RESPONSE_DETAIL.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PATIENT_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PATIENT_APPOINTMENT_APPT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PATIENT_APPOINTMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PATIENT_ADMISSION_DATE.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PATIENT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_OUTPATIENT_DISPOSITION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ORDER_TYPE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ORDER_TASK.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ORDER_PRIORITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ORDER_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NED_PROVIDER_GROUP.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NED_PATIENT_ENROLLMENT_HISTORY_PCM_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NED_PATIENT_ENROLLMENT_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NED_PATIENT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NED_HCDP_COVERAGE_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_NDI_ELIGIBILITY.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MILITARY_GRADE_RANK.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MEPRS_CODES.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MEDICAL_CENTER_DIVISION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_CDM_ADDITIONAL_PROVIDER_Delete.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_REFERRAL_APPOINTMENTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_REFERRAL_APPOINTMENT_REFUSALS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_REFERRAL.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_TOBACCO_USE_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_BENEFICIARY_CATEGORIES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_APPOINTMENT_REFUSAL_REASON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MCP_ALTERNATE_CARE_VALUE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SCHEDULABLE_ENTITY_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_MARITAL_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SCHEDULABLE_ENTITY_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_TEST_MTF_CPT_CODE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_SCHEDULE_DATE_TIMES_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_TEST_LAB_WORK_ELEMENT_CPT_CODE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_TEST_LAB_WORK_ELEMENT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_SCHEDULE_DATE_TIMES_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_TEST_LAB_TEST_IN_PANEL.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_TEST.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_CYTOLOGY_GYN.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_CLINICAL_CHEMISTRY_RESULT.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_CLINICAL_CHEMISTRY.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_BACTERIOLOGY_TEST_ORGANISM.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_BACTERIOLOGY_TEST.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT_BACTERIOLOGY.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESULT.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESUL_CLINICAL__RESULT_APPENDED_AMENDED_RNR.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESUL_BACTERIOL_TEST_ORGANISM_ANTIBIOTIC2.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESUL_BACTERIOL_TEST_APPENDED_AMENDED_RNR.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_INTERPRETATION_FILE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_KG_CPT_EVALUATION_MANAGEMENT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_KG_ADC_DATA_ICD_DIAGNOSIS.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_PAT_COMMON_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_KG_ADC_DATA_EVAL_MGMT_CODE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_PAT_COMMON_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_KG_ADC_DATA_CPT_CODE.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_KG_ADC_DATA.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_IMMUNIZATIONS_WEEK4.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_IMMUNIZATIONS_WEEK3.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_IMMUNIZATIONS_WEEK2.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_IMMUNIZATIONS_WEEK1.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ICD_OPERATION_PROCEDURE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ICD_DIAGNOSIS.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_HOSPITAL_LOCATION.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_GEOGRAPHIC_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_FORMULARY_GROUP.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_SCHEDULE_DATE_TIMES_SelectMissing.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_POP_HEALTH_ATIDEPRESSANT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_FAMILY_MEMBER_PREFIX.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_EXAMINATION_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ETIOLOGY_FIELD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ENCOUNTER_ICD_OPERATIONS_PROCEDURES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ENCOUNTER_ICD_OPERATIONS_PR_ASSISTING_HCPS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ENCOUNTER_DIAGNOSIS__FREE_TEXT_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_DETAIL_CODES_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ENCOUNTER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_DETAIL_CODES_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DRUG_ASSOCIATED_FORMULARY.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DRUG.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_DETAIL_CODES_UpdateDetailCode.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DMIS_ID_CODES.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DISCHARGE_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DIAGNOSTIC_RELATED_GROUP.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_DEPARTMENT_AND_SERVICE.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_CPT_HCPCS_MODIFIER.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_CPT_HCPCS.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_CPG_ANTIBIOTIC.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_COLLECTION_SAMPLE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_CLINICAL_HISTORY_DRUG_ALLERGY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_CLINICAL_HISTORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_BRANCH_OF_SERVICE.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_BORROWERS_FILE_AREAS.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ACCESSION_AREA.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_BMI.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ACCESS_TO_CARE_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_APPOINTMENT_TYPE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_APPOINTMENT_STATUS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_APPOINTMENT_REFUSAL_REASON.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_APPOINTMENT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_APPOINTMENT_AUDIT_TRAIL.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\SearchAllTables.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_AP_DESCRIPTION_DIAGNOSIS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ANTIBIOTIC_SUSCEPTIBILITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ALLERGIES_SELECTIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ALLERGIES_DEFINITIONS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_AHLTA_MAMMOGRAPHY_ICD9.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_AHLTA_MAMMOGRAPHY_CPT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_AHLTA_CERVICAL_ICD9.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_AHLTA_CERVICAL_CPT.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_ADDITIONAL_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_IMMUNIZATIONS_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_WARD_LOCATION_ROOM_BED.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upActivityLog.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_WARD_LOCATION_ROOM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_WARD_LOCATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_USER_.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_UNIT_SHIP_ID.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SOURCE_OF_ADMISSION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SMOKING_CESSATION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SCHEDULABLE_ENTITY_SCHEDULE_DATE_TIMES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SCHEDULABLE_ENTITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_CHCS_PRESCRIPTION_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SCHEDULABLE_ENTITIES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_CHCS_PRESCRIPTION_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SCHEDULABLE_ENT_SCHEDULE_DATE_T_APPOINTMENT_SLOTS.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procSTG_BIT_BUCKET_CDM_ADDITIONAL_PROVIDER_Insert.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_SCHEDULABL_SCHEDULE_D_APPOINTMEN_APPT_DETAIL_CODES.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RESULT_CATEGORY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RELIGION.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RECORDS.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RECORD_TYPES.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RECORD_MOVEMENT_TYPES.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_UpdateSlot.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_AHLTA_MAMMOGRAPHY_ICD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RADIOLOGY_REPORTS.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_UpdateType.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_AHLTA_MAMMOGRAPHY_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RADIOLOGY_PROCEDURES_PROCEDURES_IN_GROUP.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_UpdateClinic.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_AHLTA_CERVICAL_ICD.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RADIOLOGY_PROCEDURES.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_UpdateProvider.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_BB_AHLTA_CERVICAL_CPT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RADIOLOGY_EXAM.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procMDE_SE_APPOINTMENT_SLOTS_UpdateStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_PROVIDER_ACTIVITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_RACE.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_PATIENT_PROVIDER.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PROVIDER_CLASS.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\procESS_TOBACCO_USE_Select.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_PATIENT_ACTIVITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PROVIDER.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_MAX_PCM.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upCreateIndexes_PRODUCTIVITY.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+    <Build Include="Stored Procedures\upSTG_MAX_ENROLLMENT.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NHJAX_ODS\NHJAX_ODS.sqlproj">
+      <Name>NHJAX_ODS</Name>
+      <Project>{79606fd9-86ed-4c6d-9757-0c484d4256ed}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>True</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>NHJAX_ODS</DatabaseSqlCmdVariable>
+      <ServerSqlCmdVariable>OtherServer</ServerSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="NHJAX_ODS">
+      <DefaultValue>NHJAX_ODS</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OtherServer">
+      <DefaultValue>NHJAX-ODS</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[LAB_RESULT_BACTERIOLOGY_APPENDED] (
+    [LabResultBacteriologyAppendedId] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [LabResultBacteriologyTestId]     BIGINT   NULL,
+    [AppendDate]                      DATETIME NULL,
+    [CreatedDate]                     DATETIME CONSTRAINT [DF_LAB_RESULT_BACTERIOLOGY_APPENDED_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_LAB_RESULT_BACTERIOLOGY_APPENDED] PRIMARY KEY CLUSTERED ([LabResultBacteriologyAppendedId] ASC),
+    CONSTRAINT [FK_LAB_RESULT_BACTERIOLOGY_APPENDED_LAB_RESULT_BACTERIOLOGY_TEST] FOREIGN KEY ([LabResultBacteriologyTestId]) REFERENCES [dbo].[LAB_RESULT_BACTERIOLOGY_TEST] ([LabResultBacteriologyTestId])
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_LAB_RESULT_BACTERIOLOGY_APPENDED_MultiKey]
+    ON [dbo].[LAB_RESULT_BACTERIOLOGY_APPENDED]([LabResultBacteriologyAppendedId] ASC, [LabResultBacteriologyTestId] ASC);
+

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[TICKET_ARCHIVE] (
+    [TicketId]        INT             NOT NULL,
+    [TicketNumber]    VARCHAR (50)    NOT NULL,
+    [ProblemTypeId]   INT             NOT NULL,
+    [SystemNameId]    INT             NOT NULL,
+    [PatientImpact]   BIT             NOT NULL,
+    [PlantAccountNum] VARCHAR (50)    NULL,
+    [SoftwareId]      INT             NOT NULL,
+    [DepartmentId]    INT             NOT NULL,
+    [TicketLocation]  VARCHAR (50)    NULL,
+    [Comments]        TEXT            NOT NULL,
+    [CreatedFor]      INT             NOT NULL,
+    [CreatedDate]     DATETIME        NOT NULL,
+    [AssignedBy]      INT             NOT NULL,
+    [AssignedDate]    DATETIME        NOT NULL,
+    [StatusId]        INT             NOT NULL,
+    [ClosedDate]      DATETIME        NULL,
+    [ClosedBy]        INT             NULL,
+    [CustomerName]    VARCHAR (50)    NULL,
+    [UpdatedDate]     DATETIME        NULL,
+    [UpdatedBy]       INT             NULL,
+    [OpenDate]        DATETIME        NULL,
+    [PriorityId]      INT             NULL,
+    [EstimatedHours]  DECIMAL (18, 2) NULL,
+    [AudienceId]      BIGINT          NULL
+);
+

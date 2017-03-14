@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[ASSET_COMPUTER] (
+    [AssetId]                  INT             NOT NULL,
+    [RAMSize]                  DECIMAL (19, 4) NULL,
+    [HardDriveSize]            DECIMAL (19, 4) NULL,
+    [CPUSpeed]                 DECIMAL (19, 4) NULL,
+    [CreatedDate]              DATETIME        CONSTRAINT [DF_ASSET_COMPUTER_CreatedDate] DEFAULT (getdate()) NULL,
+    [UpdatedDate]              DATETIME        CONSTRAINT [DF_ASSET_COMPUTER_UpdatedDate] DEFAULT (getdate()) NULL,
+    [AIMVersion]               VARCHAR (10)    CONSTRAINT [DF_ASSET_COMPUTER_AIMVersion] DEFAULT ('0') NULL,
+    [OSMinorVersion]           INT             NULL,
+    [OSServicePackMajorNumber] INT             NULL,
+    [LastSyncTime]             DATETIME        NULL,
+    [LastReportedStatusTime]   DATETIME        NULL,
+    [LastReportedRebootTime]   DATETIME        NULL,
+    [IsServiceAccount]         BIT             CONSTRAINT [DF_ASSET_COMPUTER_IsServiceAccount] DEFAULT ((0)) NULL,
+    [EDPTSVersion]             VARCHAR (10)    NULL,
+    [EDPTSPosition]            INT             CONSTRAINT [DF_ASSET_COMPUTER_EDPTSPosition] DEFAULT ((0)) NULL,
+    [DualMonitor]              BIT             CONSTRAINT [DF_ASSET_COMPUTER_MonitorCount] DEFAULT ((0)) NULL,
+    [IsManagedServer]          BIT             CONSTRAINT [DF_ASSET_COMPUTER_IsManagedServer] DEFAULT ((0)) NULL,
+    [ShutdownPriorityId]       INT             CONSTRAINT [DF_ASSET_COMPUTER_ShutdownPriorityId] DEFAULT ((0)) NULL,
+    [TimeToShutdown]           INT             CONSTRAINT [DF_ASSET_COMPUTER_TimeToShutdown] DEFAULT ((0)) NULL,
+    [ServerNotes]              NVARCHAR (MAX)  NULL,
+    [RackLocation]             NVARCHAR (10)   NULL,
+    CONSTRAINT [PK_ASSET_COMPUTER] PRIMARY KEY CLUSTERED ([AssetId] ASC),
+    CONSTRAINT [FK_ASSET_COMPUTER_ASSET] FOREIGN KEY ([AssetId]) REFERENCES [dbo].[ASSET] ([AssetId])
+);
+

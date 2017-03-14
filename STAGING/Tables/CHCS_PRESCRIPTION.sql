@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[CHCS_PRESCRIPTION] (
+    [KEY_SITE]           NUMERIC (5)     NULL,
+    [KEY_PRESCRIPTION]   NUMERIC (14, 3) NULL,
+    [RX_#]               VARCHAR (10)    NULL,
+    [PATIENT_IEN]        NUMERIC (21, 3) NULL,
+    [PROVIDER_IEN]       NUMERIC (21, 3) NULL,
+    [DRUG_IEN]           NUMERIC (21, 3) NULL,
+    [QTY]                NUMERIC (15, 5) NULL,
+    [DAYS_SUPPLY]        NUMERIC (10, 3) NULL,
+    [REFILLS]            NUMERIC (8, 3)  NULL,
+    [STATUS]             VARCHAR (30)    NULL,
+    [REFILLS_REMAINING]  NUMERIC (8, 3)  NULL,
+    [LAST_FILL_DATE]     DATETIME        NULL,
+    [FILL_EXPIRATION]    DATETIME        NULL,
+    [ORDER_DATE_TIME]    DATETIME        NULL,
+    [ORDER_ENTRY_NUMBER] VARCHAR (12)    NULL,
+    [ORDER_POINTER_IEN]  NUMERIC (21, 3) NULL,
+    [EXPIRATION_DATE]    VARCHAR (15)    NULL,
+    [EDITED]             VARCHAR (30)    NULL,
+    [COMMENTS]           VARCHAR (79)    NULL,
+    [SIG]                VARCHAR (220)   NULL,
+    [SIG1]               VARCHAR (29)    NULL,
+    [SIG2]               VARCHAR (28)    NULL,
+    [SIG3]               VARCHAR (28)    NULL,
+    [CreatedDate]        DATETIME        CONSTRAINT [DF_CHCS_PRESCRIPTION_CreatedDate] DEFAULT (getdate()) NULL
+);
+

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[FLAG_ICD] (
+    [FlagICDId]   BIGINT   IDENTITY (1, 1) NOT NULL,
+    [FlagId]      BIGINT   NULL,
+    [ICDId]       BIGINT   NULL,
+    [CreatedDate] DATETIME CONSTRAINT [DF_FLAG_CPT_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_FLAG_CPT] PRIMARY KEY CLUSTERED ([FlagICDId] ASC)
+);
+

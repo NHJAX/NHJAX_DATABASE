@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[xxx20140821Inventory] (
+    [F1] NVARCHAR (255) NULL,
+    [F2] NVARCHAR (255) NULL,
+    [F3] NVARCHAR (255) NULL
+);
+

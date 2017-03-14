@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[DRUG$SYNONYM] (
+    [KEY_SITE]         NUMERIC (5)     NULL,
+    [KEY_DRUG]         NUMERIC (14, 3) NULL,
+    [KEY_DRUG$SYNONYM] NUMERIC (8, 3)  NULL,
+    [SYNONYM_]         VARCHAR (30)    NULL,
+    [INTENDED_USE]     VARCHAR (30)    NULL
+);
+

@@ -1,0 +1,16 @@
+﻿CREATE TABLE [dbo].[AUDIENCE_MEMBER] (
+    [AudienceMemberId] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [BilletId]         INT      CONSTRAINT [DF_AUDIENCE_MEMBER_BilletId] DEFAULT ((0)) NOT NULL,
+    [AudienceId]       BIGINT   NOT NULL,
+    [TechnicianId]     INT      NOT NULL,
+    [CreatedDate]      DATETIME CONSTRAINT [DF_AUDIENCE_MEMBER_CreatedDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_AUDIENCE] PRIMARY KEY CLUSTERED ([AudienceMemberId] ASC),
+    CONSTRAINT [FK_AUDIENCE_MEMBER_AUDIENCE] FOREIGN KEY ([AudienceId]) REFERENCES [dbo].[AUDIENCE] ([AudienceId]),
+    CONSTRAINT [FK_AUDIENCE_MEMBER_TECHNICIAN] FOREIGN KEY ([TechnicianId]) REFERENCES [dbo].[TECHNICIAN] ([UserId])
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_AUDIENCE_MEMBER_MultiKey]
+    ON [dbo].[AUDIENCE_MEMBER]([BilletId] ASC, [AudienceId] ASC, [TechnicianId] ASC);
+

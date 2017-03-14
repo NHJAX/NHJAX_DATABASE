@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[RVU] (
+    [CPT_CODE] NVARCHAR (5)   NULL,
+    [MOD]      NVARCHAR (255) NULL,
+    [WORKDC]   FLOAT (53)     NULL,
+    [PEXPFADC] FLOAT (53)     NULL,
+    [PEXPNFDC] FLOAT (53)     NULL,
+    [MALEXP]   FLOAT (53)     NULL,
+    [GLOBAL]   NVARCHAR (255) NULL,
+    [WORKPC]   FLOAT (53)     NULL,
+    [PEXPFAPC] FLOAT (53)     NULL,
+    [PEXPNFPC] FLOAT (53)     NULL,
+    [MODFLAG]  NVARCHAR (255) NULL,
+    [RVU]      MONEY          NULL
+);
+

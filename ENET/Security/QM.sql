@@ -1,0 +1,2 @@
+﻿CREATE USER [QM] FOR LOGIN [QM];
+

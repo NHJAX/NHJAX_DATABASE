@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[BIT_BUCKET_POP_HEALTH_MAMMOGRAPHY] (
+    [Annotation]    VARCHAR (255) NULL,
+    [PatientName]   VARCHAR (255) NULL,
+    [SponsorSSN]    VARCHAR (255) NULL,
+    [FMP]           VARCHAR (255) NULL,
+    [DOB]           VARCHAR (255) NULL,
+    [Age]           VARCHAR (255) NULL,
+    [BenCat]        VARCHAR (255) NULL,
+    [PCMName]       VARCHAR (255) NULL,
+    [ProviderGroup] VARCHAR (255) NULL,
+    [LastExamDate]  VARCHAR (255) NULL,
+    [System]        VARCHAR (255) NULL,
+    [Source]        VARCHAR (255) NULL,
+    [Street1]       VARCHAR (255) NULL,
+    [Street2]       VARCHAR (255) NULL,
+    [City]          VARCHAR (255) NULL,
+    [State]         VARCHAR (255) NULL,
+    [Zip]           VARCHAR (255) NULL,
+    [Country]       VARCHAR (255) NULL,
+    [HomePhone]     VARCHAR (255) NULL,
+    [WorkPhone]     VARCHAR (255) NULL,
+    [DMIS]          VARCHAR (255) NULL,
+    [CreatedDate]   DATETIME      CONSTRAINT [DF_BIT_BUCKET_POP_HEALTH_MAMMOGRAPHY_CreatedDate] DEFAULT (getdate()) NULL,
+    [EDIPN]         VARCHAR (255) NULL
+);
+

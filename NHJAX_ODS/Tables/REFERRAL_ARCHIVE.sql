@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[REFERRAL_ARCHIVE] (
+    [ReferralId]           BIGINT          NOT NULL,
+    [ReferralKey]          NUMERIC (17, 3) NULL,
+    [ReferralDate]         DATETIME        NULL,
+    [ReasonForReferral]    VARCHAR (5000)  NULL,
+    [ReferredToProviderId] BIGINT          NULL,
+    [ReferredToLocationId] BIGINT          NULL,
+    [ReferredByProviderId] BIGINT          NULL,
+    [ReferredByLocationId] BIGINT          NULL,
+    [PatientOrderId]       BIGINT          NULL,
+    [AncillaryProcedureId] BIGINT          NULL,
+    [CreatedDate]          DATETIME        NULL,
+    [UpdatedDate]          DATETIME        NULL,
+    [SourceSystemId]       BIGINT          NULL,
+    [PlaceofTreatmentId]   BIGINT          NULL,
+    [ProvisionalDiagnosis] VARCHAR (1000)  NULL,
+    [SpecialtyId]          BIGINT          NULL,
+    [AuthorizationNumber]  DECIMAL (21, 3) NULL,
+    [PatientId]            BIGINT          NULL,
+    [NumberofVisits]       DECIMAL (8, 3)  NULL,
+    [ReferralNumber]       VARCHAR (11)    NULL,
+    [PriorityId]           BIGINT          NULL,
+    [ArchiveDate]          DATETIME        CONSTRAINT [DF_REFERRAL_ARCHIVE_ArchiveDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_REFERRAL_ARCHIVE] PRIMARY KEY CLUSTERED ([ReferralId] ASC)
+);
+

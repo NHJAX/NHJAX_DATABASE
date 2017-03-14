@@ -1,0 +1,61 @@
+﻿CREATE TABLE [dbo].[PRESCRIPTION] (
+    [KEY_SITE]                     NUMERIC (5)     NULL,
+    [KEY_PRESCRIPTION]             NUMERIC (14, 3) NULL,
+    [RX_#]                         VARCHAR (10)    NULL,
+    [PATIENT_IEN]                  NUMERIC (21, 3) NULL,
+    [PROVIDER_IEN]                 NUMERIC (21, 3) NULL,
+    [DRUG_IEN]                     NUMERIC (21, 3) NULL,
+    [QTY]                          NUMERIC (15, 5) NULL,
+    [DAYS_SUPPLY]                  NUMERIC (9, 3)  NULL,
+    [REFILLS]                      NUMERIC (8, 3)  NULL,
+    [LOGGED_BY_IEN]                NUMERIC (21, 3) NULL,
+    [STATUS]                       VARCHAR (30)    NULL,
+    [REFILLS_REMAINING]            NUMERIC (8, 3)  NULL,
+    [LAST_FILL_DATE]               DATETIME        NULL,
+    [FILL_EXPIRATION]              DATETIME        NULL,
+    [ORDER_DATE_TIME]              DATETIME        NULL,
+    [ORDER_ENTRY_NUMBER]           VARCHAR (12)    NULL,
+    [ORDER_POINTER_IEN]            NUMERIC (21, 3) NULL,
+    [OUTPATIENT_SITE_IEN]          NUMERIC (21, 3) NULL,
+    [EXPIRATION_DATE]              VARCHAR (15)    NULL,
+    [MEPRS_CODE_IEN]               NUMERIC (21, 3) NULL,
+    [EDITED]                       VARCHAR (30)    NULL,
+    [LAST_DISPENSING_PHARMACY_IEN] NUMERIC (21, 3) NULL,
+    [COMMENTS]                     VARCHAR (78)    NULL,
+    [SIG]                          VARCHAR (220)   NULL,
+    [SIG1]                         VARCHAR (275)   NULL,
+    [SIG2]                         VARCHAR (36)    NULL,
+    [SIG3]                         VARCHAR (27)    NULL,
+    [SIG4]                         VARCHAR (27)    NULL
+);
+
+
+GO
+CREATE CLUSTERED INDEX [IX_PRESCRIPTION_EXPIRATION_DATE]
+    ON [dbo].[PRESCRIPTION]([EXPIRATION_DATE] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_KEY_PRESCRIPTION]
+    ON [dbo].[PRESCRIPTION]([KEY_PRESCRIPTION] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_PATIENT_IEN]
+    ON [dbo].[PRESCRIPTION]([PATIENT_IEN] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_PROVIDER_IEN]
+    ON [dbo].[PRESCRIPTION]([PROVIDER_IEN] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_DRUG_IEN]
+    ON [dbo].[PRESCRIPTION]([DRUG_IEN] ASC) WITH (FILLFACTOR = 100);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_LAST_FILL_DATE]
+    ON [dbo].[PRESCRIPTION]([LAST_FILL_DATE] ASC) WITH (FILLFACTOR = 100);
+

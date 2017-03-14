@@ -1,0 +1,14 @@
+﻿CREATE PROCEDURE [dbo].[upLog]
+(
+	@logDescription	varchar(8000)
+)
+AS
+	BEGIN TRANSACTION
+
+	PRINT 'INSERT INTO ACTIVITY_LOG'
+
+INSERT INTO ACTIVITY_LOG (
+LogDescription) 
+VALUES(@logDescription);
+
+	COMMIT TRANSACTION

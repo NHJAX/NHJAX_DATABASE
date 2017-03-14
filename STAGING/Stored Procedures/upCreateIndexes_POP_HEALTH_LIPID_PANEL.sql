@@ -1,0 +1,45 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_POP_HEALTH_LIPID_PANEL] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_POP_HEALTH_LIPID_PANEL')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.ind_POP_HEALTH_LIPID_PANEL
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_EDIPN')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_EDIPN
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_EDIPN
+	ON 			POP_HEALTH_LIPID_PANEL(EDIPN)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_FMP')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_FMP
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_FMP
+	ON 			POP_HEALTH_LIPID_PANEL(FMP)
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_LDLCertDate')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_LDLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_LDLCertDate
+	ON 			POP_HEALTH_LIPID_PANEL([LDL CertDate])
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_CHOLCertDate')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_CHOLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_CHOLCertDate
+	ON 			POP_HEALTH_LIPID_PANEL([CHOL CertDate])
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_HDLCertDate')
+		DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_HDLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_HDLCertDate
+	ON 			POP_HEALTH_LIPID_PANEL([HDL CertDate])
+	WITH 			FILLFACTOR = 100
+
+	--IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_LIPID_PANEL_FMP_SponsorSSN')
+	--	DROP INDEX POP_HEALTH_LIPID_PANEL.IX_POP_HEALTH_LIPID_PANEL_FMP_SponsorSSN
+		                                                                
+	--CREATE INDEX 	IX_POP_HEALTH_LIPID_PANEL_FMP_SponsorSSN
+	--ON 			POP_HEALTH_LIPID_PANEL(FMP,[Sponsor SSN])
+	--WITH 			FILLFACTOR = 100

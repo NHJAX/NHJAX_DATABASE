@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_ETIOLOGY_FIELD] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_ETIOLOGY_FIELD')
+		DROP INDEX ETIOLOGY_FIELD.ind_ETIOLOGY_FIELD
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ETIOLOGY_FIELD_KEY_ETIOLOGY_FIELD')
+		DROP INDEX ETIOLOGY_FIELD.IX_ETIOLOGY_FIELD_KEY_ETIOLOGY_FIELD
+		                                                                
+	CREATE INDEX 	IX_ETIOLOGY_FIELD_KEY_ETIOLOGY_FIELD
+	ON 			ETIOLOGY_FIELD(KEY_ETIOLOGY_FIELD)
+	WITH 			FILLFACTOR = 100

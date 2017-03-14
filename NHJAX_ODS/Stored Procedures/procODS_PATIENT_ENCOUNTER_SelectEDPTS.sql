@@ -1,0 +1,13 @@
+﻿
+create PROCEDURE [dbo].[procODS_PATIENT_ENCOUNTER_SelectEDPTS]
+
+AS
+	SET NOCOUNT ON;
+	
+SELECT PAT.PatientKey
+FROM PATIENT_ENCOUNTER AS PE
+	INNER JOIN PATIENT AS PAT
+	ON PE.PatientId = PAT.PatientId
+WHERE PE.HospitalLocationId = 174
+	AND DATEDIFF(HOUR,AppointmentDateTime, GetDate()) < 48
+	

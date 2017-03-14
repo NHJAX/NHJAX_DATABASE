@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [NMED\nhjax-SQL-ADM]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

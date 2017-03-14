@@ -1,0 +1,20 @@
+﻿CREATE TABLE [dbo].[PRESCRIPTION_DRUG] (
+    [PrescriptionDrugId] BIGINT   IDENTITY (1, 1) NOT NULL,
+    [PrescriptionId]     BIGINT   NULL,
+    [DrugId]             BIGINT   NULL,
+    [CreatedDate]        DATETIME CONSTRAINT [DF_PRESCRIPTION_DRUG_CreatedDate] DEFAULT (getdate()) NULL,
+    [UpdatedDate]        DATETIME CONSTRAINT [DF_PRESCRIPTION_DRUG_UpdatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_PRESCRIPTION_DRUG] PRIMARY KEY CLUSTERED ([PrescriptionDrugId] ASC),
+    CONSTRAINT [FK_PRESCRIPTION_DRUG_PRESCRIPTION] FOREIGN KEY ([PrescriptionId]) REFERENCES [dbo].[PRESCRIPTION] ([PrescriptionId])
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PRESCRIPTION_DRUG_PrescriptionId_DrugId]
+    ON [dbo].[PRESCRIPTION_DRUG]([PrescriptionId] ASC, [DrugId] ASC) WITH (ALLOW_PAGE_LOCKS = OFF);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_PRESCRIPTION_DRUG_DrugId,PrescDrugId]
+    ON [dbo].[PRESCRIPTION_DRUG]([DrugId] ASC, [PrescriptionDrugId] ASC);
+

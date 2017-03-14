@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[SESSION_LOOKUP] (
+    [LookupId]    INT          IDENTITY (1, 1) NOT NULL,
+    [LookupDesc]  VARCHAR (50) NULL,
+    [CreatedBy]   INT          CONSTRAINT [DF_SESSION_LOOKUP_CreatedBy] DEFAULT ((0)) NULL,
+    [CreatedDate] DATETIME     CONSTRAINT [DF_SESSION_LOOKUP_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_SESSION_LOOKUP] PRIMARY KEY CLUSTERED ([LookupId] ASC)
+);
+

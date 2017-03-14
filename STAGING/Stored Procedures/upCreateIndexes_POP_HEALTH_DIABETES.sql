@@ -1,0 +1,59 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_POP_HEALTH_DIABETES] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_POP_HEALTH_DIABETES')
+		DROP INDEX POP_HEALTH_DIABETES.ind_POP_HEALTH_DIABETES
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_EDIPN')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_EDIPN
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_EDIPN
+	ON 			POP_HEALTH_DIABETES(EDIPN)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_FMP')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_FMP
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_FMP
+	ON 			POP_HEALTH_DIABETES(FMP)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_A1CDate')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_A1CDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_A1CDate
+	ON 			POP_HEALTH_DIABETES(A1CDate)
+	WITH 			FILLFACTOR = 100
+
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_RetinalDate')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_RetinalDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_RetinalDate
+	ON 			POP_HEALTH_DIABETES(RetinalDate)
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_LDLCertDate')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_LDLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_LDLCertDate
+	ON 			POP_HEALTH_DIABETES(LDLCertDate)
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_CHOLCertDate')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_CHOLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_CHOLCertDate
+	ON 			POP_HEALTH_DIABETES(CHOLCertDate)
+	WITH 			FILLFACTOR = 100
+	
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_HDLCertDate')
+		DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_HDLCertDate
+		                                                                
+	CREATE INDEX 	IX_POP_HEALTH_DIABETES_HDLCertDate
+	ON 			POP_HEALTH_DIABETES(HDLCertDate)
+	WITH 			FILLFACTOR = 100
+
+	--IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_POP_HEALTH_DIABETES_FMP_SponsorSSN')
+	--	DROP INDEX POP_HEALTH_DIABETES.IX_POP_HEALTH_DIABETES_FMP_SponsorSSN
+		                                                                
+	--CREATE INDEX 	IX_POP_HEALTH_DIABETES_FMP_SponsorSSN
+	--ON 			POP_HEALTH_DIABETES(FMP,SponsorSSN)
+	--WITH 			FILLFACTOR = 100

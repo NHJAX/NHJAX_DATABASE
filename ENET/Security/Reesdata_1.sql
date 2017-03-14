@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Reesdata]
+    WITH PASSWORD = N'uihibhrybgguHgUanpiwrgtdmsFT7_&#$!~<ooytfS,ehokG', SID = 0x54FBFBCA6563184088EAAA0D7EAAE001, DEFAULT_DATABASE = [Reesdata], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

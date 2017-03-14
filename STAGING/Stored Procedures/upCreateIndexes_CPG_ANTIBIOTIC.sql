@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_CPG_ANTIBIOTIC] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_CPG_ANTIBIOTIC')
+		DROP INDEX CPG_ANTIBIOTIC.ind_CPG_ANTIBIOTIC
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_CPG_ANTIBIOTIC_KEY_CPG_ANTIBIOTIC')
+		DROP INDEX CPG_ANTIBIOTIC.IX_CPG_ANTIBIOTIC_KEY_CPG_ANTIBIOTIC
+		                                                                
+	CREATE INDEX 	IX_CPG_ANTIBIOTIC_KEY_CPG_ANTIBIOTIC
+	ON 			CPG_ANTIBIOTIC(KEY_CPG_ANTIBIOTIC)
+	WITH 			FILLFACTOR = 100

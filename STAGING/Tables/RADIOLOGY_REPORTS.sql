@@ -1,0 +1,18 @@
+﻿CREATE TABLE [dbo].[RADIOLOGY_REPORTS] (
+    [KEY_SITE]                    NUMERIC (5)     NULL,
+    [KEY_RADIOLOGY_REPORTS]       NUMERIC (13, 3) NULL,
+    [DATE_TIME_CREATED]           DATETIME        NULL,
+    [PATIENT_NAME_IEN]            NUMERIC (21, 3) NULL,
+    [EXAM_DATE_TIME]              DATETIME        NULL,
+    [VERIFIED_DATE]               DATETIME        NULL,
+    [REPORTED_DATE]               DATETIME        NULL,
+    [RESULT_CODE_IEN]             NUMERIC (21, 3) NULL,
+    [DATE_VERIFIED_BY_SUPERVISOR] DATETIME        NULL,
+    [REPORT_TEXT]                 TEXT            NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ind_RADIOLOGY_REPORTS]
+    ON [dbo].[RADIOLOGY_REPORTS]([KEY_SITE] ASC, [KEY_RADIOLOGY_REPORTS] ASC);
+

@@ -1,0 +1,23 @@
+﻿CREATE TABLE [dbo].[xxx20160920_ENROLLMENT] (
+    [PATIENT_ID]                NVARCHAR (50)  NULL,
+    [ENROLLMENT_HISTORY_NUMBER] NUMERIC (11)   NULL,
+    [PCM_HIST_NUMBER]           NVARCHAR (50)  NULL,
+    [DMIS_ID_DMIS_ID]           NVARCHAR (50)  NULL,
+    [PATIENT_DMIS_ID]           NVARCHAR (50)  NULL,
+    [PCM_ASSIGNED_DATE]         DATETIME       NULL,
+    [PCM_START_DATE]            DATETIME       NULL,
+    [PCM_PROJECTED_END_DATE]    NVARCHAR (50)  NULL,
+    [PROVIDER_ID]               NVARCHAR (50)  NULL,
+    [PROVIDER_NAME]             NVARCHAR (255) NULL,
+    [CLINIC_ID]                 NVARCHAR (50)  NULL,
+    [CLINIC_NAME]               NVARCHAR (255) NULL,
+    [BEN_CAT_CODE]              NVARCHAR (50)  NULL,
+    [END_REASON_CODE]           NVARCHAR (50)  NULL,
+    [END_REASON_DESCRIPTION]    NVARCHAR (255) NULL,
+    [ENROLL_HIST_DMIS_ID]       NVARCHAR (50)  NULL,
+    [DEERS_LAST_VERIFIED]       DATETIME       NULL,
+    [HCDP_START_DATE]           DATETIME       NULL,
+    [DEERS_ELIGIBILITY]         NVARCHAR (50)  NULL,
+    [UpdatedDate]               DATETIME       NULL
+);
+

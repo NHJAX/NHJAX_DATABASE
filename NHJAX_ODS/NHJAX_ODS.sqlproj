@@ -1,0 +1,1457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>NHJAX_ODS</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{79606fd9-86ed-4c6d-9757-0c484d4256ed}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>NHJAX_ODS</RootNamespace>
+    <AssemblyName>NHJAX_ODS</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+    <SuppressTSqlWarnings>
+    </SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables\" />
+    <Folder Include="Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="Functions\" />
+    <Folder Include="Stored Procedures\" />
+    <Folder Include="User Defined Types\" />
+    <Folder Include="Synonyms\" />
+    <Folder Include="Server Object" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\APPOINTMENT_SLOT_STATUS.sql" />
+    <Build Include="Tables\PATIENT.sql" />
+    <Build Include="Tables\PROVIDER_ROLE.sql" />
+    <Build Include="Tables\PATIENT_PROCEDURE.sql" />
+    <Build Include="Tables\PRESCRIPTION.sql" />
+    <Build Include="Tables\MATERNITY_TEAM.sql" />
+    <Build Include="Tables\TEST_TABLE.sql" />
+    <Build Include="Tables\LAB_RESULT_ANTIBIOTIC.sql" />
+    <Build Include="Tables\ACCESSION_AREA.sql" />
+    <Build Include="Tables\REVIEW_STATUS.sql" />
+    <Build Include="Tables\xxx20160920_ENROLLMENT.sql" />
+    <Build Include="Tables\RELEASE_CONDITION.sql" />
+    <Build Include="Tables\TEST_LOOKUP.sql" />
+    <Build Include="Tables\CHCS_USER.sql" />
+    <Build Include="Tables\MATERNITY_PATIENT.sql" />
+    <Build Include="Tables\DM_DIABETES_KEY_LAB_RESULTS.sql" />
+    <Build Include="Tables\TEST_TRANSACTION.sql" />
+    <Build Include="Tables\ANCILLARY_PROCEDURE.sql" />
+    <Build Include="Tables\PROVIDER_CLASS.sql" />
+    <Build Include="Tables\LAB_RESULT_CHEMISTRY_RESULT.sql" />
+    <Build Include="Tables\ACCESS_TO_CARE.sql" />
+    <Build Include="Tables\MEDICAL_CENTER_DIVISION.sql" />
+    <Build Include="Tables\MILITARY_GRADE_RANK.sql" />
+    <Build Include="Tables\REFERRAL_ARCHIVE.sql" />
+    <Build Include="Tables\RACE.sql" />
+    <Build Include="Tables\ACCESSION.sql" />
+    <Build Include="Tables\ON_DEMAND.sql" />
+    <Build Include="Tables\PRESCRIPTION_EDITED.sql" />
+    <Build Include="Tables\APPOINTMENT_TYPE.sql" />
+    <Build Include="Tables\LAB_RESULT_BACTERIOLOGY_APPENDED.sql" />
+    <Build Include="Tables\DM_PHARMACY_CONTROLLED_SUBSTANCES_RXS.sql" />
+    <Build Include="Tables\DEPARTMENT.sql" />
+    <Build Include="Tables\PROVIDER_CODE.sql" />
+    <Build Include="Tables\ENCOUNTER_DIAGNOSIS.sql" />
+    <Build Include="Tables\REFUSAL_REASON.sql" />
+    <Build Include="Tables\RADIOLOGY_IN_GROUP.sql" />
+    <Build Include="Tables\ON_DEMAND_TYPE.sql" />
+    <Build Include="Tables\REFERRAL_REVIEW_STATUS.sql" />
+    <Build Include="Tables\APPOINTMENT_STATUS.sql" />
+    <Build Include="Tables\LAB_RESULT_CHEMISTRY_APPENDED.sql" />
+    <Build Include="Tables\PRESCRIPTION_DRUG.sql" />
+    <Build Include="Tables\TRIAGE.sql" />
+    <Build Include="Tables\ER_DISPOSITION.sql" />
+    <Build Include="Tables\REFERRAL_REFUSAL_ARCHIVE.sql" />
+    <Build Include="Tables\PRESCRIPTION_ACTION.sql" />
+    <Build Include="Tables\REFUSAL_STATUS.sql" />
+    <Build Include="Tables\PATIENT_ADMISSION.sql" />
+    <Build Include="Tables\ACTIVITY_LOG.sql" />
+    <Build Include="Tables\PLACE_OF_TREATMENT.sql" />
+    <Build Include="Tables\ENCOUNTER_DIAGNOSIS_FREE_TEXT.sql" />
+    <Build Include="Tables\REGISTRATION_TYPE.sql" />
+    <Build Include="Tables\DRUG_FORM.sql" />
+    <Build Include="Tables\APPOINTMENT_SLOT_DETAIL.sql" />
+    <Build Include="Tables\PRESCRIPTION_FILL_DATE.sql" />
+    <Build Include="Tables\CPT_TYPE.sql" />
+    <Build Include="Tables\DRUG_ROUTE.sql" />
+    <Build Include="Tables\DRUG_CATEGORY.sql" />
+    <Build Include="Tables\REFERRAL_REFUSAL.sql" />
+    <Build Include="Tables\STATUS_MODIFIER.sql" />
+    <Build Include="Tables\MARITAL_STATUS.sql" />
+    <Build Include="Tables\VITAL_TYPE.sql" />
+    <Build Include="Tables\FLAG.sql" />
+    <Build Include="Tables\DRUG_ASSOCIATED_FORMULARY.sql" />
+    <Build Include="Tables\PCM_EXCEPTION.sql" />
+    <Build Include="Tables\PRESCRIPTION_ACTIVITY_LOG.sql" />
+    <Build Include="Tables\PCM_CODE.sql" />
+    <Build Include="Tables\ETIOLOGY.sql" />
+    <Build Include="Tables\EMAIL.sql" />
+    <Build Include="Tables\DIAGNOSIS_CONVERSION.sql" />
+    <Build Include="Tables\PRESCRIPTION_ACTIVITY_LOG_REASON.sql" />
+    <Build Include="Tables\ORDER_TYPE.sql" />
+    <Build Include="Tables\AUDIT_LOG.sql" />
+    <Build Include="Tables\THIRD_PARTY_PAYER.sql" />
+    <Build Include="Tables\DISEASE_SPECIFIC_DRUG.sql" />
+    <Build Include="Tables\SOURCE_SYSTEM.sql" />
+    <Build Include="Tables\LAB_TEST.sql" />
+    <Build Include="Tables\PATIENT_FLAG.sql" />
+    <Build Include="Tables\WALK_IN.sql" />
+    <Build Include="Tables\VITAL.sql" />
+    <Build Include="Tables\HOSPITAL_LOCATION.sql" />
+    <Build Include="Tables\METHOD_OF_TRANSIT.sql" />
+    <Build Include="Tables\GENERATOR.sql" />
+    <Build Include="Tables\PORTABLE.sql" />
+    <Build Include="Tables\ANTIBIOTIC_SUSCEPTIBILITY.sql" />
+    <Build Include="Tables\AHFS_CLASSIFICATION.sql" />
+    <Build Include="Tables\MOBILITY_STATUS.sql" />
+    <Build Include="Tables\SEVERITY_FLAG.sql" />
+    <Build Include="Tables\DM_ASTHMA_ISC_DRUG_LOOKUP.sql" />
+    <Build Include="Tables\COLLECTION_SAMPLE.sql" />
+    <Build Include="Tables\REFERRAL_LOG.sql" />
+    <Build Include="Tables\SPECIALTY.sql" />
+    <Build Include="Tables\DM_ASTHMA_SABA_DRUG_LOOKUP.sql" />
+    <Build Include="Tables\THERAPEUTIC_CLASS.sql" />
+    <Build Include="Tables\ACTIVITY_COUNT.sql" />
+    <Build Include="Tables\LAB_INTERPRETATION.sql" />
+    <Build Include="Tables\RESULT_CATEGORY.sql" />
+    <Build Include="Tables\FLAG_ICD.sql" />
+    <Build Include="Tables\DM_ASTHMA_ISC_SABA_DETAILS.sql" />
+    <Build Include="Tables\PATIENT_ENCOUNTER_DETAIL_CODE.sql" />
+    <Build Include="Tables\DRUG.sql" />
+    <Build Include="Tables\PATIENT_ORDER_HISTORY.sql" />
+    <Build Include="Tables\PATIENT_CANCELLED_REASON.sql" />
+    <Build Include="Tables\REASON_SEEN.sql" />
+    <Build Include="Tables\ARRIVAL_CATEGORY.sql" />
+    <Build Include="Tables\DISPENSING_EVENT.sql" />
+    <Build Include="Tables\DISEASE_MANAGEMENT.sql" />
+    <Build Include="Tables\PROVIDER.sql" />
+    <Build Include="Tables\PROVIDER_SPECIALTY.sql" />
+    <Build Include="Tables\APPOINTMENT_SLOT.sql" />
+    <Build Include="Tables\DISCHARGE_TYPE.sql" />
+    <Build Include="Tables\PATIENT_ORDER.sql" />
+    <Build Include="Tables\AHLTA_IMMUNIZATION.sql" />
+    <Build Include="Tables\APPOINTMENT_HISTORY.sql" />
+    <Build Include="Tables\BED_STATUS.sql" />
+    <Build Include="Tables\xxx20161018_ORDER.sql" />
+    <Build Include="Tables\RADIOLOGY_REPORT.sql" />
+    <Build Include="Tables\RADIOLOGY_EXAM.sql" />
+    <Build Include="Tables\BED.sql" />
+    <Build Include="Tables\PHARMACY.sql" />
+    <Build Include="Tables\ADMISSION_TYPE.sql" />
+    <Build Include="Tables\SERVICE_TYPE.sql" />
+    <Build Include="Tables\IMMUNIZATION_MANUFACTURER.sql" />
+    <Build Include="Tables\DM_DIABETES_LAB_RESULT_TYPE.sql" />
+    <Build Include="Tables\BED_HISTORY.sql" />
+    <Build Include="Tables\PATIENT_CATEGORY.sql" />
+    <Build Include="Tables\AUDIOCARE_STAGING.sql" />
+    <Build Include="Tables\ENCOUNTER_PROVIDER.sql" />
+    <Build Include="Tables\PATIENT_ALLERGY.sql" />
+    <Build Include="Tables\xxx20160609_LAB_RESULTS.sql" />
+    <Build Include="Tables\DM_DIABETES_ENCOUNTER_TYPE.sql" />
+    <Build Include="Tables\DRUG_SCHEDULE.sql" />
+    <Build Include="Tables\DM_DIABETES_LAB_RESULTS.sql" />
+    <Build Include="Tables\CPTBakup.sql" />
+    <Build Include="Tables\PRIORITY.sql" />
+    <Build Include="Tables\DIAGNOSIS_TYPE.sql" />
+    <Build Include="Tables\ACCESSION_TYPE.sql" />
+    <Build Include="Tables\PSEUDO_PATIENT.sql" />
+    <Build Include="Tables\PATIENT_COVERAGE.sql" />
+    <Build Include="Tables\DM_DIABETES_ENCOUNTERS.sql" />
+    <Build Include="Tables\LAB_TEST_TYPE.sql" />
+    <Build Include="Tables\PRIMARY_CARE_MANAGER.sql" />
+    <Build Include="Tables\FAMILY_MEMBER_PREFIX.sql" />
+    <Build Include="Tables\GEOGRAPHIC_LOCATION.sql" />
+    <Build Include="Tables\ORDER_ENCOUNTER_TYPE.sql" />
+    <Build Include="Tables\DM_DIABETES_DASHBOARD_ENCOUNTERS_PERCENTAGES.sql" />
+    <Build Include="Tables\MATERNITY_PATIENT_HISTORY.sql" />
+    <Build Include="Tables\TEST.sql" />
+    <Build Include="Tables\ORDER_STATUS_TYPE.sql" />
+    <Build Include="Tables\PATIENT_DISPOSITION.sql" />
+    <Build Include="Tables\PATIENT_STAT.sql" />
+    <Build Include="Tables\DM_DIABETES_DASHBOARD_LAB_RESULTS_AVERAGES.sql" />
+    <Build Include="Tables\PRESCRIPTION_STATUS.sql" />
+    <Build Include="Tables\ALTERNATE_CARE_VALUE.sql" />
+    <Build Include="Tables\PROCEDURE_TYPE.sql" />
+    <Build Include="Tables\PATIENT_ENCOUNTER_SURGERY.sql" />
+    <Build Include="Tables\ACCESS_TO_CARE_HISTORY.sql" />
+    <Build Include="Tables\LAB_RESULT_BACTERIOLOGY_TEST.sql" />
+    <Build Include="Tables\DIAGNOSIS.sql" />
+    <Build Include="Tables\PROVIDER_HISTORY.sql" />
+    <Build Include="Tables\DMIS.sql" />
+    <Build Include="Tables\MEPRS_CODE.sql" />
+    <Build Include="Tables\HCDP_COVERAGE.sql" />
+    <Build Include="Tables\PATIENT_SUMMARY.sql" />
+    <Build Include="Tables\LAB_RESULT.sql" />
+    <Build Include="Tables\RADIOLOGY.sql" />
+    <Build Include="Tables\ALLERGY.sql" />
+    <Build Include="Tables\PATIENT_ENCOUNTER_EDPTS.sql" />
+    <Build Include="Tables\UIC.sql" />
+    <Build Include="Tables\REFERRAL.sql" />
+    <Build Include="Tables\AppErrorLog.sql" />
+    <Build Include="Tables\CPT.sql" />
+    <Build Include="Tables\LAB_TEST_IN_PANEL.sql" />
+    <Build Include="Tables\APPOINTMENT_AUDIT_TRAIL.sql" />
+    <Build Include="Tables\PATIENT_ACTIVITY.sql" />
+    <Build Include="Tables\APPOINTMENT_DETAIL_CODE.sql" />
+    <Build Include="Tables\RADIOLOGY_TYPE.sql" />
+    <Build Include="Tables\BRANCH_OF_SERVICE.sql" />
+    <Build Include="Tables\MATERNITY_STATUS.sql" />
+    <Build Include="Tables\ORDER_STATUS.sql" />
+    <Build Include="Tables\PATIENT_ENCOUNTER.sql" />
+    <Build Include="Tables\REFERRAL_REVIEW_STATUS_ARCHIVE.sql" />
+    <Build Include="Tables\ORDER_CATEGORY.sql" />
+    <Build Include="Tables\ERROR_CODE.sql" />
+    <Build Include="Tables\HOLIDAY.sql" />
+    <Build Include="Tables\DM_CERVICALCANCER_SCREENING.sql" />
+    <Build Include="Tables\PREFERENCE.sql" />
+    <Build Include="Tables\PROVIDER_ACTIVITY.sql" />
+    <Build Include="Tables\LAB_RESULT_ORGANISM.sql" />
+    <Build Include="Tables\ORDER_PRIORITY.sql" />
+    <Build Include="Tables\IMAGING_TYPE.sql" />
+    <Build Include="Tables\TESTReferrals.sql" />
+    <Build Include="Tables\EXAM_STATUS.sql" />
+    <Build Include="Tables\BENEFITS_CATEGORY.sql" />
+    <Build Include="Views\vwCP_FLAG.sql" />
+    <Build Include="Views\vwMDE_NED_PROVIDER_GROUP.sql" />
+    <Build Include="Views\vwMDE_ORDER_PRIORITY.sql" />
+    <Build Include="Views\vwMDE_ORDER_TASK.sql" />
+    <Build Include="Views\vwMDE_MCP_REFERRAL_APPOINTMENT_REQUEST_REVIEW.sql" />
+    <Build Include="Views\vwMDE_ORDER_TYPE.sql" />
+    <Build Include="Views\vwCP_PRESCRIPTION.sql" />
+    <Build Include="Views\vwCP_PATIENT_PATIENT_FLAG.sql" />
+    <Build Include="Views\vwMDE_PROVIDER.sql" />
+    <Build Include="Views\vwMDE_PRESCRIPTION_ACTIVITY_LOG.sql" />
+    <Build Include="Views\vwMDE_PATIENT_APPOINTMENT.sql" />
+    <Build Include="Views\vwENET_TECHNICIAN.sql" />
+    <Build Include="Views\vwMDE_ACCESS_TO_CARE_CATEGORY.sql" />
+    <Build Include="Views\vwMDE_RX_ACTIVITY_LOG_REASON.sql" />
+    <Build Include="Views\vwMDE_NDI_ELIGIBILITY_MaxResponse.sql" />
+    <Build Include="Views\vwMDE_ANTIBIOTIC_SUSCEPTIBILITY.sql" />
+    <Build Include="Views\vwMDE_AP_DESCRIPTION_DIAGNOSIS.sql" />
+    <Build Include="Views\vwSTG_IMMUNIZATIONS.sql" />
+    <Build Include="Views\vwMDE_ORDER_TASK_MAX.sql" />
+    <Build Include="Views\vwMDE_APPOINTMENT_AUDIT_TRAIL.sql" />
+    <Build Include="Views\vwSTG_BMI.sql" />
+    <Build Include="Views\vwSTG_AHLTA_CERVICAL_CPT.sql" />
+    <Build Include="Views\vwODS_PATIENT_FMP.sql" />
+    <Build Include="Views\vwMDE_DRUG.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_DIABETES_MICROALBUMINS.sql" />
+    <Build Include="Views\vwMDE_DRUG_ASSOCIATED_FORMULARY.sql" />
+    <Build Include="Views\vwMDE_ENCOUNTER.sql" />
+    <Build Include="Views\vwODS_MEDICAL_CENTER_DIVISION.sql" />
+    <Build Include="Views\vwMDE_ICD_OPERATION_PROCEDURE.sql" />
+    <Build Include="Views\vwSTG_MIN_DATE_ASTHMA.sql" />
+    <Build Include="Views\vwSTG_AHLTA_MAMMOGRAPHY_CPT.sql" />
+    <Build Include="Views\vwMDE_KG_ADC_DATA.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_CYTOLOGY_GYN.sql" />
+    <Build Include="Views\vwSTG_MAX_DATE_ASTHMA.sql" />
+    <Build Include="Views\vwSTG_AHLTA_MAMMOGRAPHY_ICD9.sql" />
+    <Build Include="Views\vwMDE_KG_ADC_DATA_CPT_CODE.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_CYTOLOGY_GYN_APPENDED_AMENDED_RNR.sql" />
+    <Build Include="Views\vwMDE_KG_ADC_DATA_EVAL_MGMT_CODE.sql" />
+    <Build Include="Views\vwMDE_KG_ADC_DATA_ICD_DIAGNOSIS.sql" />
+    <Build Include="Views\vwMDE_NED_PATIENT_ENROLLMENT_HISTORY_PCM_HISTORY.sql" />
+    <Build Include="Views\vwMDE_LAB_RESUL_CLINICAL__RESULT_APPENDED_AMENDED_RNR.sql" />
+    <Build Include="Views\vwMDE_SCHEDULABLE_ENT_SCHEDULE_DATE_T_APPOINTMENT_SLOTS.sql" />
+    <Build Include="Views\vwMDE_SCHEDULABL_SCHEDULE_D_APPOINTMEN_APPT_DETAIL_CODES.sql" />
+    <Build Include="Views\vwPDTSMaxPrescriptionFillDate.sql" />
+    <Build Include="Views\vwMDE_MCP_REFERRAL.sql" />
+    <Build Include="Views\vwODS_Patient_Activity_SelectStats.sql" />
+    <Build Include="Views\vwMDE_MEDICAL_CENTER_DIVISION.sql" />
+    <Build Include="Views\vwMDE_NED_PCM_END_REASON.sql" />
+    <Build Include="Views\vwMDE_MEPRS_CODES.sql" />
+    <Build Include="Views\vwMDE_MILITARY_GRADE_RANK.sql" />
+    <Build Include="Views\vwMDE_ACCESSION_AREA.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_CERVICAL.sql" />
+    <Build Include="Views\vwMDE_ALLERGIES_DEFINITIONS.sql" />
+    <Build Include="Views\vwMDE_ALLERGIES_SELECTIONS.sql" />
+    <Build Include="Views\vwMDE_ANCILLARY_PROCEDURE.sql" />
+    <Build Include="Views\vwMDE_CPT_HCPCS_MODIFIER.sql" />
+    <Build Include="Views\vwMDE_DEPARTMENT_AND_SERVICE.sql" />
+    <Build Include="Views\vwMDE_NDI_ELIGIBILITY.sql" />
+    <Build Include="Views\vwMDE_PROVIDER_SPECIALTY.sql" />
+    <Build Include="Views\vwMDE_ENCOUNTER_DIAGNOSIS__FREE_TEXT_.sql" />
+    <Build Include="Views\vwMDE_ENCOUNTER_ICD_OPERATIONS_PR_ASSISTING_HCPS.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_LIPID_PANEL.sql" />
+    <Build Include="Views\vwENET_TECHNICIAN_EXTENDED.sql" />
+    <Build Include="Views\vwMDE_APPOINTMENT_DETAIL_CODES.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_COLON.sql" />
+    <Build Include="Views\vwMDE_APPOINTMENT_STATUS.sql" />
+    <Build Include="Views\vwODS_DM_PRESCRIPTION.sql" />
+    <Build Include="Views\vwMDE_APPOINTMENT_TYPE.sql" />
+    <Build Include="Views\vwMDE_BORROWERS_FILE_AREAS.sql" />
+    <Build Include="Views\vwSTG_STG_PATIENT_ACTIVITY.sql" />
+    <Build Include="Views\vwMDE_FORMULARY_GROUP.sql" />
+    <Build Include="Views\vwMDE_GEOGRAPHIC_LOCATION.sql" />
+    <Build Include="Views\vwCIP_DM_ClinicReportCardCost.sql" />
+    <Build Include="Views\vwMDE_CPG_ANTIBIOTIC.sql" />
+    <Build Include="Views\vwCIP_DM_ClinicReportCardAppt.sql" />
+    <Build Include="Views\vwMDE_ICD_DIAGNOSIS.sql" />
+    <Build Include="Views\vwMDE_RADIOLOGY_PROCEDURES_PROCEDURES_IN_GROUP.sql" />
+    <Build Include="Views\vwMDE_RADIOLOGY_PROCEDURES.sql" />
+    <Build Include="Views\vwMDE_ORDER_APPOINTMENT_REVIEW_STATUS.sql" />
+    <Build Include="Views\vwMDE_RACE.sql" />
+    <Build Include="Views\vwMDE_UNIT_SHIP_ID.sql" />
+    <Build Include="Views\vwMDE_PATIENT_CATEGORY.sql" />
+    <Build Include="Views\vwMDE_PDTS_PROFILE_COLLECTION_F_ACCEPTED_RESPONSE_DETAIL.sql" />
+    <Build Include="Views\vwMDE_PDTS_PROFILE_COLLECTION_FILE.sql" />
+    <Build Include="Views\vwMDE_PROVIDER_CLASS.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_MAMMOGRAPHY.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_BACTERIOLOGY_TEST.sql" />
+    <Build Include="Views\vwODS_PRESCRIPTION_SelectDispensingEvents.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_BACTERIOLOGY_TEST_ORGANISM.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectHospitalVisits_Asthma.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_CLINICAL_CHEMISTRY.sql" />
+    <Build Include="Views\vwMDE_PHARMACY_PATIENT.sql" />
+    <Build Include="Views\vwMDE_PRESCRIPTION_FILL_DATES.sql" />
+    <Build Include="Views\vwODS_MaxFillDatebyPrescriptionId.sql" />
+    <Build Include="Views\vwODS_IMMUNIZATIONS_TUBERCULOSIS.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_ASTHMA.sql" />
+    <Build Include="Views\vwENET_PERSONNEL_ROSTER.sql" />
+    <Build Include="Views\vwPDTSCombinedInfo_Fill.sql" />
+    <Build Include="Views\vwMDE_RADIOLOGY_EXAM.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT.sql" />
+    <Build Include="Views\vwESS_PATCOMMON.sql" />
+    <Build Include="Views\vwMDE_USER_.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_BACTERIOLOGY.sql" />
+    <Build Include="Views\vwMDE_LAB_TEST_LAB_TEST_IN_PANEL.sql" />
+    <Build Include="Views\vwODS_VITAL_BMI.sql" />
+    <Build Include="Views\vwMDE_LAB_TEST_LAB_WORK_ELEMENT.sql" />
+    <Build Include="Views\vwODS_Max_Appointment.sql" />
+    <Build Include="Views\vwMDE_LAB_TEST_LAB_WORK_ELEMENT_CPT_CODE.sql" />
+    <Build Include="Views\vwSSRS_Sess_PATIENT_LETTER_PRINT.sql" />
+    <Build Include="Views\vwODS_MaxAppointment_BMI.sql" />
+    <Build Include="Views\vwMDE_MARITAL_STATUS.sql" />
+    <Build Include="Views\vwCP_PROVIDER_A1CS_ABOVE_8.sql" />
+    <Build Include="Views\vwMDE_RVU.sql" />
+    <Build Include="Views\vwMDE_HOSPITAL_LOCATION.sql" />
+    <Build Include="Views\vwSTG_SMOKING_CESSATION.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectERVisits.sql" />
+    <Build Include="Views\vwMDE_RECORD_TYPES.sql" />
+    <Build Include="Views\vwMDE_RECORD_MOVEMENT_TYPES.sql" />
+    <Build Include="Views\vwMDE_RADIOLOGY_REPORTS.sql" />
+    <Build Include="Views\vwSTG_ADDITIONAL_PROVIDER.sql" />
+    <Build Include="Views\vwPDTSCombinedInfo.sql" />
+    <Build Include="Views\vwMDE_RESULT_CATEGORY.sql" />
+    <Build Include="Views\vwMDE_MCP_REFERRAL_APPOINTMENT_REFUSALS.sql" />
+    <Build Include="Views\vwMDE_RELIGION.sql" />
+    <Build Include="Views\vwSTG_PRODUCTIVITY.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_MaxAppointment.sql" />
+    <Build Include="Views\vwMDE_LAB_TEST_MTF_CPT_CODE.sql" />
+    <Build Include="Views\vwMDE_NED_PATIENT_ENROLLMENT_HISTORY.sql" />
+    <Build Include="Views\vwMDE_LAB_RESUL_BACTERIOL_TEST_ORGANISM_ANTIBIOTIC2.sql" />
+    <Build Include="Views\vwMDE_OUTPATIENT_DISPOSITION.sql" />
+    <Build Include="Views\vwMDE_PATIENT.sql" />
+    <Build Include="Views\vwMDE_PATIENT_ADMISSION_DATE.sql" />
+    <Build Include="Views\vwMDE_PATIENT_APPOINTMENT_APPT_DETAIL_CODES.sql" />
+    <Build Include="Views\vwMDE_SCHEDULABLE_ENTITY_SCHEDULE_DATE_TIMES.sql" />
+    <Build Include="Views\vwMDE_ENCOUNTER_DIAGNOSIS.sql" />
+    <Build Include="Views\vwMDE_SCHEDULABLE_ENTITY.sql" />
+    <Build Include="Views\vwSTG_STG_MAX_PCM.sql" />
+    <Build Include="Views\vwMDE_COLLECTION_SAMPLE.sql" />
+    <Build Include="Views\vwODS_PATIENT.sql" />
+    <Build Include="Views\vwMDE_CPT_HCPCS.sql" />
+    <Build Include="Views\vwMDE_ORDER_.sql" />
+    <Build Include="Views\vwMDE_PRESCRIPTION.sql" />
+    <Build Include="Views\vwMDE_SOURCE_OF_ADMISSION.sql" />
+    <Build Include="Views\vwMDE_MCP_REFERRAL_APPOINTMENTS.sql" />
+    <Build Include="Views\vwPatientEncounterReferrals.sql" />
+    <Build Include="Views\vwMDE_RECORDS.sql" />
+    <Build Include="Views\vwESS_ORDER_NEW.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectOutpatientVisits_Asthma.sql" />
+    <Build Include="Views\vwMDE_LAB_RESULT_CLINICAL_CHEMISTRY_RESULT.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectERVisits_Asthma.sql" />
+    <Build Include="Views\vwMDE_LAB_STATUS.sql" />
+    <Build Include="Views\vwMDE_LAB_TEST.sql" />
+    <Build Include="Views\vwODS_AppointmentBMI.sql" />
+    <Build Include="Views\vwCP_PATIENT_LETTER.sql" />
+    <Build Include="Views\vwODS_AppointmentBMIResults.sql" />
+    <Build Include="Views\vwSTG_STG_PROVIDER_ACTIVITY.sql" />
+    <Build Include="Views\vwMDE_MCP_ALTERNATE_CARE_VALUE.sql" />
+    <Build Include="Views\vwENET_BASE.sql" />
+    <Build Include="Views\vwMDE_MCP_APPOINTMENT_REFUSAL_REASON.sql" />
+    <Build Include="Views\vwCP_FLU_STAT.sql" />
+    <Build Include="Views\vwMDE_MCP_BENEFICIARY_CATEGORIES.sql" />
+    <Build Include="Views\vwMDE_NED_PATIENT_ENROLLMENT_HISTORYMax.sql" />
+    <Build Include="Views\vwODS_MammoEncounters.sql" />
+    <Build Include="Views\vwODS_PROVIDER.sql" />
+    <Build Include="Views\vwMDE_MCP_PROVIDER.sql" />
+    <Build Include="Views\vwMDE_NED_HCDP_COVERAGE_CODE.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_CHF.sql" />
+    <Build Include="Views\vwMDE_NED_PATIENT.sql" />
+    <Build Include="Views\vwMDE_ACCESSION.sql" />
+    <Build Include="Views\vwMDE_ACCESSION_ACCESSION_NAME.sql" />
+    <Build Include="Views\vwMDE_ACCESSION_TEST_ORDERED.sql" />
+    <Build Include="Views\vwMDE_BRANCH_OF_SERVICE.sql" />
+    <Build Include="Views\vwSTG_STG_PATIENT_PROVIDER.sql" />
+    <Build Include="Views\vwMDE_CLINICAL_HISTORY.sql" />
+    <Build Include="Views\vwMDE_PROVIDER_PROVIDER_SPECIALTY_S.sql" />
+    <Build Include="Views\vwSTG_STG_MAX_ENROLLMENT.sql" />
+    <Build Include="Views\vwMDE_CLINICAL_HISTORY_DRUG_ALLERGY.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_DIABETES.sql" />
+    <Build Include="Views\vwMDE_EXAMINATION_STATUS.sql" />
+    <Build Include="Views\vwESS_TOBACCO_USE.sql" />
+    <Build Include="Views\vwMDE_FAMILY_MEMBER_PREFIX.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_CHLAMYDIA.sql" />
+    <Build Include="Views\vwSTG_POP_HEALTH_ANTIDEPRESSANT.sql" />
+    <Build Include="Views\vwMDE_KG_CPT_EVALUATION_MANAGEMENT.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectHospitalVisits.sql" />
+    <Build Include="Views\vwMDE_LAB_INTERPRETATION_FILE.sql" />
+    <Build Include="Views\vwER_CategorySummary.sql" />
+    <Build Include="Views\vwODS_PATIENT_ENCOUNTER_SelectOutpatientVisits.sql" />
+    <Build Include="Views\vwMDE_LAB_RESUL_BACTERIOL_TEST_APPENDED_AMENDED_RNR.sql" />
+    <Build Include="Views\vwMDE_DIAGNOSTIC_RELATED_GROUP.sql" />
+    <Build Include="Views\vwMDE_DISCHARGE_TYPE.sql" />
+    <Build Include="Views\vwODS_PATIENT_ColonCancerDateRange51_80.sql" />
+    <Build Include="Views\vwMDE_DMIS_ID_CODES.sql" />
+    <Build Include="Views\vwSTG_AHLTA_CERVICAL_ICD9.sql" />
+    <Build Include="Views\vwMDE_ENCOUNTER_ICD_OPERATIONS_PROCEDURES.sql" />
+    <Build Include="Views\vwMDE_ETIOLOGY_FIELD.sql" />
+    <Build Include="Views\vwODS_PRIMARY_CARE_MANAGER_NotUpdated.sql" />
+    <Build Include="Security\RMAN.sql" />
+    <Build Include="Security\RMAN_1.sql" />
+    <Build Include="Security\PORTAL.sql" />
+    <Build Include="Security\PORTAL_1.sql" />
+    <Build Include="Security\ODS.sql" />
+    <Build Include="Security\ODS_1.sql" />
+    <Build Include="Security\REPORTS.sql" />
+    <Build Include="Security\REPORTS_1.sql" />
+    <Build Include="Security\EDPTS.sql" />
+    <Build Include="Security\EDPTS_1.sql" />
+    <Build Include="Security\DW.sql" />
+    <Build Include="Security\DW_1.sql" />
+    <Build Include="Security\ENET.sql" />
+    <Build Include="Security\ENET_1.sql" />
+    <Build Include="Security\NSQIP.sql" />
+    <Build Include="Security\NSQIP_1.sql" />
+    <Build Include="Security\NMED_NHJAX-WEBAPPS-0_.sql" />
+    <Build Include="Security\NMED_NHJAX-WEBAPPS-0__1.sql" />
+    <Build Include="Security\NMED_nhjax-SQL-ADM.sql" />
+    <Build Include="Security\NMED_nhjax-SQL-ADM_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Functions\MilitaryTime.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\FormatDuration.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\ToCompressedDateStr.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Functions\GenerateEncounterKey.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Functions\CalculateFluSeason.sql" />
+    <Build Include="Functions\EDPTS_RVU.sql" />
+    <Build Include="Functions\FormatTime.sql" />
+    <Build Include="Functions\SpecificDrugs.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\Is_numeric.sql" />
+    <Build Include="Functions\AudiocareResults.sql" />
+    <Build Include="Functions\EndOfDay.sql" />
+    <Build Include="Functions\StartOfDay.sql" />
+    <Build Include="Functions\FormatNamesWithHyphen.sql" />
+    <Build Include="Functions\PatientsGestationalDiabetesResults.sql" />
+    <Build Include="Functions\LeftSideOfNamesWithHyphen.sql" />
+    <Build Include="Functions\FormattedSSN.sql" />
+    <Build Include="Functions\CleanUpLabResult.sql" />
+    <Build Include="Functions\MaxSlotDate.sql" />
+    <Build Include="Functions\MinSlotDate.sql" />
+    <Build Include="Functions\IsGestationalDiabeticAbnormal.sql" />
+    <Build Include="Functions\FormatDateWithoutTime.sql" />
+    <Build Include="Functions\MailStatus.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\ReturnFMPCode.sql" />
+    <Build Include="Functions\GenerateOrderKey.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Functions\GestationalDiabetesCounseling.sql" />
+    <Build Include="Functions\RecordLocation.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\RightSideOfNamesWithHyphen.sql" />
+    <Build Include="Functions\FirstDayofMonth.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\AdmissionDateTime.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Functions\LastDayofMonth.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\PatientsGestationalDiabetesResultsStr.sql" />
+    <Build Include="Functions\FormattedNDC.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Functions\PatientHasHedisFlag.sql" />
+    <Build Include="Functions\FormatElapsedTime.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_OrderType.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceXrayTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_ACTIVITY_LOG_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_HCDP_COVERAGE_SelectbyCode.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDisplayAge.sql" />
+    <Build Include="Stored Procedures\upODS_PatientCategory.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBandCTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_ProviderActivity.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultOrganism.sql" />
+    <Build Include="Stored Procedures\xxxODS_gCareEncounter20090601.sql" />
+    <Build Include="Stored Procedures\procODS_ACTIVITY_LOG_SelectError.sql" />
+    <Build Include="Stored Procedures\procODS_HCDP_COVERAGE_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateSponsorSSN.sql" />
+    <Build Include="Stored Procedures\upODS_PatientCoverage.sql" />
+    <Build Include="Stored Procedures\upODS_DM_CIP_Purge_3Days.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBandXTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCP_DM_GET_ISC_SABA_RATIOS.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_STATUS_Select.sql" />
+    <Build Include="Stored Procedures\procODS_HCDP_COVERAGE_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceCandXTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_ORDER_TYPE_Insert.sql" />
+    <Build Include="Stored Procedures\upPatientUpdatebyKEY.sql" />
+    <Build Include="Stored Procedures\upODS_PatientDisposition.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient_SelectTEST.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectActivebyMonth_20091130.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\upODS_PrescriptionAction.sql" />
+    <Build Include="Stored Procedures\procODS_TBI_PATIENTS_SelectByAlpha.sql" />
+    <Build Include="Stored Procedures\GetMedications20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_PrescriptionDrug.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_PrescriptionStatus.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_Additional_Providers_BitBucket.sql" />
+    <Build Include="Stored Procedures\GetOrganism20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\FindSPWithText.sql" />
+    <Build Include="Stored Procedures\upODS_RefusalStatus.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_HEDIS_RPT3.sql" />
+    <Build Include="Stored Procedures\upODS_ProviderClass.sql" />
+    <Build Include="Stored Procedures\procS3_Provider.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient_DM20120815.sql" />
+    <Build Include="Stored Procedures\GetChemistryPositive20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_PopHealthCHF.sql" />
+    <Build Include="Stored Procedures\procODS_CREATE_TABLE_DM_ICS_SABA_DETAILS.sql" />
+    <Build Include="Stored Procedures\upODS_PseudoPatient.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectByVariable.sql" />
+    <Build Include="Stored Procedures\upCHK_Encounter_Diagnosis__Free_Text_.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Referral_Appointment_Refusals.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_PRIORITY_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateHcdpCoverageId.sql" />
+    <Build Include="Stored Procedures\upODS_Race.sql" />
+    <Build Include="Stored Procedures\procCP_LABRAD_Tracking_Select.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_PRIORITY_Select.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologyType.sql" />
+    <Build Include="Stored Procedures\procCP_LABRAD_Tracking_SelectByPatient.sql" />
+    <Build Include="Stored Procedures\upODS_StatusModifier.sql" />
+    <Build Include="Stored Procedures\upODS_Accession_Area.sql" />
+    <Build Include="Stored Procedures\upODS_PatientHCDP_20090331.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultAntibiotic.sql" />
+    <Build Include="Stored Procedures\upODS_Acv.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_InsertV2.sql" />
+    <Build Include="Stored Procedures\upODS_Diagnosis.sql" />
+    <Build Include="Stored Procedures\upODS_Prescription_Edited.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateV2.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectByMatPatientId.sql" />
+    <Build Include="Stored Procedures\upODS_LabTestSingle.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_DropDowns.sql" />
+    <Build Include="Stored Procedures\upODS_LabTestInPanel.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_SelectbyOrderId.sql" />
+    <Build Include="Stored Procedures\upODS_LabTestPanel.sql" />
+    <Build Include="Stored Procedures\procDW_GETDAILYLABRAD.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateAncillaryProcedureId.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultChemistryResult.sql" />
+    <Build Include="Stored Procedures\upCHK_Access_to_Care_Category.sql" />
+    <Build Include="Stored Procedures\upODS_Meprs.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateSpecialtyId.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_FAMILY_MEMBER_PREFIX_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_TEAM_Select.sql" />
+    <Build Include="Stored Procedures\upODS_AccessToCare.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_InsertHepatitisB.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologySingle.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateAuthorizationNumber.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectAllbyMonth_20091130.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_InsertHepatitisB.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologyGroup.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_Delete.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_InsertAnnualPPD.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologyPanel.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_SelectbyEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_SelectbyName.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_Select.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_Select.sql" />
+    <Build Include="Stored Procedures\upODS_HospitalLocation.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateCitybyID.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateAdmissionType.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_Truncate.sql" />
+    <Build Include="Stored Procedures\upODS_PatientAllergy.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDeersPatientIdentifierbyID.sql" />
+    <Build Include="Stored Procedures\upOR_GetLatexAllergy.sql" />
+    <Build Include="Stored Procedures\upODS_ReferralReviewStatus.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_TYPE_UpdateInac.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultBacteriologyAppended.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_Delete20090605.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateAdmittingPhysician.sql" />
+    <Build Include="Stored Procedures\upODS_LabResults.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDisplayAgebyID.sql" />
+    <Build Include="Stored Procedures\upOR_SetLatexAllergy.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateOrderId.sql" />
+    <Build Include="Stored Procedures\procETL_ACCESS_TO_CARE.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_UpdateIsNSQIP.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateAttendingPhysician.sql" />
+    <Build Include="Stored Procedures\upODS_Provider.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDmisIdbyID.sql" />
+    <Build Include="Stored Procedures\upODS_PrescriptionsMaxFillDate.sql" />
+    <Build Include="Stored Procedures\procETL_ALTERNATE_CARE_VALUE.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateAdmissionDate.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentSlot.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDOBbyID.sql" />
+    <Build Include="Stored Procedures\upOR_GetLatexAllergyById.sql" />
+    <Build Include="Stored Procedures\procETL_ADMISSION_TYPE.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateDischargeDate.sql" />
+    <Build Include="Stored Procedures\upODS_Referral.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateFamilyMemberPrefixIdbyID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_TEST_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upOR_SetLatexAllergybyId.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultChemistryAppended.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectbyId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateSameDaySurgery.sql" />
+    <Build Include="Stored Procedures\upODS_PatientAdmission.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateFullNamebyID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_Diagnosis_Select.sql" />
+    <Build Include="Stored Procedures\upODS_ProviderCode.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_UpdateCptId.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateEDC.sql" />
+    <Build Include="Stored Procedures\procETL_AHFS_CLASSIFICATION.sql" />
+    <Build Include="Stored Procedures\upODS_PatientOrder.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateHcdpCoverageIdbyID.sql" />
+    <Build Include="Stored Procedures\procCP_SELECT_PROVIDERS_WITH_PATCOUNT_WITH_HIGH_A1C.sql" />
+    <Build Include="Stored Procedures\upSendMail2005.sql" />
+    <Build Include="Stored Procedures\upCHK_PopHealthAsthma.sql" />
+    <Build Include="Stored Procedures\AAA_ManualRun.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_UpdateProcedureTypeId.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateMaternityStatusId.sql" />
+    <Build Include="Stored Procedures\upCP_Patient_ByFlag.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateMilitaryGradeRankId.sql" />
+    <Build Include="Stored Procedures\upODS_Procedure.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateHomePhonebyID.sql" />
+    <Build Include="Stored Procedures\procS3_PatientEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_UpdateSurgeonId.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateMaternityTeamId.sql" />
+    <Build Include="Stored Procedures\upODS_Prescriptions.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateMilitaryGradeRankIdbyID.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient.sql" />
+    <Build Include="Stored Procedures\upSSRS_Patient.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_UpdateAnesthetistId.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateNotes.sql" />
+    <Build Include="Stored Procedures\upODS_PDTSPrescriptionDrug.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_STATUS_Insert.sql" />
+    <Build Include="Stored Procedures\upODS_RefusalReason.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologyExam.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdatePatientCategoryIdbyID.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_PROCEDURE_UpdateRVU.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_ARRIVAL_CATEGORY_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Appointment_Refusal_Reason.sql" />
+    <Build Include="Stored Procedures\procODS_ANCILLARY_PROCEDURE_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_User.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateSexbyID.sql" />
+    <Build Include="Stored Procedures\upCHK_Prescription_ACTIVITY_LOG.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_Insert.sql" />
+    <Build Include="Stored Procedures\upEDPTS_PatientEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_SelectbyCode.sql" />
+    <Build Include="Stored Procedures\procETL_ALLERGY.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_DISPOSITION_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PLACE_OF_TREATMENT_SelectbyName.sql" />
+    <Build Include="Stored Procedures\procODS_ANCILLARY_PROCEDURE_Update.sql" />
+    <Build Include="Stored Procedures\upODS_PatientEncounterDetailCode.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateSponsorSSNbyID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_Update.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_Update_20100521.sql" />
+    <Build Include="Stored Procedures\procCP_PHARMACY_AdverseReactions_ByDate.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_Insert.sql" />
+    <Build Include="Stored Procedures\procETL_ANTIBIOTIC_SUSCEPTIBILITY.sql" />
+    <Build Include="Stored Procedures\procODS_PRIORITY_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PLACE_OF_TREATMENT_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_Insert.sql" />
+    <Build Include="Stored Procedures\upODS_EncounterDiagnosis.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStateIdbyID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateOrderId.sql" />
+    <Build Include="Stored Procedures\upCHK_PopHealthDiabetes.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_Select.sql" />
+    <Build Include="Stored Procedures\procETL_ANCILLARY_PROCEDURE.sql" />
+    <Build Include="Stored Procedures\procODS_RELEASE_CONDITION_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_ANCILLARY_PROCEDURE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_UpdateFacilityName.sql" />
+    <Build Include="Stored Procedures\upODS_PrimaryCareManager.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStreetAddress1byID.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_ServiceUpdate.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateTakenDate.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Vitals.sql" />
+    <Build Include="Stored Procedures\upODS_EncounterDiagnosisFreeText.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procETL_APPOINTMENT_DETAIL_CODE.sql" />
+    <Build Include="Stored Procedures\upODS_PDTSPrescriptionFillDate.sql" />
+    <Build Include="Stored Procedures\procODS_ANCILLARY_PROCEDURE_SelectbyName.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_UpdateDmisCode.sql" />
+    <Build Include="Stored Procedures\upODS_PatientEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStreetAddress2byID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateEnterDate.sql" />
+    <Build Include="Stored Procedures\procODS_CPT_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCP_Patient_By_AppointmentDateTime.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_TYPE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_PrescriptionFillDate.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateZipCodebyID.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateCertifyDate.sql" />
+    <Build Include="Stored Procedures\upODS_DM_EDPTS_Purge_3Days.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_CleanDuplicate20120413.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_STATUS_Select.sql" />
+    <Build Include="Stored Procedures\upODS_ReferralRefusal.sql" />
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_ACTIVITY_LOG_InsertChanges.sql" />
+    <Build Include="Stored Procedures\procCP_ACCESS_TO_CARE_RPT.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentSlotDetail.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_UpdateCode.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_UpdateCHCSUserName.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReasonForReferral.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\GetAccessToCare20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_UpdateMeprsCode.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateDispositionOrder.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_UpdateAbbrev.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateResult.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_UpdateTerminationDate.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReferredToProviderId.sql" />
+    <Build Include="Stored Procedures\procODS_ARRIVAL_CATEGORY_Select.sql" />
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_UpdateMeprsCodeDesc.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_UpdatePayGrade.sql" />
+    <Build Include="Stored Procedures\upODS_Drug_Associated_Formulary.sql" />
+    <Build Include="Stored Procedures\GetSourceUtilization20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReferredToLocationId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_DISPOSITION_Select.sql" />
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_UpdateDmisId.sql" />
+    <Build Include="Stored Procedures\procODS_ADMISSION_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateAlert.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_UpdateSSN.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReferredByProviderId.sql" />
+    <Build Include="Stored Procedures\procODS_PRIORITY_Select.sql" />
+    <Build Include="Stored Procedures\procODS_DISCHARGE_TYPE_Select.sql" />
+    <Build Include="Stored Procedures\upCP_Patient_Encounter_SelectERVisitDetail.sql" />
+    <Build Include="Stored Procedures\upSendMail.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_Update.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReferredByLocationId.sql" />
+    <Build Include="Stored Procedures\procODS_RELEASE_CONDITION_Select.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_UpdateLastSignOn.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateNumberofVisits.sql" />
+    <Build Include="Stored Procedures\upODS_PatientFlags.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_STATUS_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upODS_Etiology.sql" />
+    <Build Include="Stored Procedures\procODS_CHCS_USER_UpdateProviderId.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_Smoking_Cessation_Encounters_20090323.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdatePriorityId.sql" />
+    <Build Include="Stored Procedures\procODS_Patient_SelectbyName.sql" />
+    <Build Include="Stored Procedures\procODS_APPOINTMENT_TYPE_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_Allergies_Definitions.sql" />
+    <Build Include="Stored Procedures\upCHK_Prescription_ACTIVITY_LOG_REASON.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_Smoking_Cessation_Vitals.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REVIEW_STATUS_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_DISPOSITION_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_Etiology_Field.sql" />
+    <Build Include="Stored Procedures\procODS_MEDICAL_CENTER_DIVISION_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Allergies_Selections.sql" />
+    <Build Include="Stored Procedures\upODS_Prescription_Activity_Log.sql" />
+    <Build Include="Stored Procedures\procODS_MEDICAL_CENTER_DIVISION_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Ancillary_Procedure.sql" />
+    <Build Include="Stored Procedures\upODS_Prescription_Activity_Log_Reason.sql" />
+    <Build Include="Stored Procedures\procODS_AUDIT_LOG.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Patient_Order.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REVIEW_STATUS_SelectbyReferral.sql" />
+    <Build Include="Stored Procedures\procODS_MEDICAL_CENTER_DIVISION_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_Ap_Description_Diagnosis.sql" />
+    <Build Include="Stored Procedures\GetProviderNames20120815.sql" />
+    <Build Include="Stored Procedures\upCP_DM_PATIENT_FLAG_20060829.sql" />
+    <Build Include="Stored Procedures\upODS_PDTSDrug.sql" />
+    <Build Include="Stored Procedures\upCHK_Appointment_Audit_Trail.sql" />
+    <Build Include="Stored Procedures\procCP_GET_DAILY_ACCESS_TO_CARE_DATA.sql" />
+    <Build Include="Stored Procedures\upCHK_Appointment_Detail_Codes.sql" />
+    <Build Include="Stored Procedures\upODS_PHCervical_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_REPORT_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_M2_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\upCHK_CDMSmokingCessation.sql" />
+    <Build Include="Stored Procedures\upCHK_Antibiotic_Susceptibility.sql" />
+    <Build Include="Stored Procedures\upCHK_Appointment_Status.sql" />
+    <Build Include="Stored Procedures\upODS_PHCervical_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_AntibioticSusceptibility.sql" />
+    <Build Include="Stored Procedures\upCHK_Appointment_Type.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_REPORT_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Productivity.sql" />
+    <Build Include="Stored Procedures\GetStatVariance20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectbyName.sql" />
+    <Build Include="Stored Procedures\upCHK_Borrowers_File_Areas.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_Insert.sql" />
+    <Build Include="Stored Procedures\upODS_M2_Patient_Procedures.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REVIEW_STATUS_UpdateReviewStatusId.sql" />
+    <Build Include="Stored Procedures\procCOPY_G_ED_REFERRALS.sql" />
+    <Build Include="Stored Procedures\upCreateIndexes_LAB_RESUL_CLINICAL__RESULT_APPENDED_AMENDED_RNR_20050912.sql" />
+    <Build Include="Stored Procedures\upODS_POPHealthPrimaryCareManager_20070611.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Branch_of_Service.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_REPORT_UpdateResultCategoryId.sql" />
+    <Build Include="Stored Procedures\upCHK_CDMBMI.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REVIEW_STATUS_UpdateReviewerId.sql" />
+    <Build Include="Stored Procedures\upODS_Prescription_DiseaseSpecific_Select.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_CDM_IMMUNIZATIONS_ICD.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBySource20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectDynamic.sql" />
+    <Build Include="Stored Procedures\upCHK_Clinical_History.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_UpdateExamStatusId.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REVIEW_STATUS_UpdateReviewComment.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_IMMUNIZATIONS_CPT.sql" />
+    <Build Include="Stored Procedures\upCP_Patient_Detail.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_SelectbyId.sql" />
+    <Build Include="Stored Procedures\upCHK_Clinical_History_Drug_Allergy.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_UpdateRadiologyId.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_BMI_Vitals.sql" />
+    <Build Include="Stored Procedures\procETL_APPOINTMENT_SLOT_STATUS.sql" />
+    <Build Include="Stored Procedures\upCHK_Collection_Sample.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateDispositioningPhysician.sql" />
+    <Build Include="Stored Procedures\upCHK_Cpt_Hcpcs.sql" />
+    <Build Include="Stored Procedures\upODS_PHColorectal_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_UpdateOrderId.sql" />
+    <Build Include="Stored Procedures\upODS_AHFSClassification.sql" />
+    <Build Include="Stored Procedures\procETL_APPOINTMENT_STATUS.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ADMISSION_UpdateDischargeType.sql" />
+    <Build Include="Stored Procedures\upCHK_Cpt_Hcpcs_Modifier.sql" />
+    <Build Include="Stored Procedures\procODS_UPDATE_PATIENT_CONTACTINFO_FROM_PHN.sql" />
+    <Build Include="Stored Procedures\procETL_APPOINTMENT_TYPE.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_Department_and_Service.sql" />
+    <Build Include="Stored Procedures\upODS_PHColorectal_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_CleanDuplicate20120418.sql" />
+    <Build Include="Stored Procedures\upLog.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procETL_BENEFITS_CATEGORY.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_UpdateName.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_SelectNHJAX.sql" />
+    <Build Include="Stored Procedures\upCHK_Diagnostic_Related_Group.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procETL_BRANCH_OF_SERVICE.sql" />
+    <Build Include="Stored Procedures\AAA_PATIENT_ENCOUNTER_ARCHIVE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_UpdateMeprs.sql" />
+    <Build Include="Stored Procedures\upCHK_Discharge_Type.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_UpdateFPProviderId.sql" />
+    <Build Include="Stored Procedures\procCOPY_C_RADIOLOGY_EXAM_ORDERS.sql" />
+    <Build Include="Stored Procedures\upODS_CollectionSample.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_UpdatePhone.sql" />
+    <Build Include="Stored Procedures\upCHK_Dmis_Id_Codes.sql" />
+    <Build Include="Stored Procedures\procCP_RPT_MATERNITY_LISTING.sql" />
+    <Build Include="Stored Procedures\upODS_PatientEncounterUpdateNonCount20070920.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_IMMUNIZATION_MANUFACTURER.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectDynamicBulk.sql" />
+    <Build Include="Stored Procedures\procCOPY_D_LAB_RESULT_ORDER.sql" />
+    <Build Include="Stored Procedures\upODS_PHDrug.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_LOG_Insert.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Interpretation_File.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_UpdateDivision.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_SelectNHJAX.sql" />
+    <Build Include="Stored Procedures\upCHK_Drug.sql" />
+    <Build Include="Stored Procedures\procODS_RESULT_CATEGORY_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Ndi_Eligibility.sql" />
+    <Build Include="Stored Procedures\upODS_Specialty.sql" />
+    <Build Include="Stored Procedures\procCOPY_E_PHARMACY_ORDER.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_SelectbyLocation.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectbyNPI.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_PRIORITY_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_Drug_Associated_Formulary.sql" />
+    <Build Include="Stored Procedures\procODS_EXAM_STATUS_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Lab_Result.sql" />
+    <Build Include="Stored Procedures\upODS_TherapeuticClass.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REFUSAL_SelectbyReferral.sql" />
+    <Build Include="Stored Procedures\procCOPY_F_ED_ADMISSION.sql" />
+    <Build Include="Stored Procedures\upODS_PHPrescriptions.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_InsertODS2.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Encounter.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REFUSAL_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_Select.sql" />
+    <Build Include="Stored Procedures\upCHK_Encounter_Icd_Operations_Pr_Assisting_Hcps.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_REFUSAL_UpdateRefusalReasonId.sql" />
+    <Build Include="Stored Procedures\upODS_PHPrescriptionDrug.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_Update.sql" />
+    <Build Include="Stored Procedures\upCHK_Encounter_Icd_Operations_Procedures.sql" />
+    <Build Include="Stored Procedures\upODS_PHPrescriptionFillDate.sql" />
+    <Build Include="Stored Procedures\upODS_LabInterpretation.sql" />
+    <Build Include="Stored Procedures\procODS_HOSPITAL_LOCATION_SelectNONNHJAX.sql" />
+    <Build Include="Stored Procedures\upCHK_Examination_Status.sql" />
+    <Build Include="Stored Procedures\upODS_ResultCategory.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_SelectbyNumber.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_DRUG_Select.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectReferredBy.sql" />
+    <Build Include="Stored Procedures\upCHK_Family_Member_Prefix.sql" />
+    <Build Include="Stored Procedures\procETL_20120815_UPDATED_OVERNIGHT_ETL_RUNS_BELOW.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_SelectbySSNDOB.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_DRUG_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectReferredTo.sql" />
+    <Build Include="Stored Procedures\upCHK_Formulary_Group.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTACervical_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Micro_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_SelectbyCode.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_FILL_DATE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SPECIALTY_SelectReferrals.sql" />
+    <Build Include="Stored Procedures\upCHK_Geographic_Location.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Micro_Patient_Order.sql" />
+    <Build Include="Stored Procedures\procCOPY_H_ED_APPOINTMENTS.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_InsertReferral.sql" />
+    <Build Include="Stored Procedures\procODS_PRESCRIPTION_FILL_DATE_Select.sql" />
+    <Build Include="Stored Procedures\procODS_HCDP_COVERAGE_Select.sql" />
+    <Build Include="Stored Procedures\upCHK_Hospital_Location.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTACervical_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procODS_LAB_RESULT_UpdateTestId.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Micro_Lab_Result.sql" />
+    <Build Include="Stored Procedures\procODS_DM_DIABETES_LAB_RESULTS.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_TOBACCO_CESSATION.sql" />
+    <Build Include="Stored Procedures\upODS_PatientEncounter_DMIS_20090325.sql" />
+    <Build Include="Stored Procedures\upODS_Prescription_DiseaseSpecific_SelectByPatient.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_CDM_IMMUNIZATIONS.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Radiology_Reports.sql" />
+    <Build Include="Stored Procedures\upODS_xxx20091030.sql" />
+    <Build Include="Stored Procedures\upCHK_Icd_Diagnosis.sql" />
+    <Build Include="Stored Procedures\upCHK_AhltaCervicalCPT.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_MATERNITY.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_UpdateProviderName.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_SelectbyEncounter.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_InsertPatientOrders.sql" />
+    <Build Include="Stored Procedures\upCHK_Result_Category.sql" />
+    <Build Include="Stored Procedures\upCHK_Icd_Operation_Procedure.sql" />
+    <Build Include="Stored Procedures\upODS_PHLipid_Panel_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_BODY_MASS_INDEX.sql" />
+    <Build Include="Stored Procedures\upODS_PrimaryCareManager_20090326.sql" />
+    <Build Include="Stored Procedures\upODS_SeverityFlags_Asthma.sql" />
+    <Build Include="Stored Procedures\procODS_ON_DEMAND_InsertBlankStatus.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_InsertReferral.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Result_Bacteriology.sql" />
+    <Build Include="Stored Procedures\upCHK_Kg_Adc_Data.sql" />
+    <Build Include="Stored Procedures\upCHK_AhltaCervicalICD9.sql" />
+    <Build Include="Stored Procedures\upODS_PHLipid_Panel_Patient_Order.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_CONGESTIVE_HEART_FAILURE.sql" />
+    <Build Include="Stored Procedures\upCHK_ActivityLog.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_STATUS_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectDynamicBulkTEST_20091125.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Result_Bacteriology_Test.sql" />
+    <Build Include="Stored Procedures\upCHK_Kg_Adc_Data_Cpt_Code.sql" />
+    <Build Include="Stored Procedures\upODS_PHLipid_Panel_Lab_Result.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_COLON_CANCER_SCREENING.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upODS_RadiologyReport.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectbyPatientId.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_SelectbyAuthorizationSpecialty.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Result_Bacteriology_Test_Organism.sql" />
+    <Build Include="Stored Procedures\procODS_ORDER_TYPE_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\procODS_PHARMACY_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectbySSN.sql" />
+    <Build Include="Stored Procedures\upCHK_Kg_Adc_Data_Eval_Mgmt_Code.sql" />
+    <Build Include="Stored Procedures\procS3_Procedure.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTACervical_Patient_Diagnosis.sql" />
+    <Build Include="Stored Procedures\upODS_ProviderSpecialty.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_CERVICAL_CANCER_SCREENING.sql" />
+    <Build Include="Stored Procedures\procCIP_DMIS_Select.sql" />
+    <Build Include="Stored Procedures\GetBacteriology20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Resul_Bacteriol_Test_Organism_Antibiotic2.sql" />
+    <Build Include="Stored Procedures\procODS_PHARMACY_Select.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SelectbyDoDEDI.sql" />
+    <Build Include="Stored Procedures\upCHK_Kg_Adc_Data_Icd_Diagnosis.sql" />
+    <Build Include="Stored Procedures\upODS_PHChlamydia_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_BREAST_CANCER_SCREENING.sql" />
+    <Build Include="Stored Procedures\procODS_BED_Insert.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Radiology_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\GetChemistry20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PHARMACY_SelectbyId.sql" />
+    <Build Include="Stored Procedures\upCHK_Kg_Cpt_Evaluation_Management.sql" />
+    <Build Include="Stored Procedures\upCHK_PopHealthCervical.sql" />
+    <Build Include="Stored Procedures\upODS_PHChlamydia_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_DIABETIC.sql" />
+    <Build Include="Stored Procedures\procODS_BED_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procCIP_HOSPITAL_LOCATION_SelectbyDmisId.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBacteriology20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Resul_Clinical__Result_Appended_Amended_Rnr.sql" />
+    <Build Include="Stored Procedures\procS3_EncounterProcedure.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SPECIALTY_Insert.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_ASTHMATIC.sql" />
+    <Build Include="Stored Procedures\procODS_BED_UpdatePatientId.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceChemistry20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdatePatientId.sql" />
+    <Build Include="Stored Procedures\procODS_DRUG_SelectbyNDC.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Result.sql" />
+    <Build Include="Stored Procedures\procODS_PROVIDER_SPECIALTY_SelectbyDesc.sql" />
+    <Build Include="Stored Procedures\GetAsthma20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upEDPTS_GetBacteriology20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_Insert.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceXray20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procODS_Patient_SelectbyFMPSSN.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateHospitalLocationId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderElementKey.sql" />
+    <Build Include="Stored Procedures\upODS_Pharmacy.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Result_Clinical_Chemistry.sql" />
+    <Build Include="Stored Procedures\procODS_DM_diabetesEncounters.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderTypeId.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBandC20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateProviderId.sql" />
+    <Build Include="Stored Procedures\GetProviderReportCard20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Result_Clinical_Chemistry_Result.sql" />
+    <Build Include="Stored Procedures\upCP_GetProviders.sql" />
+    <Build Include="Stored Procedures\GetDiabetesDx20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateSigDateTime.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBandX20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Status.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderComment.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceCandX20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateDuration.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Test.sql" />
+    <Build Include="Stored Procedures\upODS_PHDiabetes_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderingProviderId.sql" />
+    <Build Include="Stored Procedures\GetXRay20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_PHPatientSummary.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateAppointmentStatusId.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Test_Lab_Test_In_Panel.sql" />
+    <Build Include="Stored Procedures\upCHK_AhltaMammographyCPT.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderPriorityId.sql" />
+    <Build Include="Stored Procedures\GetLabResults20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upODS_Patient_Encounter_SelectER72Count.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateReasonForAppointment.sql" />
+    <Build Include="Stored Procedures\procCP_LABRAD_Tracking_SelectByLocationClinic.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Test_Lab_Work_Element.sql" />
+    <Build Include="Stored Procedures\upCHK_AhltaMammographyICD9.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateAncillaryProcedureId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateArrivalCategoryId.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Test_Lab_Work_Element_Cpt_Code.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTAMammography_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateLocationId.sql" />
+    <Build Include="Stored Procedures\procETL_COLLECTION_SAMPLE.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdatePatientDispositionId.sql" />
+    <Build Include="Stored Procedures\GetClinicNames20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Lab_Test_Mtf_Cpt_Code.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTAMammography_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_HEDIS_RPT.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderDateTime.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateReleaseDateTime.sql" />
+    <Build Include="Stored Procedures\upODS_Patient.sql" />
+    <Build Include="Stored Procedures\upCHK_Marital_Status.sql" />
+    <Build Include="Stored Procedures\upODS_AHLTAMammography_Patient_Diagnosis.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetChemistry20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdateOrderStatusId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdatePriorityId.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_LOG_SelectCurrent.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Alternate_Care_Value.sql" />
+    <Build Include="Stored Procedures\procSearchAllTables.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateReleaseConditionId.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Beneficiary_Categories.sql" />
+    <Build Include="Stored Procedures\upCP_Patient_GetSuggestions.sql" />
+    <Build Include="Stored Procedures\procODS_PCM_Locations_Lookup.sql" />
+    <Build Include="Stored Procedures\upODS_Patient_20090331.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateAppointmentTypeId.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Provider.sql" />
+    <Build Include="Stored Procedures\upODS_Department.sql" />
+    <Build Include="Stored Procedures\procODS_BED_UpdateBedStatusId.sql" />
+    <Build Include="Stored Procedures\upCHK_Pharmacy_Patient.sql" />
+    <Build Include="Stored Procedures\upODS_Priority.sql" />
+    <Build Include="Stored Procedures\procETL_CPT.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Referral.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateEREntryNumber.sql" />
+    <Build Include="Stored Procedures\upActivityLog.sql" />
+    <Build Include="Stored Procedures\procS3_Service.sql" />
+    <Build Include="Stored Procedures\procODS_DEPARTMENT_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Accession.sql" />
+    <Build Include="Stored Procedures\procETL_DEPARTMENT.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateDmisId.sql" />
+    <Build Include="Stored Procedures\upCHK_Mcp_Referral_Appointments.sql" />
+    <Build Include="Stored Procedures\upODS_AdmissionType.sql" />
+    <Build Include="Stored Procedures\upCHK_Accession_Accession_Name.sql" />
+    <Build Include="Stored Procedures\upODS_PatientNDI_20090331.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateMeprsId.sql" />
+    <Build Include="Stored Procedures\upCHK_Medical_Center_Division.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentAuditTrail.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_SelectEDPTS.sql" />
+    <Build Include="Stored Procedures\upCHK_Accession_Test_Ordered.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_UpdateEncounterKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Meprs_Codes.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_HEDIS_RPT2.sql" />
+    <Build Include="Stored Procedures\upCHK_Accession_Area.sql" />
+    <Build Include="Stored Procedures\procODS_MEPRS_CODE_SelectbyLocation.sql" />
+    <Build Include="Stored Procedures\upCHK_Military_Grade_Rank.sql" />
+    <Build Include="Stored Procedures\upODS_Allergy.sql" />
+    <Build Include="Stored Procedures\procODS_Patient_Flags_Lookup.sql" />
+    <Build Include="Stored Procedures\upCHK_PDTS_Profile_Collection_File.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ENCOUNTER_SelectbyPatientAppointmentKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Ned_Hcdp_Coverage_Code.sql" />
+    <Build Include="Stored Procedures\upODS_AncillaryProcedure.sql" />
+    <Build Include="Stored Procedures\upCHK_PDTS_Profile_Collection_F_Accepted_Response_Detail.sql" />
+    <Build Include="Stored Procedures\upCHK_Ned_Patient.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentDetailCode.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient_Encounter_SelectReturnVisitsODS.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_UpdatePatientEncounterId.sql" />
+    <Build Include="Stored Procedures\upCHK_Lab_Resul_Bacteriol_Test_Appended_Amended_Rnr.sql" />
+    <Build Include="Stored Procedures\upCHK_Ned_Patient_Enrollment_History.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentSlotStatus.sql" />
+    <Build Include="Stored Procedures\GetDysuria2Dx20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\GetOtitisMediaDx20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Ned_Patient_Enrollment_History_Pcm_History.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_Update.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentStatus.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetMedications20120815.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_FluShot_StatsV2.sql" />
+    <Build Include="Stored Procedures\GetOtitisMediaDx220120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Ned_Provider_Group.sql" />
+    <Build Include="Stored Procedures\upODS_AppointmentType.sql" />
+    <Build Include="Stored Procedures\upODS_PDTSPrescriptions.sql" />
+    <Build Include="Stored Procedures\upCHK_Order_.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Patient_SelectbyID.sql" />
+    <Build Include="Stored Procedures\upCHK_Order_Priority.sql" />
+    <Build Include="Stored Procedures\procODS_RADIOLOGY_EXAM_UpdateRadiologyReportId.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_ORDER_SelectMaxKey.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdatePatientId.sql" />
+    <Build Include="Stored Procedures\upODS_LabResultBacteriologyTest.sql" />
+    <Build Include="Stored Procedures\upCHK_Order_Task.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Result_Category_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_REFERRAL_UpdateReferralNumber.sql" />
+    <Build Include="Stored Procedures\upCHK_Order_Type.sql" />
+    <Build Include="Stored Procedures\procEDPTS_PATIENT_ENCOUNTER_SelectAsthmaVisits.sql" />
+    <Build Include="Stored Procedures\upODS_HCDPCoverage.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateFamilyMemberPrefixId.sql" />
+    <Build Include="Stored Procedures\upCHK_Unit_Ship_Id.sql" />
+    <Build Include="Stored Procedures\upCHK_Outpatient_Disposition.sql" />
+    <Build Include="Stored Procedures\procODS_TEST_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_CDMAdditionalProvider.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDOB.sql" />
+    <Build Include="Stored Procedures\upCHK_Patient.sql" />
+    <Build Include="Stored Procedures\procCP_DM_DIABETES_DASHBOARD_ENCOUNTER_PERCENTAGES.sql" />
+    <Build Include="Stored Procedures\upEDPTS_RVU.sql" />
+    <Build Include="Stored Procedures\upODS_DM_CIP_Encounter.sql" />
+    <Build Include="Stored Procedures\procODS_InsertProcessHepatitisB.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateSex.sql" />
+    <Build Include="Stored Procedures\procODS_DRUG_Insert.sql" />
+    <Build Include="Stored Procedures\xxxODS_PatientInfoUpdate.sql" />
+    <Build Include="Stored Procedures\upCHK_Patient_Admission_Date.sql" />
+    <Build Include="Stored Procedures\procCP_DM_DIABETES_DASHBOARD_LAB_RESULT_AVERAGES.sql" />
+    <Build Include="Stored Procedures\upEDPTS_Cost20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDeersPatientIdentifier.sql" />
+    <Build Include="Stored Procedures\procODS_DRUG_SelectbyDesc.sql" />
+    <Build Include="Stored Procedures\upCHK_PopHealthColorectal.sql" />
+    <Build Include="Stored Procedures\upCHK_Patient_Appointment.sql" />
+    <Build Include="Stored Procedures\procCP_DM_DIABETES_DASHBOARD_RUN_PROCS.sql" />
+    <Build Include="Stored Procedures\upODS_CDM_Additional_Providers.sql" />
+    <Build Include="Stored Procedures\GetDysuriaDx20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="Stored Procedures\upCHK_Patient_Appointment_Appt_Detail_Codes.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectGestationalDiabetesLabResults.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVariance20120214.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdatePatientCategoryId.sql" />
+    <Build Include="Stored Procedures\upCHK_Patient_Category.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetChemistryPositive20120214.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStreetAddress1.sql" />
+    <Build Include="Stored Procedures\upCHK_Prescription.sql" />
+    <Build Include="Stored Procedures\usp_GetErrorInfo.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetOrganism20120214.sql" />
+    <Build Include="Stored Procedures\procODS_FAMILY_MEMBER_PREFIX_SelectbyCode.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStreetAddress2.sql" />
+    <Build Include="Stored Procedures\xxxODS_PatientInfoUpdate20090527.sql" />
+    <Build Include="Stored Procedures\upCHK_Prescription_Fill_Dates.sql" />
+    <Build Include="Stored Procedures\procS3_CPT.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetXRay20120214.sql" />
+    <Build Include="Stored Procedures\procODS_FAMILY_MEMBER_PREFIX_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateCity.sql" />
+    <Build Include="Stored Procedures\upCHK_Provider.sql" />
+    <Build Include="Stored Procedures\procCP_PHARMACY_CREATETABLE_CONTROLLED_SUBSTANCES_RXS.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetLabResults20120214.sql" />
+    <Build Include="Stored Procedures\procODS_FAMILY_MEMBER_PREFIX_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateStateId.sql" />
+    <Build Include="Stored Procedures\upCHK_Provider_Class.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceBySource20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateZipCode.sql" />
+    <Build Include="Stored Procedures\upCHK_Race.sql" />
+    <Build Include="Stored Procedures\upEDPTS_ER_EODSummary_EmpanelledPatientUtilization20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_CATEGORY_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateHomePhone.sql" />
+    <Build Include="Stored Procedures\upCHK_Radiology_Exam.sql" />
+    <Build Include="Stored Procedures\upODS_BenefitsCategory.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceBacteriology20120214.sql" />
+    <Build Include="Stored Procedures\upODS_DM_CIP_Order.sql" />
+    <Build Include="Stored Procedures\procODS_DMIS_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateDmisId.sql" />
+    <Build Include="Stored Procedures\upCHK_Radiology_Procedures.sql" />
+    <Build Include="Stored Procedures\upODS_Branch.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceChemistry20120815.sql" />
+    <Build Include="Stored Procedures\procODS_GEOGRAPHIC_LOCATION_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Radiology_Procedures_Procedures_In_Group.sql" />
+    <Build Include="Stored Procedures\upODS_Cpt.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceXray20120815.sql" />
+    <Build Include="Stored Procedures\upODS_SeverityFlags_Diabetes.sql" />
+    <Build Include="Stored Procedures\procODS_GEOGRAPHIC_LOCATION_Insert.sql" />
+    <Build Include="Stored Procedures\upCHK_Record_Movement_Types.sql" />
+    <Build Include="Stored Procedures\procODS_DIAGNOSIS_SelectTBCodes.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceBandC20120815.sql" />
+    <Build Include="Stored Procedures\upODS_ReviewStatus.sql" />
+    <Build Include="Stored Procedures\upODS_SeverityFlags_BreastCancer_20090406.sql" />
+    <Build Include="Stored Procedures\procCP_GET_ACCESS_TO_CARE_DAILY_HISTORY.sql" />
+    <Build Include="Stored Procedures\upCHK_Record_Types.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_ENCOUNTER_DIAGNOSIS_Insert.sql" />
+    <Build Include="Stored Procedures\upODS_DischargeType.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceBandX20120815.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_Insert.sql" />
+    <Build Include="Stored Procedures\upODS_PatientActivity.sql" />
+    <Build Include="Stored Procedures\upCHK_Records.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_SelectbyCode.sql" />
+    <Build Include="Stored Procedures\upEDPTS_GetStatVarianceCandX20120815.sql" />
+    <Build Include="Stored Procedures\upODS_PHMammo_Patient_Encounters.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\upCHK_Religion.sql" />
+    <Build Include="Stored Procedures\upODS_Dmis.sql" />
+    <Build Include="Stored Procedures\procODS_GESTATIONAL_DIABETES_TEST_RESULTS.sql" />
+    <Build Include="Stored Procedures\upCDSS_PatientFindByID20070417.sql" />
+    <Build Include="Stored Procedures\upODS_PatientName.sql" />
+    <Build Include="Stored Procedures\procODS_Patient_Update.sql" />
+    <Build Include="Stored Procedures\upCHK_Schedulabl_Schedule_D_Appointmen_Appt_Detail_Codes.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_FluShot_Stats.sql" />
+    <Build Include="Stored Procedures\upODS_Drug.sql" />
+    <Build Include="Stored Procedures\upCHK_Schedulable_Ent_Schedule_Date_T_Appointment_Slots.sql" />
+    <Build Include="Stored Procedures\procODS_MILITARY_GRADE_RANK_UpdateDesc.sql" />
+    <Build Include="Stored Procedures\upODS_ExamStatus.sql" />
+    <Build Include="Stored Procedures\upCDSS_SearchForERVisits20070417.sql" />
+    <Build Include="Stored Procedures\upODS_PHMammo_Patient_Procedure.sql" />
+    <Build Include="Stored Procedures\upODS_UIC.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_STATUS_Select.sql" />
+    <Build Include="Stored Procedures\upCHK_Schedulable_Entity.sql" />
+    <Build Include="Stored Procedures\upODS_FamilyMemberPrefix.sql" />
+    <Build Include="Stored Procedures\procCP_DM_DIABETES_KEY_LAB_RESULTS.sql" />
+    <Build Include="Stored Procedures\upODS_OrderPriority.sql" />
+    <Build Include="Stored Procedures\upODS_PatientSummary.sql" />
+    <Build Include="Stored Procedures\upCHK_Schedulable_Entity_Schedule_Date_Times.sql" />
+    <Build Include="Stored Procedures\upODS_GeographicLocation.sql" />
+    <Build Include="Stored Procedures\procCP_PATIENT_FLAG_ANTIDEPRESSANT.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectbyPatient.sql" />
+    <Build Include="Stored Procedures\upCHK_Source_of_Admission.sql" />
+    <Build Include="Stored Procedures\upODS_MaritalStatus.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBySourceChemistry20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCP_GET_FUTURE_DATE_ACCESS_TO_CARE_DAILY_HISTORY.sql" />
+    <Build Include="Stored Procedures\procODS_MATERNITY_PATIENT_SelectActive_20091130.sql" />
+    <Build Include="Stored Procedures\upCHK_Sp_Accession_File.sql" />
+    <Build Include="Stored Procedures\upODS_MedicalCenterDivision.sql" />
+    <Build Include="Stored Procedures\upSSRS_Patient_letters.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceBacteriologyTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PATIENT_CATEGORY_SelectbyKey.sql" />
+    <Build Include="Stored Procedures\procCP_ACCESS_TO_CARE__WEEKLY_RPT.sql" />
+    <Build Include="Stored Procedures\upCHK_User_.sql" />
+    <Build Include="Stored Procedures\procODS_PREFERENCE_SelectbyId.sql" />
+    <Build Include="Stored Procedures\upODS_MilitaryGradeRank.sql" />
+    <Build Include="Stored Procedures\GetStatVarianceChemistryTEST20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procCP_ACCESS_TO_CARE__MONTHLY_RPT.sql" />
+    <Build Include="Stored Procedures\GetOtitisMediaAllDx20120815.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Stored Procedures\procODS_PREFERENCE_Update.sql" />
+    <Build Include="Stored Procedures\procODS_HCDP_COVERAGE_Insert.sql" />
+    <Build Include="Stored Procedures\procODS_PATIENT_UpdateFullName.sql" />
+    <Build Include="User Defined Types\AuditLogType.sql" />
+    <Build Include="User Defined Types\ProcedureParameters.sql" />
+    <Build Include="User Defined Types\IdListing.sql" />
+    <Build Include="Synonyms\ods.sql" />
+    <Build Include="ExtendedProperties.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="ENET">
+      <DefaultValue>ENET</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OtherServer">
+      <DefaultValue>NHJAX-SQL-1A</DefaultValue>
+      <Value>$(SqlCmdVar__4)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OtherServer1">
+      <DefaultValue>NHJAX-CACHE</DefaultValue>
+      <Value>$(SqlCmdVar__6)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="STAGING">
+      <DefaultValue>STAGING</DefaultValue>
+      <Value>$(SqlCmdVar__5)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

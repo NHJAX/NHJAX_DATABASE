@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[APPOINTMENT_SLOT_DETAIL] (
+    [AppointmentSlotId]        BIGINT         NOT NULL,
+    [AppointmentDetailId]      BIGINT         NOT NULL,
+    [AppointmentSlotDetailKey] NUMERIC (7, 3) NULL,
+    [CreatedDate]              DATETIME       CONSTRAINT [DF_APPOINTMENT_SLOT_DETAIL_CreatedDate] DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_APPOINTMENT_SLOT_DETAIL] PRIMARY KEY CLUSTERED ([AppointmentSlotId] ASC, [AppointmentDetailId] ASC),
+    CONSTRAINT [FK_APPOINTMENT_SLOT_DETAIL_APPOINTMENT_DETAIL_CODE] FOREIGN KEY ([AppointmentDetailId]) REFERENCES [dbo].[APPOINTMENT_DETAIL_CODE] ([AppointmentDetailId]),
+    CONSTRAINT [FK_APPOINTMENT_SLOT_DETAIL_APPOINTMENT_SLOT] FOREIGN KEY ([AppointmentSlotId]) REFERENCES [dbo].[APPOINTMENT_SLOT] ([AppointmentSlotId]) ON DELETE CASCADE
+);
+

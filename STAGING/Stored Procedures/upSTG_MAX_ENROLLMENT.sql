@@ -1,0 +1,57 @@
+﻿create PROCEDURE [dbo].[upSTG_MAX_ENROLLMENT]
+AS
+	
+	DECLARE @exists int
+
+	DECLARE @pat numeric(13,3)
+	DECLARE @max numeric(17,3)
+
+EXEC dbo.upActivityLog 'Begin STG Max Enrollment',0;
+
+TRUNCATE TABLE STG_MAX_ENROLLMENT;
+
+--DECLARE curSTGMaxEnr CURSOR FAST_FORWARD FOR
+INSERT INTO STG_MAX_ENROLLMENT
+(
+	KEY_NED_PATIENT,
+	MaxEnr
+)
+SELECT     
+	KEY_NED_PATIENT, 
+	MAX(ENROLLMENT_HISTORY_NUMBER) AS MaxEnr
+FROM dbo.NED_PATIENT$ENROLLMENT_HISTORY
+GROUP BY KEY_NED_PATIENT
+
+--OPEN curSTGPat
+
+EXEC dbo.upActivityLog 'End STG Max Enrollment',0
+
+/*FETCH NEXT FROM curSTGPat INTO @pat
+
+if(@@FETCH_STATUS = 0)
+BEGIN
+
+	WHILE(@@FETCH_STATUS = 0)
+	BEGIN
+		BEGIN TRANSACTION
+
+			INSERT INTO STG_PATIENT_ACTIVITY
+			(
+			Patient_Ien
+			)
+			VALUES
+			(@pat);
+	
+		FETCH NEXT FROM curSTGPat INTO @pat
+
+		COMMIT
+	END
+
+END
+CLOSE curSTGPat
+DEALLOCATE curSTGPat
+
+
+EXEC dbo.upActivityLog 'End STG Patient Activity',0;
+
+*/

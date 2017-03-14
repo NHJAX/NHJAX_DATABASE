@@ -1,0 +1,2 @@
+﻿CREATE USER [VTC] FOR LOGIN [VTC];
+

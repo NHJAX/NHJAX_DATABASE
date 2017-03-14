@@ -1,0 +1,31 @@
+﻿CREATE PROCEDURE [dbo].[procENET_ASSET_ASSIGNMENT_SelectbyUser]
+(
+	@tech int
+)
+ AS
+
+SELECT ASSET.AssetId,
+	ASSET.NetworkName,
+	@tech AS AssignedTo
+FROM ASSET_ASSIGNMENT 
+	INNER JOIN ASSET 
+	ON ASSET_ASSIGNMENT.AssetId = ASSET.AssetId 
+	INNER JOIN DISPOSITION 
+	ON ASSET.DispositionId = DISPOSITION.DispositionId
+WHERE (ASSET_ASSIGNMENT.AssignedTo = @tech) 
+	AND (ASSET_ASSIGNMENT.Usage > 1)
+	AND (ASSET.AssetTypeId = 1) 
+	AND (DISPOSITION.ViewLevelId = 1)
+	AND (ASSET.DispositionId NOT IN(19,21,25))
+	AND (ASSET.AssetSubTypeId NOT IN(2))
+	AND (ASSET.AssetId NOT IN 
+		(
+			SELECT AssetId
+			FROM ASSET_COMPUTER
+			WHERE IsServiceAccount = 1
+		))
+ORDER BY ASSET_ASSIGNMENT.Usage DESC
+
+
+
+

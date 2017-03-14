@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[ORDER_APPOINTMENT_REVIEW_STATUS] (
+    [KEY_SITE]                            NUMERIC (5)     NULL,
+    [KEY_ORDER_APPOINTMENT_REVIEW_STATUS] NUMERIC (8, 3)  NULL,
+    [NUMBER_]                             NUMERIC (10, 3) NULL,
+    [NAME]                                VARCHAR (30)    NULL,
+    [ORDER_TYPE_SCREEN]                   VARCHAR (15)    NULL,
+    [TASK_STATUS_DISPLAY]                 VARCHAR (24)    NULL,
+    [DESCRIPTION]                         TEXT            NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ind_ORDER_APPOINTMENT_REVIEW_STATUS]
+    ON [dbo].[ORDER_APPOINTMENT_REVIEW_STATUS]([KEY_SITE] ASC, [KEY_ORDER_APPOINTMENT_REVIEW_STATUS] ASC);
+

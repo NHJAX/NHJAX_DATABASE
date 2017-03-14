@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_DISCHARGE_TYPE] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_DISCHARGE_TYPE')
+		DROP INDEX DISCHARGE_TYPE.ind_DISCHARGE_TYPE
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_DISCHARGE_TYPE_KEY_DISCHARGE_TYPE')
+		DROP INDEX DISCHARGE_TYPE.IX_DISCHARGE_TYPE_KEY_DISCHARGE_TYPE
+		                                                                
+	CREATE INDEX 	IX_DISCHARGE_TYPE_KEY_DISCHARGE_TYPE
+	ON 			DISCHARGE_TYPE(KEY_DISCHARGE_TYPE)
+	WITH 			FILLFACTOR = 100

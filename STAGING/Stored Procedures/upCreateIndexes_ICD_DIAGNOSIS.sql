@@ -1,0 +1,16 @@
+﻿CREATE PROCEDURE [dbo].[upCreateIndexes_ICD_DIAGNOSIS] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_ICD_DIAGNOSIS')
+		DROP INDEX ICD_DIAGNOSIS.ind_ICD_DIAGNOSIS
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ICD_DIAGNOSIS_KEY_ICD_DIAGNOSIS')
+		DROP INDEX ICD_DIAGNOSIS.IX_ICD_DIAGNOSIS_KEY_ICD_DIAGNOSIS
+		                                                                
+	CREATE INDEX 	IX_ICD_DIAGNOSIS_KEY_ICD_DIAGNOSIS
+	ON 			ICD_DIAGNOSIS(KEY_ICD_DIAGNOSIS)
+	WITH 			FILLFACTOR = 100
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_ICD_DIAGNOSIS_CODE_NUMBER')
+		DROP INDEX ICD_DIAGNOSIS.IX_ICD_DIAGNOSIS_CODE_NUMBER
+		                                                                
+	CREATE INDEX 	IX_ICD_DIAGNOSIS_CODE_NUMBER
+	ON 			ICD_DIAGNOSIS(CODE_NUMBER)
+	WITH 			FILLFACTOR = 100

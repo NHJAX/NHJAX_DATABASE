@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[DESIGNATION_PREFERENCE] (
+    [DesignationId] INT      NOT NULL,
+    [PreferenceId]  INT      NOT NULL,
+    [CreatedDate]   DATETIME CONSTRAINT [DF_DESIGNATION_PREFERENCE_CreatedDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_DESIGNATION_PREFERENCE] PRIMARY KEY CLUSTERED ([DesignationId] ASC, [PreferenceId] ASC)
+);
+

@@ -1,0 +1,10 @@
+﻿Create PROCEDURE [dbo].[upCreateIndexes_LAB_TEST$MTF_CPT_CODE] AS
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'ind_LAB_TEST$MTF_CPT_CODE')
+		DROP INDEX LAB_TEST$MTF_CPT_CODE.ind_LAB_TEST$MTF_CPT_CODE
+                                                                
+	IF EXISTS (SELECT name FROM sysindexes WHERE name = 'IX_LAB_TEST$MTF_CPT_CODE_KEY_LAB_TEST$MTF_CPT_CODE')
+		DROP INDEX LAB_TEST$MTF_CPT_CODE.IX_LAB_TEST$MTF_CPT_CODE_KEY_LAB_TEST$MTF_CPT_CODE
+		                                                                
+	CREATE INDEX 	IX_LAB_TEST$MTF_CPT_CODE_KEY_LAB_TEST$MTF_CPT_CODE
+	ON 			LAB_TEST$MTF_CPT_CODE(KEY_LAB_TEST$MTF_CPT_CODE)
+	WITH 			FILLFACTOR = 100

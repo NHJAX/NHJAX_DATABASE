@@ -1,0 +1,24 @@
+﻿
+CREATE PROCEDURE [dbo].[procODS_TEST_Insert]
+
+AS
+	SET NOCOUNT ON;
+	
+DECLARE @desc varchar(50)
+BEGIN TRY
+SELECT @desc = MAX(TestId) FROM TEST
+
+INSERT INTO TEST
+(
+	TestDesc
+) 
+VALUES
+(
+	@desc
+);
+SELECT SCOPE_IDENTITY();
+END TRY
+BEGIN CATCH
+	SELECT @@ERROR
+	--EXEC upSendMail 'Test',CAST(@@ERROR AS varchar(1000))
+END CATCH

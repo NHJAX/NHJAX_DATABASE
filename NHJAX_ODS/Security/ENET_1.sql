@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [ENET]
+    WITH PASSWORD = N'f{DrxgmfixgQqlytstqogbuMmsFT7_&#$!~<jrouu$lkacxo', SID = 0x4AE3C7A9A9D932448B9864A155CAE5F6, DEFAULT_DATABASE = [AORS], DEFAULT_LANGUAGE = [us_english];
+

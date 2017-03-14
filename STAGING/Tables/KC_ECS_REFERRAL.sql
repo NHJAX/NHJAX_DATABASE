@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[KC_ECS_REFERRAL] (
+    [KEY_SITE]                NUMERIC (5)     NULL,
+    [KEY_KC_ECS_REFERRAL]     NUMERIC (14, 3) NULL,
+    [ORDER_IEN]               NUMERIC (21, 3) NULL,
+    [PATIENT]                 VARCHAR (30)    NULL,
+    [ORDER_DATE_TIME]         DATETIME        NULL,
+    [PARENT_IEN]              NUMERIC (21, 3) NULL,
+    [REQUESTING_LOCATION_IEN] NUMERIC (22, 4) NULL,
+    [REQUESTING_PROVIDER_IEN] NUMERIC (21, 3) NULL,
+    [REFERRAL_TYPE_IEN]       NUMERIC (21, 3) NULL,
+    [CLINIC_IEN]              NUMERIC (21, 3) NULL,
+    [DISPOSITION]             VARCHAR (30)    NULL,
+    [APPOINTMENT_IEN]         NUMERIC (21, 3) NULL,
+    [DATE_RESULTED]           DATETIME        NULL,
+    [RESULTS]                 TEXT            NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ind_KC_ECS_REFERRAL]
+    ON [dbo].[KC_ECS_REFERRAL]([KEY_SITE] ASC, [KEY_KC_ECS_REFERRAL] ASC);
+
